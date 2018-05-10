@@ -1,0 +1,21 @@
+.m-main .head{
+  background: #1F86EC;
+}
+
+.m-main .head .company{font-size: 16px;color: #fff;}
+.m-main .head .operation{font-size: 14px;color: #fff;}
+.m-main .head .operation li i{color: #fff;}
+.m-main .head .operation li i.icon-yonghu1{
+  font-size:18px;
+}
+.m-main .head .operation li.intercalate{
+  cursor: pointer;
+}
+.m-main .head .operation li i.icon-shezhi{
+  font-size:20px;
+}
+.m-main .head .operation li em{ color:#ff9912}
+
+.m-main .nav .nav-box{font-size: 16px;box-sizing: border-box;}
+
+.m-main .content{background: #f4f7f9;}

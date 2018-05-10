@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/carManage/carManage.css"/>
+    <title>其他费用</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">其他费用列表</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入车牌号" id="carNum">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 导出人员信息 -->
+<!--导出-->
+<form class="form-list-small" id="export">
+    <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName" id="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增其他费用</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>用户部门:</span>
+                        <input type="text" class="dept" name="dept"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>车牌号:</span>
+                        <select class="carNum" disabled="disabled" name="otherCostCarId"></select>
+                    </li>
+                    <li>
+                        <span><em>*</em>费用(元):</span>
+                        <input type="text" class="otherCostMoney" name="otherCostMoney"/>
+                    </li>
+                    <li>
+                        <span>缴费人:</span>
+                        <input type="text" class="agentName" name="agentName" id="agentName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>缴费时间:</span>
+                        <input type="text" class="otherCostTime" id="time1" name="otherCostTime"/>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea class="remark" name="otherCostRemark" id="otherCostRemark"></textarea>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<div class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除其他费用</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body deletePopup">
+                <h6 class="title" id="delete-info">
+                    <i class="iconfont icon-tishi-copy icon-danger"></i>
+                    确定删除?
+                </h6>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</div>
+<!--查看-->
+<div class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">其他费用</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectPopup">
+                <ul class="clear">
+                    <li>
+                        <span>用户部门:</span>
+                        <p class="dept"></p>
+                    </li>
+                    <li>
+                        <span>车牌号:</span>
+                        <p class="carNum"></p>
+                    </li>
+                    <li>
+                        <span>费用(元):</span>
+                        <p class="otherCostMoney"></p>
+                    </li>
+                    <li>
+                        <span>缴费人:</span>
+                        <p class="agentName"></p>
+                    </li>
+                    <li>
+                        <span>缴费时间:</span>
+                        <p class="otherCostTime"></p>
+                    </li>
+                    <li class="long">
+                        <span>备注:</span>
+                        <p class="otherCostRemark"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</div>
+<!--结构树弹窗-->
+<div class="add form-Tree" style="display:none;" id="form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择部门</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox">
+                    <ul id="windowTree" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../../../res/js/common/validate.js"></script>-->
+<script src="../../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../../res/js/carManage/carManage.js"></script>
+<script src="../../../../res/js/carManage/expenseManage/otherCost.js"></script>
+</body>
+</html>
+
+
+
+

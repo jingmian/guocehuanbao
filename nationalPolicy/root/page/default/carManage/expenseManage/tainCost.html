@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/carManage/carManage.css"/>
+    <title>保养费用</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">保养列表</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入车牌号" id="carNum">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 导出人员信息 -->
+<!--导出-->
+<form class="form-list-small" id="export">
+    <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName" id="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--新增/修改保养-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增保养费用</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>部门:</span>
+                        <input type="text" class="dept" name="dept"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>车牌号:</span>
+                        <select class="carNum" disabled="disabled" name="maintainCarId" id="maintainCarId"></select>
+                    </li>
+                    <li>
+                        <span><em>*</em>保养费用(元):</span>
+                        <input type="text" class="mainMoney" id="moneyTotal" name="maintainMoney"/>
+                    </li>
+                    <li>
+                        <span>缴费人:</span>
+                        <input type="text" class="agentName" id="agentName" name="agentName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>时间间隔:</span>
+                        <select class="timeSpace" id="timeCyc" name="timeSpace">
+                            <option value="6">6个月</option>
+                            <option value="12">12个月</option>
+                            <option value="18">18个月</option>
+                            <option value="24">24个月</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span><em>*</em>送保时间:</span>
+                        <input type="text" class="startTime" id="time1" name="maintainStartTime"/>
+                    </li>
+
+                    <li>
+                        <span><em>*</em>完保时间:</span>
+                        <input type="text" class="endTime" id="time2" name="maintainEndTime"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>间隔里程:</span>
+                        <select class="mileageSpace" name="mileageSpace" id="mileageSpace">
+                            <option value="5000">5000公里</option>
+                            <option value="7500">7500公里</option>
+                            <option value="10000">10000公里</option>
+                            <option value="12500">12500公里</option>
+                            <option value="15000">15000公里</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span><em>*</em>下次保养时间:</span>
+                        <input type="text" class="maintainRemindTime" id="time3" name="maintainRemindTime"/>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea class="remark" name="maintainRemark" id="maintainRemark"></textarea>
+                    </li>
+                </ul>
+                <div class="wSTime clear">
+                    <h3 class="sTTitle">费用明细<a href="javascript:;" class="btnTAdd">新增</a></h3>
+                    <div class="sTCont">
+                        <span>保养项名称</span>
+                        <span>保养费用(元)</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="sTCont sTCont1">
+                        <input type="text" value="" class="workTime1" placeholder="名称"/>
+                        <input type="text" value="" class="workTime2" placeholder="费用"/>
+                        <span><a href="javascript:;" class="btnTDel">删除</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<div class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除保养费用</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body deletePopup">
+                <h6 class="title" id="delete-info">
+                    <i class="iconfont icon-tishi-copy icon-danger"></i>
+                    确定删除?
+                </h6>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</div>
+<!--查看-->
+<div class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">保养费用</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectPopup">
+                <ul class="clear">
+                    <li>
+                        <span>部门:</span>
+                        <p class="dept"></p>
+                    </li>
+                    <li>
+                        <span>车牌号:</span>
+                        <p class="carNum"></p>
+                    </li>
+                    <li>
+                        <span>保养费用(元):</span>
+                        <p class="maintainMoney"></p>
+                    </li>
+                    <li>
+                        <span>缴费人:</span>
+                        <p class="agentName"></p>
+                    </li>
+                    <li>
+                        <span>送保时间:</span>
+                        <p class="maintainStartTime"></p>
+                    </li>
+                    <li>
+                        <span>完保时间:</span>
+                        <p class="maintainEndTime"></p>
+                    </li>
+                    <li>
+                        <span>时间间隔(月):</span>
+                        <p class="timeSpace"></p>
+                    </li>
+                    <li>
+                        <span>间隔里程(km):</span>
+                        <p class="mileageSpace"></p>
+                    </li>
+                    <li>
+                        <span>下次保养时间:</span>
+                        <p class="maintainRemindTime"></p>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <p class="maintainRemark"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</div>
+<!--结构树弹窗-->
+<div class="add form-Tree" style="display:none;" id="form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择部门</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox">
+                    <ul id="windowTree" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../../res/js/carManage/carManage.js"></script>
+<script src="../../../../res/js/carManage/expenseManage/tainCost.js"></script>
+</body>
+</html>
+
+
+
+

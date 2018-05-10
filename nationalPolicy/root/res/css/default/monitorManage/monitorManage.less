@@ -1,0 +1,103 @@
+.myDgrid{
+    .datagrid-header-check{
+        &>div{
+            bottom: 11px;
+        }
+        &>input{
+            bottom: 11px;
+        }
+    }
+}
+.lTList{
+    margin:0 16px 12px;
+    border-bottom:1px solid #ddd;
+    width: auto!important;
+    &>ul {
+        height: 40px;
+        padding: 0px!important;
+        li{
+            height: 39px;
+            float: left;
+            cursor: pointer;
+            &.lTActive{
+                border-bottom:1px solid #036edb;
+                &>span{
+                    color:#036edb;
+                }
+            }
+            &>span{
+                height: 20px;
+                line-height: 20px;
+                margin-top: 10px;
+                color:#3a4c57;
+                border-right: 1px solid #ddd;
+                padding:0 16px;
+                display:block;
+                &>i.termiState{
+                    width: 10px;
+                    height: 10px;
+                    display: inline-block;
+                    background: red;
+                }
+            }
+        }
+    }
+}
+.insertPopup,.selectPopup{
+    .wSTime_ruleSet{
+        border:none;
+        border-bottom:1px solid #ddd;
+        //padding-bottom:5px;
+        &>div.sTCont{
+            &>span{
+                width: 33.33%!important;
+                &:nth-child(2){
+                    text-align: center!important;
+                }
+                &:nth-last-child(1){
+                    text-align: right;
+                }
+            }
+        }
+        &>div.sTCont1{
+            padding-top:5px;
+            &>p{
+                width: 33.33%;
+                display: inline-block;
+                position: relative;
+                height: 30px;
+                float: left;
+                &:nth-child(2){
+                    text-align: center;
+                }
+                &:nth-last-child(1){
+                    text-align: right;
+                }
+                &>select{
+                    position: absolute;
+                    top:0px;
+                    bottom:0px;
+                    border:1px solid #ddd;
+                }
+                &:nth-child(2){
+                    &>input{
+                        height: 30px;
+                        width: 30%;
+                        float: left;
+                        &:nth-child(2){
+                            float: right;
+                        }
+                        border:1px solid #ddd;
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        text-indent: 5px;
+                    }
+                }
+                &>a{
+                    color:#e84957;
+                }
+            }
+        }
+    }
+}

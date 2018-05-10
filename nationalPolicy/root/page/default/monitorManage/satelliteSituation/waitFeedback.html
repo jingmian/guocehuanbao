@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/jquery-vague-search/jquery-vague-search.css">
+    <link rel="stylesheet" href="../../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <title>等待反馈</title>
+    <style type="text/css">
+        #checkedPerson {
+            border: 1px solid black;
+        }
+
+        .sISTxt {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">等待反馈</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input id="sbr_input" type="text" placeholder="请输入上报人">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block" id="searchBtn"></i>
+                    </li>
+                    <li>
+                        <select class="time-during" id="timeDuring" style="vertical-align: inherit">
+                            <option value="0">精简查询</option>
+                            <option value="1">最近一天</option>
+                            <option value="7">最近一周</option>
+                            <option value="14">最近两周</option>
+                            <option value="30">最近一月</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="mapPlace"/>
+</div>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增卫情</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>上报人:</span>
+                        <input type="text" data-class="agentName" id="agentName" name="agentName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>卫情地点:</span>
+                        <input type="text" data-class="sanitationPlace" id="sanitationPlace" placeholder="请选择地点"
+                               name="sanitationPlace"/>
+                    </li>
+                    <li>
+                        <span>卫情等级:</span>
+                        <select data-class="sanitationLevel" id="sanitationLevel" name="sanitationLevel">
+                            <option value="0">一般</option>
+                            <option value="1">紧急</option>
+                            <option value="3">特急</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>卫情状态:</span>
+                        <select data-class="sanitationState" id="sanitationState" name="sanitationState">
+                            <option value="0">未分派</option>
+                            <option value="1">已分派</option>
+                            <option value="2">已完成</option>
+                            <!--<option value="3">已确认</option>
+                            <option value="4">已删除</option>-->
+                        </select>
+                    </li>
+                    <li class="long" data-textarea="true">
+                        <span><em>*</em>卫情描述:</span>
+                        <textarea data-class="sanitationDetails" id="sanitationDetails" cols="70" rows="5"
+                                  name="sanitationDetails"></textarea>
+                    </li>
+                </ul>
+            </div>
+            <div class="document">
+                <h6 class="title" id="inputBox">图片
+                    <span class="c-blue" id="addFile" onclick="fileUpLoad.upload()">新增</span>
+                </h6>
+                <div id="fileBox" class="file-box clear">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--查看-->
+<div class="form-list-small sateInfo" id="sateInfo">
+    <h5 class="title clear">
+        <span class="titleText">查看等待反馈信息</span>
+        <span class="titleState">等待时间:<em></em></span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body sateInfoPopup">
+                <div class="sIState">
+                    <h5>卫情状态</h5>
+                    <ul class="clear">
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>卫情上报</span>
+                            <p data-class="addTime"></p>
+                        </li>
+                        <li class="sISLine sISLine1">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>分派时间</span>
+                            <p data-class="arrangeTime"></p>
+                        </li>
+                        <li class="sISLine sISLine2">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>任务完成</span>
+                            <p data-class="sureTime"></p>
+                        </li>
+                        <li class="sISLine sISLine3">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>确认完成</span>
+                            <p data-class="fileTime"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sIInfo">
+                    <h5>卫情信息</h5>
+                    <ul class="clear">
+                        <li>
+                            <span>上报人:</span>
+                            <p data-class="agentName">张三</p>
+                        </li>
+                        <li class="colorBlue">
+                            <span>上报时间:</span>
+                            <p data-class="addTime">2017-10-16</p>
+                        </li>
+                        <li class="maxWLi colorBlue">
+                            <span>卫情地点:</span>
+                            <p data-class="sanitationPlace">成都</p>
+                        </li>
+                        <li class="maxWLi">
+                            <span>卫情描述:</span>
+                            <p data-class="sanitationDetails">卫情描述</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sIIImg">
+                    <h5>卫情照片</h5>
+                    <ul class="clear">
+                        <!-- <li><img src="" alt=""></li>
+                         <li><img src="" alt=""></li>
+                         <li><img src="" alt=""></li>
+                         <li><img src="" alt=""></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--大图-->
+<div class="form-list-small" id="peelInfo">
+    <h5 class="title clear">
+        <span>卫情照片</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body peelInfoPopup">
+                <ul class="clear">
+                    <li class="carImg3">
+                        <img src="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--分派-->
+<form class="form-list-small" id="distrib">
+    <h5 class="title"><span class="titleText">分派卫情信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body distribPopup">
+            <!--<h6 class="title" id="distrib-info">-->
+            <!--<i class="iconfont icon-tishi-copy icon-danger"></i>-->
+            <!--确定分派上报人为<span id="dInfo1"></span>的等待反馈信息?-->
+            <!--</h6>-->
+            <ul class="clear">
+                <li>
+                    <span><em>*</em>分派人员:</span>
+                    <input type="text" data-class="agentName1" id="agentName1" name="agentName1"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--卫情确认-->
+<form class="form-list-small sateConfirm" id="sateConfirm">
+    <h5 class="title clear">
+        <span class="titleText">确认等待反馈信息</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body sateConfirmPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>处理时间:</span>
+                        <input type="text" id="sureTime" data-class="sureTime">
+                    </li>
+                </ul>
+            </div>
+            <div class="document">
+                <h6 class="title" id="inputBox2">图片
+                    <span class="c-blue" id="addFile2" onclick="fileUpLoad2.upload()">新增</span>
+                </h6>
+                <div id="fileBox2" class="file-box clear">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除等待反馈信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除上报人为<span id="dInfo"></span>的等待反馈信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--预览大图-->
+<div class="form-list-small" id="previewInfo">
+    <h5 class="title clear">
+        <span>卫情现场图片</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body peelInfoPopup">
+                <ul class="clear">
+                    <li class="carImg3">
+                        <img src="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--取点弹窗-->
+<form class="form-list-small insertArea" id="insertArea">
+    <h5 class="title"><span class="titleText">选择地点</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertAreaPopup clear">
+                <div class="auto-search">
+                    <input type="text" id="suggestId" placeholder="请输入地址" style="width:260px"/>
+                </div>
+                <div id="searchResultPanel"></div>
+                <div class="betaMap" style="width:100%" id="betaMap">
+                    <div id="map" class="commonDetaMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--人员树弹窗-->
+<div class="add form-Tree" style="display:none;" id="pers-form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">请选择人员</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox1">
+                    <span>被分派人:</span>
+                    <input id="checkedPerson" type="text"
+                           style="width: 200px;margin-top: 5px;height: 20px;border: 1px solid #ddd;text-indent: 5px;">
+                    <br>
+                    <ul id="windowTree1" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <!--<div class="form-btn">-->
+                <!--<ul>-->
+                    <!--<li class="no b-gray">关闭</li>-->
+                    <!--<li class="yes b-blue">确定</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+                <input class="btn b-blue no" type="button" value="关闭" style="background: #fff!important;border:1px solid #ddd;color:#000;">
+            </div>
+        </div>
+    </form>
+
+</div>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../res/dep/formdata/formdata.js"></script>
+<script src="../../../../res/dep/formdata/fileUpLoad.js"></script>
+<script src="../../../../res/dep/jquery-vague-search/jquery-vague-search.js"></script>
+<script src="../../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../../res/js/monitorManage/monitorManage.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.exhide.js"></script>
+<script src="../../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../../res/js/monitorManage/satelliteSituation/waitFeedback.js"></script>
+</body>
+</html>
+

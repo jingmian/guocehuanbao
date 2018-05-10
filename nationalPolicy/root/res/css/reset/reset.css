@@ -1,0 +1,232 @@
+@charset "utf-8";
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+p,
+blockquote,
+pre,
+hr,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+header,
+footer,
+section,
+article,
+aside,
+nav,
+address,
+figure,
+figcaption,
+menu,
+details {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+  border: 0;
+}
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+[hidefocus],
+summary {
+  outline: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "MicroSoft YaHei", sans-serif;
+  color: #000;
+  overflow: auto;
+}
+li {
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/*解决IE浏览器a标签点击是有个背景色*/
+a:active {
+  background-color: transparent !important\9;
+}
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+  /*/!*清除移动端默认的表达样式*!/*/
+  /*-webkit-appearance: none;*/
+  /*appearance: none;*/
+}
+/*清除chrome下自动记忆背景颜色*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+select {
+  vertical-align: middle;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+}
+em,
+strong {
+  font-style: normal;
+  font-weight: normal;
+}
+img {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+/*清除浮动*/
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.clear {
+  zoom: 1;
+}
+/*字体颜色*/
+.c-green {
+  color: #34cb89!important;
+}
+.c-orange {
+  color: #faac46!important;
+}
+.c-white {
+  color: #fff!important;
+}
+.c-blue {
+  color: #439cf5!important;
+}
+.c-red {
+  color: #fe4b68!important;
+}
+.c-gray {
+  color: #a6a6a6;
+}
+.form-btn .no {
+  border: 1px solid #ddd !important;
+  color: #444 !important;
+  background: #fff !important;
+}
+/*背景颜色*/
+.b-gray {
+  background: #bdc1c6!important;
+}
+.b-blue {
+  background: #009aff!important;
+}
+.b-green {
+  background: #34cb89!important;
+}
+.b-orange {
+  background: #ff9a00!important;
+}
+.b-tishi {
+  background: #eaf2ff !important;
+}
+.b-red {
+  background: #fd5053!important;
+}
+.b-blue-choose {
+  background: #4b92fc!important;
+}
+.b-qingshe {
+  background: #0abcdf!important;
+}
+.b-violet {
+  background: #d682f4!important;
+}
+.b-skyBlue {
+  background: #32b6eb!important;
+}
+.b-white {
+  background: #fff!important;
+}
+/* 浮动 */
+.lf {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+
+/*滚动条定制*/
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    /* background-color: rgba(92,131,239,.77); */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #a4a7ae;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}

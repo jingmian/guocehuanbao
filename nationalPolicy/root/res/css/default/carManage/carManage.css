@@ -1,0 +1,86 @@
+.insertPopup > ul li,
+#addNew > ul li {
+  padding-left: 100px!important;
+}
+.insertPopup > ul li span,
+#addNew > ul li span {
+  width: 100px;
+  margin-left: -100px !important;
+}
+.insertPopup .wSTime > div.sTCont > span,
+#addNew .wSTime > div.sTCont > span,
+.insertPopup .wSTime > div.sTCont > input,
+#addNew .wSTime > div.sTCont > input {
+  width: 33.33%;
+}
+.insertPopup .wSTime > div.sTCont > span:nth-child(2),
+#addNew .wSTime > div.sTCont > span:nth-child(2),
+.insertPopup .wSTime > div.sTCont > input:nth-child(2),
+#addNew .wSTime > div.sTCont > input:nth-child(2) {
+  text-align: center;
+}
+.insertPopup .wSTime > div.sTCont > span:nth-last-child(1),
+#addNew .wSTime > div.sTCont > span:nth-last-child(1),
+.insertPopup .wSTime > div.sTCont > input:nth-last-child(1),
+#addNew .wSTime > div.sTCont > input:nth-last-child(1) {
+  text-align: right;
+}
+.correctPopup .wSTime {
+  margin-top: 15px;
+}
+.correctPopup .wSTime0 {
+  max-height: 190px;
+}
+.correctPopup .wSTime0 > h3 {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+.correctPopup .wSTime0 > .sTCont:nth-child(1) {
+  margin-top: 36px;
+}
+.dgridTerm .datagrid-header-check > .boxDiv {
+  bottom: 43px;
+}
+.dgridTerm .datagrid-header-check > input {
+  bottom: 43px;
+}
+.wSTime1 li {
+  width: 49%;
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  box-sizing: border-box;
+}
+.wSTime1 li > span {
+  width: 60px;
+  display: inline-block;
+}
+.wSTime1 li > input {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 26px;
+  line-height: 26px;
+  display: inline-block;
+  width: 70px;
+  text-indent: 5px;
+}
+.wSTime1 li > a {
+  display: inline-block;
+  width: 60px;
+  background-color: #009aff;
+  height: 26px;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+}
+.wSTime1 li.fuelQuant > input {
+  width: 132px;
+}
+/*底部全选按钮样式*/
+#dgridBox .datagrid-header-check > .boxDiv {
+  left: 288px;
+}
+#dgridBox .datagrid-header-check > input {
+  left: 290px;
+}

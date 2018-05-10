@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+html, div, body, p, h1, li, ul, h2, table, h3, tr, td {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+}
+
+a {
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}
+
+.vod_bg {
+	height: 350px;
+	width: 400px;
+	margin: 10px 20px 0 20px;
+	float: left;
+}
+
+.vod_bg_ {
+	height: 320px;
+	width: 400px;
+	margin: 50px 20px 0 20px;
+	float: left;
+}
+
+.content {
+	float: left;
+	margin-top: 50px;
+}
+
+.vod {
+	width: 100%;
+	/*height: 100%;*/
+    height: 280px;
+}
+
+.vod_btns {
+	/*height: 40px;*/
+	background: #fff;
+	border-top: 1px solid #444;
+}
+
+.vod_btns ul {
+	padding: 0;
+}
+
+.paly_btns {
+	float: left;
+	height: 36px;
+	width: 40px;
+}
+
+.paly_btns i {
+	font-size: 32px;
+	line-height: 36px;
+}
+
+.paly_btns .icon-zanting {
+	font-size: 26px;
+}
+
+.c1 {
+	clear: both;
+}
+
+.input_content {
+	padding: 0;
+}
+
+.input_content li {
+	float: left;
+}
+
+.input_content li p {
+	float: left;
+}
+
+.input_bg {
+	width: 160px;
+	height: 24px;
+	border: 1px solid #d6d8dc;
+}
+
+.input_title {
+	text-align: right;
+	margin-right: 6px;
+	line-height: 26px;
+}
+/*关闭*/
+.close_vod {
+	margin-left: 26px;
+	float: left;
+	height: 26px;
+	width: 80px;
+	background: #ff4e5e;
+	line-height: 26px;
+	text-align: center;
+	color: #fff;
+}
+
+.vod_gain {
+	padding-top: 10px;
+}
+
+.open_vod {
+	float: left;
+	height: 26px;
+	width: 80px;
+	background: #ff9900;
+	line-height: 26px;
+	text-align: center;
+	color: #fff;
+}
+    /*2018-4-23通道下拉列表样式*/
+    .tongdao{
+        height: 26px;
+        float: left;
+        margin-right: 15px;
+    }
+    .tongdaoSpan{
+        float: left;
+        margin-right: 15px;
+        display: inline-block;
+        line-height: 28px;
+    }
+    /*清楚浮动*/
+    body:after,.input_content:after{
+        content: '';
+        height: 0;
+        display: block;
+        clear: both;
+    }
+
+</style>
+<script type="text/javascript">
+	var DeviceID, TransIP, Device_Type;
+	function $(id) {
+		return document.getElementById(id);
+	}
+	function getobj(i) {
+		return $("Object" + i);
+	}
+	//初始化设备参数
+	function videoInit() {
+		var obj=window.parent.videoInitObj;
+		DeviceID =obj. num;
+		TransIP = obj.ip;
+// 		if (dev_type.selectedIndex == 0)
+// 			Device_Type = 123;
+// 		else
+		Device_Type = 124;
+		for(var i=0; i<=3; i++)
+		    getobj(i).SetDeviceInfo(Device_Type, "", DeviceID, 5556, TransIP, 17891, "", "");
+// 		for (var i = 1; i <= 4; i++){
+// 			getobj(i).SetDeviceInfo(Device_Type, "", DeviceID, 5556, TransIP,17891, "", "");
+// 		}
+		
+		alert("初始化完成");
+	}
+
+	//打开单个通道视频
+	function openvideo(val) {
+		var obj=window.parent.videoInitObj;
+		if(obj.num==null){
+			alert("未选中车辆");
+			return;
+		}
+		var obj = getobj(val);
+		obj.OpenVideo(val, 1);
+	}
+	//关闭单个通道视频
+	function closevideo(val) {
+		var obj = getobj(val);
+		obj.CloseVideo();
+	}
+
+	function SetSubRes() {
+		getobj(0).SetSubResolution(sel_res.value);
+	}
+
+	function record() {
+		var path = document.getElementById("RecordPath").value;
+		var obj = getobj(0);
+		var returnvalue = obj.Record(path);
+		if (returnvalue == 0)
+			alert("开始录像");
+	}
+
+	function stoprecord() {
+		var obj = getobj(0);
+		obj.StopRecord();
+	}
+
+	//打开全部通道视频
+	function OpenAllVideo() {
+		for (var i = 0; i < 4; i++) {
+			var obj = getobj(i);
+			obj.OpenVideo(i, 1);
+		}
+	}
+	//关闭全部通道视频
+	function CloseAllVideo() {
+		for (var i = 0; i < 4; i++) {
+			var obj = getobj(i);
+			obj.CloseVideo();
+		}
+	}
+	//抓图
+	function getPic() {
+		var obj = getobj(0);
+		var res = obj.CapturePic("C:\\mm.jpg", 0);
+		alert(res + "      C:\\mm.jpg");
+	}
+	//检索远程录像
+	function remotesearch() {
+		var obj = getobj(4);
+		var now = new Date();
+		var rs = obj.SearchTime(DeviceID, now.getFullYear(),
+				now.getMonth() + 1, now.getDate(), 0, 0, 0, 0, 0, 0, 0, 0);
+
+		if (rs != 0)
+			alert("fail");
+		else {
+			var rstrs = obj.SearchGetFileInfo();
+
+			//   alert(rstrs);
+			var list = rstrs.split(';');
+			var strs = "";
+			for (var i = 0; i < list.length; i++)
+				$("sel_playlist").options.add(new Option(list[i], list[i]
+						.split(',')[0]));
+			// $("sel_playlist").innerHTML = strs;
+			//alert(strs);
+		}
+		obj.SearchClose();
+		obj.CloseDevice();
+	}
+	//停止检索录像
+	function stopsearch() {
+		var obj = getobj(4);
+		obj.SearchClose();
+	}
+	//回放远程录像
+	function PlayBack() {
+		var path = sel_playlist.value;
+		if (path == "") {
+			alert("Please Choose file");
+			return;
+		}
+		var obj = getobj(4);
+		obj.PlayOpen(path, Device_Type, 1);
+	}
+
+	//下载远程录像
+	function DownloadVideo() {
+		var path = sel_playlist.value;
+		if (path == "") {
+			alert("Please Choose file");
+			return;
+		}
+		var obj = getobj(4);
+		obj.DownloadFileConvert(path, "c:/temp/", 0, 0, 1, 0);
+	}
+
+	function StopDownloadVideo() {
+		var obj = getobj(4);
+		obj.DownloadFileStop();
+	}
+
+	function SetDownloadPercent(nPercent) {
+		id_down_progress.value = nPercent;
+	}
+
+	function PlayBackLocal() {
+		var path = document.getElementById("RecordPath").value;
+		getobj(4).PlayOpen(path, 0, 0);
+	}
+	//停止远程回放
+	function StopPlayBack() {
+		var obj = getobj(4);
+		obj.PlayStop();
+	}
+
+	function PausePlayBack() {
+		document.getElementById('vod_paly_btn').style.display = "block";
+		document.getElementById('vod_suspend_btn').style.display = "none";
+		var obj = getobj(4);
+		obj.PlayPause(1);
+
+	}
+
+	function ResumePlayBack() {
+		document.getElementById('vod_paly_btn').style.display = "none";
+		document.getElementById('vod_suspend_btn').style.display = "block";
+		var obj = getobj(4);
+		/* obj.PlayPause(0);*/
+
+	}
+
+	//设置窗口大小
+	/*function setSize() {
+	    var width = $("width").value;
+	    var height = $("height").value;
+	    $("Object0").style.height= height + "px";
+	    $("Object0").style.width = width + "px";
+	    $("Object1").style.height = height + "px";
+	    $("Object1").style.width = width + "px";
+	    $("Object2").style.height = height + "px";
+	    $("Object2").style.width = width + "px";
+	    $("Object3").style.height = height + "px";
+	    $("Object3").style.width = width + "px";
+	}
+
+		function OnGetOpenVideoMessage1(szDevID, nChannel, nMessage){
+		console.log(szDevID+","+nChannel+","+nMessage);
+		if (nMessage == 1)
+			alert("open video fail");
+	}*/
+</script>
+
+</head>
+
+<body style="overflow:hidden;overflow-y:auto;height: 700px;">
+	<div id="td_obj" class="vod_bg">
+		<object class="vod" id="Object0"
+			classid="clsid:DB5D6116-F923-4aa0-83D9-D6538F55E174" name="showvideo">
+			<param name="_Version" value="65536">
+			<param name="_ExtentX" value="10583">
+			<param name="_ExtentY" value="9260">
+			<param name="_StockProps" value="0">
+		</object>
+		<ul class="input_content vod_gain">
+			<li>
+                <span class="tongdaoSpan">通道1:</span>
+                <a onclick="openvideo(0);" class="open_vod" id="bt_open">打开视频</a></li>
+			<li><a onclick="closevideo(0);" id="tb_closeall"
+				class="close_vod">关闭视频</a></li>
+			<!--<li><a onclick="init();" id="bt_init" class='initialization' />视频初始化</a></li>-->
+
+		</ul>
+	</div>
+
+	<div id="td_obj" class="vod_bg">
+		<object class="vod" id="Object1"
+			classid="clsid:DB5D6116-F923-4aa0-83D9-D6538F55E174" name="showvideo">
+			<param name="_Version" value="65536">
+			<param name="_ExtentX" value="10583">
+			<param name="_ExtentY" value="9260">
+			<param name="_StockProps" value="0">
+		</object>
+		<ul class="input_content vod_gain">
+			<li>
+                <span class="tongdaoSpan">通道2:</span>
+                <a onclick="openvideo(1);" class="open_vod" id="bt_open">打开视频</a></li>
+			<li><a onclick="closevideo(1);" id="tb_closeall"
+				class="close_vod">关闭视频</a></li>
+			<!--<li><a onclick="init();" id="bt_init" class='initialization' />视频初始化</a></li>-->
+
+		</ul>
+	</div>
+
+	<div id="td_obj" class="vod_bg">
+		<object class="vod" id="Object2"
+			classid="clsid:DB5D6116-F923-4aa0-83D9-D6538F55E174" name="showvideo">
+			<param name="_Version" value="65536">
+			<param name="_ExtentX" value="10583">
+			<param name="_ExtentY" value="9260">
+			<param name="_StockProps" value="0">
+		</object>
+		<ul class="input_content vod_gain">
+			<li>
+                <span class="tongdaoSpan">通道3:</span>
+                <a onclick="openvideo(2);" class="open_vod" id="bt_open">打开视频</a></li>
+			<li><a onclick="closevideo(2);" id="tb_closeall"
+				class="close_vod">关闭视频</a></li>
+			<!--<li><a onclick="init();" id="bt_init" class='initialization' />视频初始化</a></li>-->
+
+		</ul>
+	</div>
+
+	<div id="td_obj" class="vod_bg">
+		<object class="vod" id="Object3"
+			classid="clsid:DB5D6116-F923-4aa0-83D9-D6538F55E174" name="showvideo">
+			<param name="_Version" value="65536">
+			<param name="_ExtentX" value="10583">
+			<param name="_ExtentY" value="9260">
+			<param name="_StockProps" value="0">
+		</object>
+		<ul class="input_content vod_gain">
+			<li>
+                <span class="tongdaoSpan">通道4:</span>
+                <a onclick="openvideo(3);" class="open_vod" id="bt_open">打开视频</a></li>
+			<li><a onclick="closevideo(3);" id="tb_closeall"
+				class="close_vod">关闭视频</a></li>
+			<!--<li><a onclick="init();" id="bt_init" class='initialization' />视频初始化</a></li>-->
+
+		</ul>
+	</div>
+
+	<script language="javascript" type="text/javascript" for="Object0"
+		event="OnDoubleClick(x,y)">
+		FullScreen();
+	</script>
+	<script language="javascript" type="text/javascript" for="Object1"
+		event="OnDoubleClick(x,y)">
+		FullScreen();
+	</script>
+	<script language="javascript" type="text/javascript" for="Object2"
+		event="OnDoubleClick(x,y)">
+		FullScreen();
+	</script>
+	<script language="javascript" type="text/javascript" for="Object3"
+		event="OnDoubleClick(x,y)">
+		FullScreen();
+	</script>
+	
+
+</body>
+</html>

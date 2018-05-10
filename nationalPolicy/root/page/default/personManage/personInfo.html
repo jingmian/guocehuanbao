@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/personManage/personManage.css"/>
+    <title>人员管理</title>
+</head>
+<body>
+    <div class="m-from">
+        <div class="m-home clear">
+            <div class="departStructLeft">
+                <h2 class="list_title">部门结构树</h2>
+                <div class="personTree">
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </div>
+            <div class="m-home infoListRight">
+                <div class="title clear">
+                    <h2 class="list_title">人员信息列表</h2>
+                    <div class="search">
+                        <ul>
+                            <li>
+                                <input type="text" placeholder="请输入人员名称" id="personName">
+                                <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                            </li>
+                            <li>
+                                <i id="seniorSearchBtn" title="高级搜索" class="seniorSearch iconfont icon-gaojisousuo2" style="display: block"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dgrid" id="dgridBox">
+                    <div class="dgrid-box">
+                        <table id="dgrid"></table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 导出人员信息 -->
+    <!--导出-->
+    <form class="form-list-small" id="export">
+        <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+        <div class="form-body">
+            <div class="section">
+                <div class="section-body exportPopup">
+                    <ul class="clear infoList">
+                        <li>
+                            <span>文件名称：</span>
+                            <input type="text" class="excelFileName"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-btn">
+            <ul>
+                <li class="no b-gray">关闭</li>
+                <li class="yes b-blue">确定</li>
+            </ul>
+        </div>
+    </form>
+    <!--查看-->
+    <form class="form-list-small" id="selectAll">
+        <h5 class="title"><span class="titleText">查看人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+        <div class="form-body">
+            <div class="section">
+                <div class="section-body selectPopup with-pic-popup">
+                    <ul class="clear">
+                        <li>
+                            <span>所属部门:</span>
+                            <p class="deptName"></p>
+                        </li>
+                        <li>
+                            <span>姓名:</span>
+                            <p class="personName"></p>
+                        </li>
+                        <li>
+                            <span>联系电话:</span>
+                            <p class="personPhone"></p>
+                        </li>
+                        <li>
+                            <span>人员类型:</span>
+                            <p class="personType"></p>
+                        </li>
+                        <li>
+                            <span>民族:</span>
+                            <p class="minzuId"></p>
+                        </li>
+                        <li>
+                            <span>性别:</span>
+                            <p class="personSex"></p>
+                        </li>
+                        <li>
+                            <span>入职时间:</span>
+                            <p class="joinTime"></p>
+                        </li>
+                        <li>
+                            <span>户籍:</span>
+                            <p class="register"></p>
+                        </li>
+                        <li>
+                            <span>身份证号:</span>
+                            <p class="idCardNum"></p>
+                        </li>
+                        <li>
+                            <span>家庭住址:</span>
+                            <p class="personAddress"></p>
+                        </li>
+
+                         <li id="ic_num_li" style="display: none;">
+                            <span>ic卡号:</span>
+                            <input type="text"  class="icNum"/>
+                        </li>
+
+                        <li class="textareaLi">
+                            <span>备注:</span>
+                            <p class="remark"></p>
+                        </li>
+                    </ul>
+                    <div class="pic-wrap">
+                        <ul class="pic-list clear">
+                            <li>
+                                <!--<a href="javascript:void(0)" class="choose-pic" data-name="pic">选择图片</a>-->
+                                <!--<span class="shade" data-name="pic">点击修改</span>-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-btn">
+            <ul>
+                <li class="no b-gray">关闭</li>
+                <li class="yes b-blue">确定</li>
+            </ul>
+        </div>
+    </form>
+    <!--新增-->
+    <form class="form-list-small" id="addNew">
+        <h5 class="title"><span class="titleText">修改人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+        <div class="form-body">
+            <div class="section">
+                <div class="section-body insertPopup with-pic-popup">
+                    <ul class="clear" style="width: 460px;">
+                        <li>
+                            <span><em>*</em>所属部门:</span>
+                            <input type="text" class="deptName"/>
+                        </li>
+                        <li>
+                            <span><em>*</em>姓名:</span>
+                            <input type="text" class="personName"/>
+                        </li>
+                        <li>
+                            <span>联系电话:</span>
+                            <input type="text"  class="personPhone" />
+                        </li>
+                        <li>
+                            <span><em>*</em>人员类型:</span>
+                            <select id="person_type_id"  class="personType" onchange="personTypeOnchange(this.value)">
+                                <option value="0"></option>
+                            </select>
+                        </li>
+                        <li>
+                            <span><em>*</em>民族:</span>
+                            <select  class="minzuId">
+                                <option value="0">汉族</option>
+                                <option value="1">藏族</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span><em>*</em>性别:</span>
+                            <select class="personSex">
+                                <option value="男" maxlength="2">男</option>
+                                <option value="女" maxlength="2">女</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span>入职时间:</span>
+                            <input type="text" class="joinTime" placeholder="请选择时间" id="time1" name="orderEndTime"/>
+                        </li>
+                        <li>
+                            <span>户籍:</span>
+                            <input type="text"  class="register" />
+                        </li>
+                        <li>
+                            <span>身份证号:</span>
+                            <input type="text"  class="idCardNum"/>
+                        </li>
+                        <li>
+                            <span>家庭住址:</span>
+                            <input type="text"  class="personAddress"/>
+                        </li>
+
+                        <li id="ic_num_li_r" style="display: none;">
+                            <span>ic卡号:</span>
+                            <input type="text"  class="icNum"/>
+                        </li>
+                        <li class="textareaLi">
+                            <span>备注:</span>
+                            <textarea class="remark" id="remark"></textarea>
+                        </li>
+                    </ul>
+                    <div class="pic-wrap">
+                        <ul class="pic-list clear">
+                            <li>
+                                <a href="javascript:void(0)" class="choose-pic" data-name="pic">选择图片</a>
+                                <span class="shade" data-name="pic">点击修改</span>
+                            </li>
+                        </ul>
+                        <ul class="input-group">
+                            <li>
+                                <input type="file" id="pic" name="pic" data-name="picName"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-btn">
+            <ul>
+                <li class="no b-gray">关闭</li>
+                <li class="yes b-blue">确定</li>
+            </ul>
+        </div>
+    </form>
+    <!--删除-->
+    <form class="form-list-small" id="delete">
+        <h5 class="title"><span class="titleText">删除人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+        <div class="form-body">
+            <div class="section">
+                <div class="section-body deletePopup">
+                    <h6 class="title" id="delete-info">
+                        <i class="iconfont icon-tishi-copy icon-danger"></i>
+                        确定删除人员姓名为<span id="dPers"></span>的信息?
+                    </h6>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-btn">
+            <ul>
+                <li class="no b-gray">关闭</li>
+                <li class="yes b-blue">确定</li>
+            </ul>
+        </div>
+    </form>
+    <!--预览大图-->
+    <div class="form-list-small" id="previewInfo">
+        <h5 class="title clear">
+            <span id="sateImg">人员头像</span>
+            <i class="icon iconfont icon-cheng"></i>
+        </h5>
+        <div class="form-body">
+            <div class="section">
+                <div class="section-body peelInfoPopup">
+                    <ul class="clear">
+                        <li class="carImg3">
+                            <img src="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--结构树弹窗-->
+    <div class="add form-Tree" style="display:none;" id="form-Tree">
+        <form method="post">
+            <div class="form-container">
+                <!--标题-->
+                <div class="form-top">
+                    <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择所属部门</strong></span>
+                </div>
+                <!--内容-->
+                <div class="form-content">
+                    <div id="windowTreeBox">
+                        <ul id="windowTree" class="ztree"></ul>
+                    </div>
+                </div>
+                <!--按钮组-->
+                <div class="form-btns clear">
+                    <input class="btn b-blue submit-btn" type="button" value="确定">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+    <script src="../../../res/js/global/global.js"></script>
+    <script src="../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+    <script src="../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+    <script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+    <script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+    <script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+    <script src="../../../res/dep/formdata/formdata.js"></script>
+    <script src="../../../res/dep/formdata/fileUpLoad.js"></script>
+    <script src="../../../res/dep/layer/layer.js"></script>
+    <script src="../../../res/js/common/validate.js"></script>
+    <script src="../../../res/js/common/seniorSearch.js"></script>
+    <script src="../../../res/js/personManage/personManage.js"></script>
+    <script src="../../../res/js/personManage/personInfo.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../res/css/bigScreen/bigScreen.css"/>
+    <link rel="stylesheet" href="../../res/css/bigScreen/griddingSys.css"/>
+    <title>日客则环卫智能管理系统</title>
+</head>
+<body>
+<!--左边部分-->
+<div class="height-12 width-4 float-l">
+    <div class="lBox1 height-4 padding">
+        <p class="height-2">日客则环卫智能管理系统</p>
+        <div class="box_1 box_1_1 width-4 height-5 c-white">
+            <div class="box_2 b-blue">
+                <p class="width-6 float-l">
+                    <span class="span1">18:00</span>
+                    <em>日客则</em>
+                    <span class="span2">2017-10-26</span>
+                    <span class="span3">星期五</span>
+                </p>
+                <p class="width-6 float-l">
+                    <span class="span1">26℃</span>
+                    <em>21~26℃</em>
+                    <span class="span2">晴</span>
+                    <span class="span3">空气良&nbsp;2级微风</span>
+                </p>
+                <i>图</i>
+            </div>
+        </div>
+        <div class="box_1 width-4 height-5 c-white">
+            <div class="box_2 b-red"><span>标题</span><i>图</i>
+                <p><em>人数</em></p>
+            </div>
+        </div>
+        <div class="box_1 width-4 height-5 c-white">
+            <div class="box_2 b-orange"><span>标题</span><i>图</i>
+                <p><em>人数</em></p>
+            </div>
+        </div>
+        <div class="box_1 width-4 height-5 c-white">
+            <div class="box_2 b-green"><span>标题</span><i>图</i>
+                <p><em>人数</em></p>
+            </div>
+        </div>
+        <div class="box_1 width-4 height-5 c-white">
+            <div class="box_2 b-violet"><span>标题</span><i>图</i>
+                <p><em>人数</em></p>
+            </div>
+        </div>
+        <div class="box_1 width-4 height-5 c-white">
+            <div class="box_2 b-qingshe"><span>标题</span><i>图</i>
+                <p><em>人数</em>辆</p>
+            </div>
+        </div>
+    </div>
+    <div class="lBox2 height-4">
+        <div class="lBox2_1 height-12 width-6 float-l">
+            <div class="lBox2_1_1 height-6 padding">
+                <div id="carType" class="height-12">平台车辆类型</div>
+            </div>
+            <div class="box2_1_2 height-6 padding">
+                <div class="width-6 float-l">
+                    <h2>车辆在线率</h2>
+                    <p id="carOnLine" class="width-12 height-12"></p>
+                    <p class="txt">
+                        <span class="span1">空闲:<em>10</em></span>
+                        <span class="span2">其他:<em>0</em></span>
+                    </p>
+                </div>
+                <div class="width-6 float-l">
+                    <h2>车辆在线率</h2>
+                    <p id="personAtte" class="width-12 height-12"></p>
+                    <p class="txt">
+                        <span class="span1">空闲:<em>10</em></span>
+                        <span class="span2">其他:<em>0</em></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="lBox2_2 width-6 height-12 float-l">
+            <ul>
+                <li>
+                    <p class="title">今日耗油数据</p>
+                    <span><em>2520</em></span>
+                    <p class="desc"><span>-2.3</span></p>
+                    <i>图标</i></li>
+                <li>
+                    <p class="title">今日耗油数据</p>
+                    <span><em>2520</em></span>
+                    <p class="desc"><span>-2.3</span></p>
+                    <i>图标</i></li>
+                <li>
+                    <p class="title">今日耗油数据</p>
+                    <span><em>2520</em></span>
+                    <p class="desc"><span>-2.3</span></p>
+                    <i>图标</i></li>
+                <li>
+                    <p class="title">今日耗油数据</p>
+                    <span><em>2520</em></span>
+                    <p class="desc"><span>-2.3</span></p>
+                    <i>图标</i></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="lBox3 height-4" style="background: bisque;">
+        <div class="lBox3_1 width-6 float-l">
+            <p id="currMCost">当月成本分析</p>
+        </div>
+        <div class="lBox3_1 width-6 float-l">
+            <p id="currMSecurity">当月安全分析</p>
+        </div>
+    </div>
+</div>
+<!--地图-->
+<div id="myMap" class="height-8 width-8 float-r my-map"></div>
+<!--右边地图下方-->
+<div class="height-4 width-8 float-r">
+    <div class="rBox1 height-12 width-6 float-l">
+        <div class="rBox1_1 height-6 width-6 float-l">
+            <div class="rBox1_2">
+                <div class="height-8">
+                    <h2>平台卫情上报<em class="c-red">紧急</em></h2>
+                    <p class="person"><em>上报人</em></p>
+                    <p class="time"><em>上报时间</em>2017-10-30</p>
+                    <p><em>卫情位置</em></p>
+                    <span>现场情况</span>
+                </div>
+                <ul class="height-4">
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rBox1_1 height-6 width-6 float-l">
+            <div class="rBox1_2">
+                <div class="height-8">
+                    <h2>平台卫情上报<em class="c-red">紧急</em></h2>
+                    <p class="person"><em>上报人</em></p>
+                    <p class="time"><em>上报时间</em>2017-10-30</p>
+                    <p><em>卫情位置</em></p>
+                    <span>现场情况</span>
+                </div>
+                <ul class="height-4">
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rBox1_1 height-6 width-6 float-l">
+            <div class="rBox1_2">
+                <div class="height-8">
+                    <h2>平台卫情上报<em class="c-red">紧急</em></h2>
+                    <p class="person"><em>上报人</em></p>
+                    <p class="time"><em>上报时间</em>2017-10-30</p>
+                    <p><em>卫情位置</em></p>
+                    <span>现场情况</span>
+                </div>
+                <ul class="height-4">
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rBox1_1 height-6 width-6 float-l">
+            <div class="rBox1_2">
+                <div class="height-8">
+                    <h2>平台卫情上报<em class="c-red">紧急</em></h2>
+                    <p class="person"><em>上报人</em></p>
+                    <p class="time"><em>上报时间</em>2017-10-30</p>
+                    <p><em>卫情位置</em></p>
+                    <span>现场情况</span>
+                </div>
+                <ul class="height-4">
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                    <li class="width-4"><img src="" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="rBox2 height-12 width-6 float-l">
+        <div class="rBox2_1 height-6">
+            <ul>
+                <li class="width-6 float-l"><img src="" alt=""><span class="span1">藏ID4548329</span><span class="span2">线路1</span></li>
+                <li class="width-6 float-l"><img src="" alt=""><span class="span1">藏ID4548329</span><span class="span2">线路1</span></li>
+            </ul>
+        </div>
+        <div class="rBox2_2 height-6">
+            <h2>车辆报警预警</h2>
+            <ul class="u1 height-2">
+                <li>
+                    <i class="b-blue"></i>
+                    <span>超时停留</span>
+                </li>
+                <li>
+                    <i class="b-yellow"></i>
+                    <span>超时停留</span>
+                </li>
+                <li>
+                    <i class="b-orange"></i>
+                    <span>超时停留</span>
+                </li>
+                <li>
+                    <i class="b-red"></i>
+                    <span>超时停留</span>
+                </li>
+            </ul>
+            <table class="height-10 width-12">
+                <thead>
+                    <tr>
+                        <th>车牌号</th>
+                        <th>驾驶员</th>
+                        <th>发生时间</th>
+                        <th>状况描述</th>
+                        <th>发生地点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>藏DB535</td>
+                        <td>张三</td>
+                        <td>2017-01-01</td>
+                        <td>正常行驶</td>
+                        <td>成都锦江区</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../res/dep/eChart/echarts.min.js"></script>
+<script src="../../res/dep/eChart/echarts-liquidfill.min.js"></script>
+<script src="../../res/dep/YcyaUI/map/ycya.js"></script>
+<script src="../../res/dep/YcyaUI/map/YcyaMap.js"></script>
+<script src="../../res/js/bigScreen/bigScreen.js"></script>
+</body>
+</html>
+

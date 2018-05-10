@@ -1,0 +1,394 @@
+.dgridSched .pagination {
+  display: none;
+}
+.dgridSched .datagrid-header,
+.dgridSched .datagrid-body,
+.dgridSched .datagrid-footer {
+  color: #353639;
+}
+.dgridSched .datagrid-header td,
+.dgridSched .datagrid-body td,
+.dgridSched .datagrid-footer td {
+  border: 1px solid #ddd !important;
+  border-top: none !important;
+}
+.dgridSched .datagrid-header td:nth-child(1),
+.dgridSched .datagrid-body td:nth-child(1),
+.dgridSched .datagrid-footer td:nth-child(1) {
+  border-left: none !important;
+}
+.dgridSched .datagrid-header td:nth-last-child(1),
+.dgridSched .datagrid-body td:nth-last-child(1),
+.dgridSched .datagrid-footer td:nth-last-child(1) {
+  border-right: none !important;
+}
+.dgridSched .datagrid-header .schedTypeColor,
+.dgridSched .datagrid-body .schedTypeColor,
+.dgridSched .datagrid-footer .schedTypeColor {
+  color: #036edb;
+  height: 30px;
+  display: inline-block;
+}
+.dgridSched .datagrid-header td:nth-child(2) {
+  padding-left: 0px;
+}
+.dgridSched .datagrid-header-check {
+  position: relative;
+}
+.dgridSched .datagrid-btable .datagrid-cell {
+  height: 30px;
+  line-height: 30px;
+}
+.list_title > p {
+  height: 39px;
+  float: left;
+}
+.list_title .atteDetaList {
+  height: 39px;
+  line-height: 40px;
+  display: inline-block;
+  float: left;
+  margin-left: 30px;
+  font-size: 12px;
+}
+.list_title .atteDetaList > li {
+  float: left;
+  margin-right: 14px;
+  height: 39px;
+}
+.list_title .atteDetaList > li > span {
+  height: 10px;
+  display: inline-block;
+  width: 50px;
+  margin-left: 5px;
+}
+.attendTime {
+  float: left;
+}
+.attendTime > select.attendYear {
+  float: left;
+  width: 60px;
+  height: 26px;
+  margin-top: 6px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  -o-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin-left: 20px;
+}
+.attendTime > ul.attendMonth {
+  float: left;
+  font-size: 12px;
+}
+.attendTime > ul.attendMonth > li {
+  float: left;
+  height: 24px;
+  margin-top: 6px;
+  line-height: 26px;
+  cursor: pointer;
+}
+.attendTime > ul.attendMonth > li + li {
+  margin-left: 10px;
+}
+.attendTime > ul.attendMonth > li.aMActive {
+  color: #036edb;
+  border-bottom: 2px solid #036edb;
+}
+.attendTime > ul.attendType {
+  float: left;
+  margin-left: 50px;
+  font-size: 12px;
+}
+.attendTime > ul.attendType > li {
+  float: left;
+  height: 26px;
+  margin-top: 6px;
+  line-height: 26px;
+}
+.attendTime > ul.attendType > li + li {
+  margin-left: 10px;
+}
+.lTList {
+  margin: 0 16px 12px;
+  border-bottom: 1px solid #ddd;
+  width: auto !important;
+}
+.lTList > ul {
+  height: 40px;
+  padding: 0px !important;
+}
+.lTList > ul li {
+  height: 39px;
+  float: left;
+  cursor: pointer;
+}
+.lTList > ul li.lTActive {
+  border-bottom: 1px solid #036edb;
+}
+.lTList > ul li.lTActive > span {
+  color: #036edb;
+}
+.lTList > ul li > span {
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+  color: #3a4c57;
+  border-right: 1px solid #ddd;
+  padding: 0 16px;
+  display: block;
+}
+.lTList > ul li > span > i.termiState {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: red;
+}
+.myDgrid .datagrid-header-check > div {
+  bottom: 43px;
+}
+.myDgrid .datagrid-header-check > input {
+  bottom: 43px;
+}
+.checkbox_false {
+  width: 14px;
+  height: 14px;
+  line-height: 16px;
+  position: relative;
+  font-size: 14px;
+  background-color: #dbdbdb;
+  color: #ffffff;
+  border: 1px solid #dbdbdb;
+}
+.checkbox_true {
+  background-color: #ffffff;
+  color: #009aff;
+  border: 1px solid #009aff;
+}
+.ztree li span.button.chk.checkbox_false_full,
+.ztree li span.button.chk.checkbox_false_part {
+  width: 14px;
+  height: 14px;
+  line-height: 16px;
+  position: relative;
+  font-size: 14px;
+  background-color: #dbdbdb;
+  color: #ffffff;
+  border: 1px solid #dbdbdb;
+}
+.ztree li span.button.chk.checkbox_true_full,
+.ztree li span.button.chk.checkbox_true_part {
+  background-color: #ffffff;
+  color: #009aff;
+  border: 1px solid #009aff;
+}
+.infolistTable {
+  width: auto;
+  height: 93%;
+  padding: 0 15px;
+  padding-left: 0px;
+  margin-left: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+.infolistTable > div.table {
+  width: 100%;
+  height: 98%;
+}
+.infolistTable > div.table > table {
+  width: 100%;
+}
+.infolistTable > div.table tr {
+  height: 40px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+.infolistTable > div.table tr:nth-child(1) {
+  border-top: none;
+}
+.infolistTable > div.table tr th,
+.infolistTable > div.table tr td {
+  height: 40px;
+  line-height: 40px;
+  width: auto;
+  color: #333;
+  font-weight: 400;
+  float: left;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+.infolistTable > div.table tr td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.infolistTable > div.table tr td span {
+  height: 40px;
+  display: inline-block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  cursor: pointer;
+  border-left: 1px solid #ddd;
+}
+.infolistTable > div.table tr td span:nth-child(1) {
+  border-left: none;
+}
+.infolistTable > div.table tr td span.active {
+  color: #fff;
+  background-color: red;
+}
+.last_border {
+  border-right: 1px solid #ddd;
+}
+.datagrid-pager .selectAll {
+  height: 36px;
+  line-height: 26px;
+  display: inline-block;
+  margin-left: 15px;
+}
+.datagrid-pager #btnExport {
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  background-color: #009aff;
+  margin-left: 8px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+}
+.attendText {
+  background-color: #21be63;
+  color: #fff;
+}
+.queqinText {
+  background-color: #fb2c36;
+  color: #fff;
+}
+.leaveText {
+  background-color: #a4a7ae;
+  color: #fff;
+}
+.lateText {
+  background-color: #fab50f;
+  color: #fff;
+}
+.leaveEarlyText {
+  background-color: #0c7fea;
+  color: #fff;
+}
+/*出勤明细*/
+.detail-box {
+  -webkit-box-sizing: box-sizing;
+  -ms-box-sizing: box-sizing;
+  box-sizing: box-sizing;
+  width: 100%;
+  height: 90%;
+  outline: 1px solid #dddddd;
+  overflow: auto;
+  margin-top: 10px;
+}
+/*.caption{
+    width:4013px;
+}*/
+.caption,
+.detail-body {
+  width: 4013px;
+}
+.caption > ul,
+.detail-body > ul {
+  width: 100%;
+}
+.caption li,
+.detail-body li {
+  float: left;
+  width: 120px;
+  font-size: 12px;
+  text-align: center;
+  border-left: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.caption li.group-name,
+.detail-body li.group-name {
+  border-left: none;
+  width: 180px;
+}
+.caption li.person-name,
+.detail-body li.person-name {
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.caption li > span,
+.detail-body li > span {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+}
+.caption li > span.green,
+.detail-body li > span.green {
+  background-color: #21be63;
+}
+.caption li > span.red,
+.detail-body li > span.red {
+  background-color: #fb2c36;
+}
+.caption li > span.gray,
+.detail-body li > span.gray {
+  background-color: #a4a7ae;
+}
+.caption li > span.yellow,
+.detail-body li > span.yellow {
+  background-color: #fab50f;
+}
+.caption li > span.blue,
+.detail-body li > span.blue {
+  background-color: #0c7fea;
+}
+.caption li {
+  height: 32px;
+  line-height: 32px;
+}
+.caption li > span {
+  line-height: 32px;
+}
+.detail-body li {
+  height: 29px;
+  line-height: 29px;
+}
+.detail-body li > span {
+  line-height: 29px;
+  border-right: 1px solid #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.detail-body li > span:nth-last-child(1) {
+  border-right: none;
+}
+/*底部全选按钮样式*/
+#dgridBox .datagrid-header-check > .boxDiv {
+  left: 288px;
+}
+#dgridBox .datagrid-header-check > input {
+  left: 290px;
+}
+/*2018/4/24排班信息右侧信息展示样式*/
+.schedulingInfoShow {
+  text-align: center;
+  font-size: 20px;
+  width: 100%!important;
+  overflow: hidden;
+}

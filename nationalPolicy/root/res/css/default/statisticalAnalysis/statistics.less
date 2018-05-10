@@ -1,0 +1,319 @@
+/*datagrid样式*/
+/*主色*/
+@font-color:#5e6065;
+@active-blue:#036edb;
+@default-blue:#0c7fc9;
+@default-green:#7cca37;
+@default-red:#F01D27;
+.ycya-hidden{
+    display: none;
+}
+.pre(@style,@val){
+    -webkit-@{style}:@val;
+    -moz-@{style}:@val;
+    -o-@{style}:@val;
+    -ms-@{style}:@val;
+        @{style}:@val;
+}
+/*初始化*/
+ul{
+	padding:0;
+	margin: 0;
+	list-style:none;
+}
+input,select{
+	border:1px solid #EEE;
+}
+input{
+	padding:4px 0 4px 5px;
+}
+label,select{
+	padding:3px 0;
+}
+select{
+	vertical-align:baseline;
+}
+
+/*通用样式*/
+.width-3{
+	width:33.33%;
+}
+.width-4{
+	width:25%;
+}
+.g-style{
+	box-sizing:border-box;
+	width:100%;
+	color:@font-color;
+}
+.g-button{
+	color:#fff;
+	background-color:@default-blue;
+	text-align: center;
+	border-radius:4px;
+	cursor:pointer;
+}
+/*布局*/
+.wrap{
+	.g-style;
+    height: 909px;
+    //height:100%;
+	padding:16px;
+	background-color: #F5F6FA;
+	.wrap-top,.wrap-bottom{
+		.g-style;
+		height:50%;
+	}
+	.wrap-top{
+		padding-bottom:8px;
+	}
+	.wrap-bottom{
+		padding-top: 8px;
+	}
+	.wrap-top >div.content,.wrap-bottom>div.content{
+		.g-style;
+		height:100%;
+		padding:14px;
+		background-color:#fff;
+	}
+    .wrap-bottom>div.content{
+        padding:14px 0px;
+        &>h4{
+            padding:0 14px;
+            i{
+                cursor: pointer;
+            }
+        }
+    }
+}
+/*top*/
+.search{
+	position:relative;
+	padding-top: 6px;
+	height:46px;
+	border-bottom:1px solid #EEE;
+    z-index: 999;
+	li{
+		float:left;
+		cursor:pointer;
+        .pre(user-select,none);
+	}
+	.search-default,.search-detail,.oil-time{
+		box-sizing:border-box;
+		float:left;
+		height:100%;
+	}
+	.search-default,.oil-time{
+		padding-top:16px;
+		li.default{
+			padding:0 10px 11px 10px;
+			// border-right: 1px solid #95979b;
+			&:hover{
+				color:@default-blue;
+				border-bottom: 1px solid @default-blue;
+			}
+		}
+		li.active{
+			color:@default-blue;
+			border-bottom: 1px solid @default-blue;
+		}
+		li.line{
+			padding-top: 21px;
+    		border-right: 1px solid @font-color;
+		}
+	}
+	.search-detail{
+		padding:10px 0 0 5px;
+		li{
+			padding:6px 15px;
+			margin-right: 3px;
+			&:hover{
+				color:@default-blue;
+				text-decoration: underline;
+			}
+		}
+		.active{
+			color:#fff;
+			background-color:#1E85E9;
+			border-radius: 4px;
+			&:hover{
+				color:#fff;
+				text-decoration: none;
+			}
+		}
+	}
+	.search-condition{
+		float:right;
+		width:80px;
+		height:26px;
+		line-height:26px;
+		margin-top:12px;
+		text-align: center;
+		border: 1px solid #EEE;
+		border-radius:4px;
+		cursor:pointer;
+		em{
+			padding-left: 2px;
+    		font-size: 12px;
+            position: relative;
+            top:-1px;
+		}
+	}
+	.search-window{
+		display:none;
+		position: absolute;
+		top:59px;
+		left:9px;
+		select{
+			min-width: 120px;
+		}
+		p{
+			float:left;
+			margin-right:10px;
+            &.time{
+                input{
+                    width:130px;
+                }
+            }
+		}
+		.yes{
+			.g-button;
+			padding:4px 8px;
+			border:0;
+		}
+	}
+}
+.attend-statist{
+	box-sizing:border-box;
+	margin-top:-53px;
+	padding-top:53px ;
+	width:100%;
+	height:100%;
+	&>div{
+		width:100%;
+		height:100%;
+	}
+}
+.total{
+	margin-top:6px;
+	height:54px;
+	line-height:54px;
+	background-color:#F9F9F9;
+	&>p{
+		float:left;
+		text-align:center;
+		&>span{
+			margin-right:10px;
+		}
+		em{
+			font-size:28px;
+		}
+		&>em.blue{
+			color:@default-blue;
+		}
+		&>em.green{
+			color:@default-green;
+		}
+		&>em.red{
+			color:@default-red;
+		}
+	}
+}
+/*bottom*/
+.content{
+	.title{
+		position:relative;
+		height:40px;
+		line-height:40px;
+		z-index: 50;
+		&>span.rt{
+			margin-top:8px;
+			line-height:13px;
+			border:1px solid #EEE;
+		}
+		input{
+			border:0;
+			border-right:1px solid #EEE;
+		}
+		i{
+			display:inline-block;
+			position:relative;
+			top:2px;
+			right:2px;
+			padding-top:5px;
+			height:20px;
+			// line-height:25px;
+		}
+	}
+}
+.dGrid-box {
+	box-sizing:border-box;
+	width:100%;
+	height:100%;
+	margin-top:-40px;
+	padding-top:40px;
+	position: relative;
+	z-index: 1;
+	&>div{
+		width:100%;
+		height:100%;
+	}
+}
+.wrap-bottom {
+	.datagrid-header-check{
+		&>[type="checkbox"]{
+			bottom:38px;
+            left:43px;
+			vertical-align:middle;
+		}
+        &>div.boxDiv{
+            bottom: 38px;
+            left:43px;
+        }
+    }
+}
+//2018/1/2
+#statistList{
+    .pagination-info{
+        float: right;
+    }
+    .datagrid-header-check{
+        &>input{
+            left:35px;
+        }
+        &>.boxDiv{
+            left:35px;
+        }
+    }
+    .statistPopup{
+        div.datagrid-cell-check{
+            height:16px!important;
+            border: 1px solid #dbdbdb;
+        }
+    }
+}
+//排名
+.ranking{
+    display: inline-block;
+    width:30px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    .pre(border-radius,4px);
+    background-color: #3e93ff;
+    color: #fff;
+}
+//2018/1/24数据表格底部最右边按钮去掉
+.dGrid-box,.layui-layer{
+    .datagrid-pager{
+        td:nth-last-child(1){
+            display: none;
+        }
+    }
+}
+//2018/1/26
+.datagrid .panel-body{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

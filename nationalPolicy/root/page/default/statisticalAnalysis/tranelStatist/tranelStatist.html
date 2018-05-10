@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css">
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/jquery-vague-search/jquery-vague-search.css">
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css">
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/statisticalAnalysis/statistics.css">
+    <title>点火统计</title>
+</head>
+<body>
+<div class="wrap">
+    <div class="wrap-top">
+        <div class="content">
+            <div class="search clear">
+                <ul class="search-default">
+                    <li class="default active">月统计数据</li>
+                    <li class="line"></li>
+                    <li class="default">年统计数据</li>
+                    <li class="line"></li>
+                    <li class="default custom">自定义查询</li>
+                    <li class="line"></li>
+                </ul>
+                <ul class="search-detail clear">
+                    <li class="year"></li>
+                    <li class="year"></li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                </ul>
+                <span class="search-condition clear">
+						条件查询<em class="iconfont icon-sanjiao-copy-copy-copy"></em>
+					</span>
+                <div class="search-window clear">
+                    <p>
+                        <label for="dept">选择部门 : </label>
+                        <input type="text" id="dept" readonly>
+                    </p>
+                    <p>
+                        <label for="carType">选择车型 : </label>
+                        <select name="" id="carType"></select>
+                    </p>
+                    <p>
+                        <label for="carNum">&nbsp;&nbsp;&nbsp;车牌号 : </label>
+                        <input type="text" id="carNum">
+                    </p>
+                    <p class="time">
+                        <label>时间段 : </label>
+                        <input type="text" id="startTime" placeholder="请选择开始时间">-<input type="text" id="endTime" placeholder="请选择结束时间">
+                    </p>
+                    <button class="yes rt">
+                        确定
+                    </button>
+                </div>
+            </div>
+            <div class="attend-statist">
+                <div id="ignitionStatist"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-bottom">
+        <div class="content">
+            <h4 class="title">
+					<!--<span class="rt">-->
+						<!--<input type="text">-->
+						<!--<i class="iconfont icon-sousuo_sousuo1"></i>-->
+					<!--</span>-->
+                <span>车辆<em id="carListTitle"></em>列表</span>
+            </h4>
+            <div class="dGrid-box">
+                <div>
+                    <table id="dgrid"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导出-->
+<form class="form-list-small" id="export">
+    <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName" id="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--点火统计-->
+<form class="form-list-small" id="statistList">
+    <h5 class="title"><span class="titleText"><em id="carListTitle1"></em></span><i class="iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body statistPopup">
+                <table id="dgrid1"></table>
+            </div>
+        </div>
+    </div>
+</form>
+<!--结构树弹窗-->
+<div class="add form-Tree" style="display:none;" id="form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">请选择部门</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox">
+                    <ul id="windowTree" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--<input type="hidden" id="timeFormat" data-type="1">-->
+<!--报警内容弹出层-->
+<form class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">位置详情信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body" style="max-height: 450px;overflow-y: auto;">
+        <div class="section">
+            <div class="section-body selectPopup with-pic-popup">
+                <ul class="clear">
+                    <li class="textLen">
+                        <span>地点:</span>
+                        <p id="place"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/eChart/echarts.min.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../res/dep/jquery-vague-search/jquery-vague-search.js"></script>
+<script src="../../../../res/js/statisticalAnalysis/statistics.js"></script>
+<script src="../../../../res/js/statisticalAnalysis/tranelStatist/tranelStatist.js"></script>
+</body>
+</html>

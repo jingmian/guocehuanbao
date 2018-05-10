@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/sysSetting/sysSetting.css">
+    <title>角色管理</title>
+</head>
+<body>
+	<div class="m-from">
+    	<div class="m-home">
+        	<div class="section clear">
+        		<div class="section-left">
+        			<div>
+        				<h4 class="title" id="setCode">
+
+        				</h4>
+        				<div class="content">
+        					<ul class="ztree" id="deptTree">
+
+        					</ul>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="section-right">
+        			<div>
+        				<h4 class="title">权限信息</h4>
+        				<div class="content">
+        					<ul id="curRoleTree" class="ztree">
+        					</ul>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+    	</div>
+	</div>
+	<!--新增-->
+	<form class="form-list-small" id="addNew">
+	    <h5 class="title"><span class="titleText">新增角色信息</span><i class="icon iconfont icon-cheng"></i></h5>
+	    <div class="form-body">
+	        <div class="section">
+	            <div class="section-body insertPopup">
+	                <ul class="clear">
+                        <li>
+                            <span><em>*</em>角色名称:</span>
+                            <input type="text" class="roleName"/>
+                        </li>
+                      <!--  <li>
+                            <span><em>*</em>上级角色：</span>
+                            <input type="text" class="rolePid"/>
+                        </li>-->
+                        <li class="textareaLi">
+                            <span><em>*</em>绑定权限:</span>
+                            <textarea class="juriName" readonly="readonly" id="juriName"></textarea>
+                        </li>
+                        <!--<li class="textareaLi">-->
+                            <!--<span>备注：</span>-->
+                            <!--<textarea class="roleRemark"></textarea>-->
+                        <!--</li>-->
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="form-btn">
+	        <ul>
+	            <li class="no b-gray">关闭</li>
+	            <li class="yes b-blue">确定</li>
+	        </ul>
+	    </div>
+	</form>
+	<!--删除-->
+	<form class="form-list-small" id="delete">
+	    <h5 class="title"><span class="titleText">删除角色信息</span><i class="icon iconfont icon-cheng"></i></h5>
+	    <div class="form-body">
+	        <div class="section-body deletePopup">
+	            <h6 class="title" id="delete-info">
+	                <i class="iconfont icon-tishi-copy icon-danger"></i>
+	                确定删除角色名为<span id="dInfo"></span>的信息吗?
+	            </h6>
+	        </div>
+	    </div>
+	    <div class="form-btn">
+	        <ul>
+	            <li class="no b-gray">关闭</li>
+	            <li class="yes b-blue">确定</li>
+	        </ul>
+	    </div>
+	</form>
+    <!--角色树弹窗-->
+    <div class="add form-Tree" style="display:none;" id="role-form-Tree">
+        <form method="post">
+            <div class="form-container">
+                <!--标题-->
+                <div class="form-top">
+                    <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择父级角色</strong></span>
+                </div>
+                <!--内容-->
+                <div class="form-content">
+                    <div id="windowTreeBox">
+                        <ul id="windowTree" class="ztree"></ul>
+                    </div>
+                </div>
+                <!--按钮组-->
+                <div class="form-btns clear">
+                    <input class="btn b-blue submit-btn" type="button" value="确定">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--权限树弹窗-->
+    <div class="add form-Tree" style="display:none;" id="juri-from-Tree">
+        <form method="post">
+            <div class="form-container">
+                <!--标题-->
+                <div class="form-top">
+                    <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择权限</strong></span>
+                </div>
+                <!--内容-->
+                <div class="form-content">
+                    <div id="windowTreeBox1">
+                        <ul id="windowTree1" class="ztree"></ul>
+                    </div>
+                </div>
+                <!--按钮组-->
+                <div class="form-btns clear">
+                    <input class="btn b-blue submit-btn" type="button" value="确定">
+                </div>
+            </div>
+        </form>
+    </div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/js/sysSetting/sysSetting.js"></script>
+    <script src="../../../res/js/common/validate.js"></script>
+<script src="../../../res/js/sysSetting/roleManage.js"></script>
+</body>
+</html>

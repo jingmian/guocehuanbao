@@ -1,0 +1,387 @@
+@main-bg:#F5F6FA;
+@border-color:#F4F4F4;
+@white:#fff;
+@default-blue:#0c7fc9;
+.bg(@bg-color){
+	background-color:@bg-color !important;
+}
+.border{
+	border:1px solid @border-color;
+}
+.m-home-bg{
+	.bg( @white) ;
+	.border;
+	.title{
+		.title-style;
+		padding-left:28px;
+	}
+	.content{
+		.content-style;
+	}
+}
+.title-style{
+	color:#439cf5;
+	height:40px;
+	line-height: 40px;
+	border-bottom:1px solid @border-color;
+}
+.content-style{
+	box-sizing:border-box;
+	width:100%;
+	height:100%;
+	padding-top:41px;
+	margin-top:-41px;
+	font-size: 12px;
+}
+/*初始化背景色*/
+body{
+	background-color: @main-bg;
+}
+.m-home{
+	background: @main-bg;
+	border:none;
+}
+.section{
+	width: 100%;
+	height: 100%;
+	&>div{
+		float:left;
+	}
+	.section-left,.section-right{
+		height:100%;
+		box-sizing: border-box;
+		&>div{
+			width: 100%;
+			height: 100%;
+			background-color:#fff;
+			.border;
+		}
+	}
+	.section-left{
+		padding-right: 8px;
+        width: 30%;
+	}
+	.section-right{
+		padding-left: 8px;
+        width: 70%;
+	}
+	.title,.content{
+		padding-left:16px;
+	}
+	.title{
+		.title-style;
+		.btn{
+			margin-top: 8px;
+			line-height:26px;
+			color:#fff;
+			&.blue{
+				background: #439cf5;
+			}
+			&.orange{
+				background: #f8bb28;
+			}
+			&.red{
+				background: #f76980;
+			}
+			&.green{
+				background: #05b06e;
+			}
+		}
+	}
+	.content{
+		.content-style;
+		&>ul{
+			width:100%;
+			height:95%;
+			overflow: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+		}
+		/*左侧内容区域*/
+
+		/*右侧内容区域*/
+		.tree-name{
+			line-height:32px;
+			span{
+				color: #8c8c8c;
+			}
+			strong{
+				color: #444444;
+    			padding-left: 10px;
+			}
+		}
+	}
+}
+.ztree li span.button.switch{
+	//display:inline-block;
+}
+/*数据字典*/
+@left-wdith:300px;
+// .m-home .dgrid{
+// 	padding-top:0;
+// 	margin-top:0;
+// }
+.m-home {
+	.title{
+		background: transparent;
+		.dict-name{
+			box-sizing:border-box;
+			padding-left:14px;
+		}
+		&>span{
+			float:left;
+			width:@left-wdith;
+			height:39px;
+			line-height:39px;
+			background-color:#fff;
+		}
+		&>div{
+			float:right;
+			box-sizing:border-box;
+			width:100%;
+			height:100%;
+			padding-left:@left-wdith;
+			margin-left:-@left-wdith;
+			&>div{
+				box-sizing:border-box;
+				width:100%;
+				height:100%;
+				padding:0  14px;
+				&>div{
+					height:100%;
+					background-color:#fff;
+				}
+			}
+		}
+		// .list_title{
+		// 	padding-left:0;
+		// }
+	}
+}
+.left-nav{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+	box-sizing: border-box;
+	width: @left-wdith;
+    height: 100%;
+    padding-top: 39px;
+    .left-nav-section{
+    	box-sizing: border-box;
+    	width: 100%;
+   		height: 100%;
+    	overflow: auto;
+   	 	background: #fff;
+   	 	&>div{
+   	 		box-sizing: border-box;
+    		width: 100%;
+   			height: 100%;
+   			padding:0 12px 12px;
+   			div{
+   				box-sizing: border-box;
+   				width: 100%;
+   				height: 100%;
+   				padding:10px;
+   				overflow:auto;
+   				border:1px solid #E2E2E2;
+   				color:#536065;
+   			}
+   	 	}
+    }
+    p{
+    	line-height:30px;
+    	&.active{
+    		color:@default-blue !important;
+    	}
+    	span{
+    		cursor:pointer;
+    		margin-left:5px;
+    	}
+    }
+    .reason-select,.reason-selected{
+		display: inline-block;
+		box-sizing:border-box;
+		width: 14px;
+		height: 14px;
+		position: relative;
+		top:2px;
+		cursor: pointer;
+	}
+	.reason-select{
+		border:1px solid #eee;
+		border-radius:2px;
+	}
+	.reason-selected{
+		background: url('../../../img/default/reason-select2.png') no-repeat 0 1px;
+	}
+}
+.sys-grid{
+	box-sizing: border-box;
+    padding-left: @left-wdith;
+    z-index: 5;
+    background-color:#F5F6FA !important;
+}
+#juri-from-Tree,#treeDemo1{
+    .ztree li span.button.switch{
+        display: inline-block!important;
+
+    }
+}
+/*底部全选按钮样式*/
+#dgridBox{
+    .datagrid-header-check{
+        &>.boxDiv{
+            left:343px;
+        }
+        &>input{
+            left:345px;
+        }
+    }
+}
+
+.mixin (@name,@status,@val,@type) when (@type=1){
+    .car-@{name}-@{status}{
+        display: inline-block;
+        width:28px;
+        height:28px;
+        background: url('../../../img/default/dicIcon.png') no-repeat;
+        background-position: @val;
+    }
+}
+.mixin (@name,@status,@val,@type) when (@type=2){
+    .peo-@{name}-@{status}{
+        display: inline-block;
+        width:28px;
+        height:28px;
+        background: url('../../../img/default/dicIcon.png') no-repeat;
+        background-position: @val;
+    }
+}
+.mixin (@name,@status,@val,@type) when (@type=3){
+    .dev-@{name}-@{status}{
+        display: inline-block;
+        width:28px;
+        height:28px;
+        background: url('../../../img/default/dicIcon.png') no-repeat;
+        background-position: @val;
+    }
+}
+/*数据字典图标*/
+    //扫地车0  洒水车1  自卸车2  勾臂车3  巡查车4  摆臂车5  电动车6  压缩车7  转运车8  翻斗车9  工程车10 拖拉机11
+    //在线0 离线1  报警2  其他3
+.mixin (sd,0,-84px -198px,1);
+.mixin (sd,1,0 -198px,1);
+.mixin (sd,2,-28px -198px,1);
+.mixin (sd,3,-56px -198px,1);
+
+.mixin (ss,0,-84px -226px,1);
+.mixin (ss,1,0 -226px,1);
+.mixin (ss,2,-28px -226px,1);
+.mixin (ss,3,-56px -226px,1);
+
+.mixin (zx,0,-84px -282px,1);
+.mixin (zx,1,0 -282px,1);
+.mixin (zx,2,-28px -282px,1);
+.mixin (zx,3,-56px -282px,1);
+
+.mixin (gb,0,-84px -56px,1);
+.mixin (gb,1,0 -56px,1);
+.mixin (gb,2,-28px -56px,1);
+.mixin (gb,3,-56px -56px,1);
+
+.mixin (xc,0,-84px -170px,1);
+.mixin (xc,1,0 -170px,1);
+.mixin (xc,2,-28px -170px,1);
+.mixin (xc,3,-56px -170px,1);
+
+.mixin (bb,0,-84px -2px,1);
+.mixin (bb,1,0 -2px,1);
+.mixin (bb,2,-28px -2px,1);
+.mixin (bb,3,-56px -2px,1);
+
+.mixin (dd,0,-84px -30px,1);
+.mixin (dd,1,0 -30px,1);
+.mixin (dd,2,-28px -30px,1);
+.mixin (dd,3,-56px -30px,1);
+
+.mixin (ys,0,-84px -254px,1);
+.mixin (ys,1,0 -254px,1);
+.mixin (ys,2,-28px -254px,1);
+.mixin (ys,3,-56px -254px,1);
+
+.mixin (zy,0,-84px -58px,1);
+.mixin (zy,1,0 -58px,1);
+.mixin (zy,2,-28px -58px,1);
+.mixin (zy,3,-56px -58px,1);
+
+.mixin (fd,0,-84px -142px,1);
+.mixin (fd,1,0 -142px,1);
+.mixin (fd,2,-56px -142px,1);
+.mixin (fd,3,-28px -142px,1);
+
+.mixin (gc,0,-84px -114px,1);
+.mixin (gc,1,0 -114px,1);
+.mixin (gc,2,-28px -114px,1);
+.mixin (gc,3,-56px -114px,1);
+
+.mixin (tlj,0,-84px -86px,1);
+.mixin (tlj,1,0 -86px,1);
+.mixin (tlj,2,-28px -86px,1);
+.mixin (tlj,3,-56px -86px,1);
+
+    //道路保洁0  驾驶员1  公厕管理2  巡查人员3  机动人员4  跟车人员5  河道清运6  社区保洁7  填埋人员8
+    //在线0 离线1  报警2  其他3
+.mixin (dl,0,-280px -2px,2);
+.mixin (dl,1,-224px -2px,2);
+.mixin (dl,2,-196px -2px,2);
+.mixin (dl,3,-252px -2px,2);
+
+.mixin (js,0,-280px -142px,2);
+.mixin (js,1,-224px -142px,2);
+.mixin (js,2,-196px -142px,2);
+.mixin (js,3,-252px -142px,2);
+
+.mixin (gce,0,-280px -58px,2);
+.mixin (gce,1,-224px -58px,2);
+.mixin (gce,2,-196px -58px,2);
+.mixin (gce,3,-252px -58px,2);
+
+.mixin (xc,0,-280px -226px,2);
+.mixin (xc,1,-224px -226px,2);
+.mixin (xc,2,-196px -226px,2);
+.mixin (xc,3,-252px -226px,2);
+
+.mixin (jd,0,-280px -114px,2);
+.mixin (jd,1,-224px -114px,2);
+.mixin (jd,2,-196px -114px,2);
+.mixin (jd,3,-252px -114px,2);
+
+.mixin (gche,0,-280px -30px,2);
+.mixin (gche,1,-224px -30px,2);
+.mixin (gche,2,-196px -30px,2);
+.mixin (gche,3,-252px -30px,2);
+
+.mixin (hd,0,-280px -86px,2);
+.mixin (hd,1,-224px -86px,2);
+.mixin (hd,2,-196px -86px,2);
+.mixin (hd,3,-252px -86px,2);
+
+.mixin (sq,0,-280px -170px,2);
+.mixin (sq,1,-224px -170px,2);
+.mixin (sq,2,-196px -170px,2);
+.mixin (sq,3,-252px -170px,2);
+
+.mixin (tm,0,-280px -198px,2);
+.mixin (tm,1,-224px -198px,2);
+.mixin (tm,2,-196px -198px,2);
+.mixin (tm,3,-252px -198px,2);
+
+    //公厕 中转站 掩埋厂 垃圾箱 果皮箱
+    //在线0 离线1  报警2  其他3
+.mixin (gc,0,0 -478px,3);
+.mixin (zz,0,-84px -478px,3);
+.mixin (ym,0,-112px -478px,3);
+.mixin (lj,0,-56px -478px,3);
+.mixin (gp,0,-28px -478px,3);

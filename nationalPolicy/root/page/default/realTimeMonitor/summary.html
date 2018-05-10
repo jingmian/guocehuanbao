@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/dep/jquery-vague-search/jquery-vague-search.css">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/realTimeMonitor/realTimeMonitor.css"/>
+    <title>汇总</title>
+    <style type="text/css">
+        .m-home .title{
+            /*z-index: 0;*/
+            width: 200px;
+            background: none;
+        }
+       .m-home .title .search{
+           width: 200px;
+            float:left;
+        }
+       .m-home .title .search .situType{
+           width: 50px;
+           height: 24px;
+       }
+        .m-home .title .search > ul > li:nth-child(2) > input {
+            width: 120px;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 10px;
+        }
+        .m-home .title .search > ul > li:nth-child(2)>i{
+            width: 10px;
+            left:-10px;
+            padding-left: 3px;
+            position: absolute;
+            left: 100px;
+            background-color: #fff;
+        }
+        .jquery-vague-search{
+            border-top: 1px solid #ddd;
+        }
+        .jquery-vague-search > ul > li{
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <div class="search">
+                <ul>
+                    <li>
+                        <select class="situType" name="situType">
+                            <option value="0">人员</option>
+                            <option value="1">车辆</option>
+                            <option value="2">设施</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input id="carNum" class="context" type="text" placeholder="请输入查询内容">
+                        <i id="ss_btn" class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="rTMLBox">
+            <!--<div class="search rTMSerch">-->
+                <!--<input class="search-btn" type="text">-->
+                <!--<i class="iconfont icon-sousuo_sousuo"></i>-->
+            <!--</div>-->
+            <div class="rTMList">
+                <div class="rTMLType"></div>
+                <div class="rTMLType"></div>
+                <div class="rTMLType"></div>
+                <div class="rTMLType"></div>
+            </div>
+            <div class="btnRTMSShrink">
+                <i class="iconfont icon-shouqi"></i>
+            </div>
+        </div>
+        <div class="contentMap">
+            <div class="operate-list">
+            </div>
+            <div id="map" class="map"></div>
+            <div class="rMapList">
+                <ul class="clear">
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>人员</span>
+                        <ul class="two-menu" id="peopleMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>车辆</span>
+                        <ul class="two-menu" id="carMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>设施</span>
+                        <ul class="two-menu" id="devMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>区域</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>路线</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--车辆信息-->
+<div class="car-info" ></div>
+<!--人员信息-->
+<div class="people-info" ></div>
+<!--设备信息-->
+<div class="dev-info"></div>
+<!--实时视频-->
+<div class="video-info"></div>
+<!--报警信息-->
+<div class="alarm-info"></div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../res/js/realTimeMonitor/realTimeMonitor.js"></script>
+<script src="../../../res/js/realTimeMonitor/monitoring.js"></script>
+<script src="../../../res/dep/jquery-vague-search/jquery-vague-search.js"></script>
+<script src="../../../res/js/realTimeMonitor/summary.js"></script>
+</body>
+</html>
+
+
+
+

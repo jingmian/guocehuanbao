@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>订单首页</title>
+	</head>
+	<body>
+		<div id="myMap" style="width:800px;height:500px;"></div>
+		<script type="text/javascript" src="skin/js/jquery-1.8.0.min.js"></script>
+	    <script type="text/javascript" src="map/js/ycya.js"></script>
+	    <script type="text/javascript" src="map/js/YcyaMap.js"></script>
+	    <script type="text/javascript">
+	    function doIt(evt){
+			var strWin='<div>你好</div>';
+			ycyaMap.openWith(strWin,evt.target);
+	    }
+	    function renderPoint(map){
+	    	map.addPoint({type:1,"evt":doIt,"icon":'icon2',data:[{"lng":104.094578,"lat":30.646061,"id":"川A12344"}]});
+	    	map.addPoint({type:1,"evt":doIt,"icon":'che',data:[{"lng":104.095578,"lat":30.645061,"id":"川A12345"}]});
+	    	map.addPoint({type:1,"evt":doIt,"icon":'carImg',data:[{"lng":104.096468,"lat":30.645061,"id":"川A12346"}]});
+	    	map.addPoint({type:1,"evt":doIt,data:[
+	    		{"lng":104.098658,"lat":30.645161,"id":"川A12348"},
+	    		{"lng":104.099658,"lat":30.956161,"id":"川A12349"},
+	    		{"lng":104.097658,"lat":30.645161,"id":"川A12347"}
+	    	]});
+	    }
+	    
+	    function renderRoute(map){
+	    	var lng=104.095578,lat=30.645061;
+    		var data = {"type":1,"id":"川A12345","evt":doIt,"icon":'carImg',"start":"qq","end":"qq","line":"line1"},
+    			points = [];
+    		for(var i=0;i<100;i++){
+    			points.push(lng + Math.random()*2);
+    			points.push(lat + Math.random()*2);
+    		}
+    		data.data = points;
+    		map.route(data);
+	    }
+	    
+	    $(function(){
+	    	var ycyaMap = new YcyaMap('myMap');
+	    	ycyaMap.ready(function(){
+	    		renderPoint(ycyaMap);
+	    		//renderRoute(ycyaMap);
+	    	});
+	    })
+	    </script>
+	</body>
+</html>

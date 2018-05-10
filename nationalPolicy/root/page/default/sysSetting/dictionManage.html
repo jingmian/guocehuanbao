@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/sysSetting/sysSetting.css">
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <title>字典管理</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+        	<span class="dict-name">字典类型</span>
+            <div>
+            	<div>
+            		<div>
+            			<h2 class="list_title">车辆类型</h2>
+	            		<div class="search">
+			                <ul>
+			                    <!--<li>-->
+			                        <!--<input type="text" placeholder="请输入人员名称">-->
+			                        <!--<i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>-->
+			                    <!--</li>-->
+			                </ul>
+	            		</div>
+            		</div>
+            	</div>
+            </div>
+        </div>
+        <div class="dgrid" id="dgridBox">
+        	<div class="left-nav">
+        		<div class="left-nav-section">
+        			<div>
+        				<div id="leftNav">
+
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+            <div class="dgrid-box sys-grid">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增字典</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup" style="width: 100%;">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>字典名称:</span>
+                        <input type="text" class="dictionaryName" id="dictionaryName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除字典类型</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/js/sysSetting/sysSetting.js"></script>
+<script src="../../../res/js/common/validate.js"></script>
+<script src="../../../res/js/sysSetting/dictionManage.js"></script>
+</body>
+</html>
+
+

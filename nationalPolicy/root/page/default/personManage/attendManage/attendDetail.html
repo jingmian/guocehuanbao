@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/personManage/personManage.css"/>
+    <title>出勤明细</title>
+    <style>
+        .detail-box{
+            width:auto;
+        }
+        .caption,.detail-body{
+            width:auto;
+        }
+        .caption > ul, .detail-body > ul {
+            width: auto;
+        }
+        .detail-box{
+            outline: none;
+        }
+        .caption li{
+            border-top: 1px solid #ddd;
+        }
+        .border-right{
+            border-right: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title clear">
+                <p>出勤明细表</p>
+                <ul class="atteDetaList clear">
+                    <li>出勤:<span class="attendText"></span></li>
+                    <li>缺勤:<span class="queqinText"></span></li>
+                    <li>请假:<span class="leaveText"></span></li>
+                    <li>迟到:<span class="lateText"></span></li>
+                    <li>早退:<span class="leaveEarlyText"></span></li>
+                </ul>
+            </h2>
+            <div class="search">
+               <!-- <ul>
+                    <li>
+                        <input type="text" placeholder="请输入查询时间" id="time1">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+        <div class="detail-box">
+            <div class="caption">
+                <ul class="clear">
+                    <li class="group-name">班组</li>
+                    <li class="person-name">人员</li>
+                </ul>
+            </div>
+            <div class="detail-body">
+                <ul class="clear"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../res/js/personManage/workforceManage/workforceManage.js"></script>
+<script src="../../../../res/js/personManage/personManage.js"></script>
+<script src="../../../../res/js/personManage/attendManage/attendDetail.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <title>路线</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">路线列表</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input id='route_name' type="text" placeholder="请输入线路名称">
+                        <i onclick="findRouteInfo()"
+                           class="search-btn iconfont icon-sousuo_sousuosearch-btn iconfont icon-sousuo_sousuo"
+                           style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增路线-->
+<form class="form-list-small insertArea" id="insertArea">
+    <h5 class="title"><span class="titleText">新增路线</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertAreaPopup clear">
+                <ul class="clear">
+                    <li class="long">
+                        <span><em>*</em>路线名称:</span>
+                        <input type="text" class="ereaName" data-class="routeName" name="routeName"/>
+                    </li>
+                    <li class="long">
+                        <span>阀值(km/h):</span>
+                        <input type="text" keyBj="" class="routeSpeedNum " name="routeSpeedNum"/>
+                    </li>
+                    <li class="long">
+                        <span>停留报警:</span>
+                        <select name="" class="routeIsStop">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </li>
+                    <li class="long">
+                        <span>偏移报警:</span>
+                        <select name="" class="routeIsOff">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </li>
+                    <li class="long">
+                        <span>停留时长:</span>
+                        <input type="text" keyBj="" class="routeStopLong " name="routeSpeedNum"/>
+                    </li>
+                    <li class="car long">
+                        <span>监管车辆:</span>
+                        <input type="text" keyBj="" class="bj" id="car_input" readonly="readonly"/>
+                    </li>
+                    <!--  <li class="group long">
+                          <span>监管班组:</span>
+                          <input type="text"  class="bj" name="groupId" id="group_input" readonly="readonly"/>
+                      </li>-->
+                    <li class="dept long">
+                        <span><em>*</em>所属部门:</span>
+                        <input type="text" class="bj" id="deptId" data-class="deptId" name="deptId"
+                               readonly="readonly"/>
+                    </li>
+                    <li class="textareaLi long">
+                        <span>备注:</span>
+                        <textarea class="ereaBz" data-class="routeRemark" name="routeRemark"></textarea>
+                    </li>
+                    <li class="takePoint">
+                        <a class="btnTDraw" id="btnTDraw">绘制</a>
+                        <a class="btnTDescr" id="btnTDescr">重汇</a>
+                    </li>
+                </ul>
+                <div class="betaMap" style="position: relative;">
+                    <div class="auto-search" style="position: absolute;left: 15px;top: 5px;z-index: 1;">
+                        <input type="text" id="suggestId" placeholder="请输入地址" style="width:260px;border:1px solid #ddd;height: 26px;text-indent: 5px;"/>
+                    </div>
+                    <div id="searchResultPanel" style="display: none;"></div>
+                    <div id="map" class="commonDetaMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--查看路线-->
+<form class="form-list-small selectArea" id="selectArea">
+    <h5 class="title"><span class="titleText">查看路线信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectAreaPopup clear">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>路线名称:</span>
+                        <p class="ereaName"></p>
+                    </li>
+                    <li>
+                        <span><em>*</em>路线类型:</span>
+                        <p class="ereaType"></p>
+                    </li>
+                    <li class="textLen">
+                        <span>报警对象:</span>
+                        <p class="bj"></p>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <p class="ereaBz"></p>
+                    </li>
+                </ul>
+                <div class="betaMap">
+                    <div class="commonDetaMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除路线-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除路线信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除路线名称为<span id="dInfo"></span>的路线信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--报警对象-->
+<form class="form-list-small" id="addPerson">
+    <h5 class="title"><span class="titleText">报警对象</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body addPersonPopup">
+                <ul class="clear">
+                    <li>
+                        <span>报警类型:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>报警名称:</span>
+                        <input type="text"/>
+                    </li>
+                    <li class="aPcheckAll">
+                        <span>全选</span>
+                        <input type="checkbox">
+                        <a href="" class="btnAPSearch">搜索</a>
+                    </li>
+                </ul>
+                <div class="aPCheckBox">
+                    <div class="aPCBTxt">
+                        <ul class="clear">
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span>张三</span>
+                                    <a href="" class="btnTxtClose">x</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="aPCBPerson">
+                        <ul class="clear">
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    <span>张三</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn area-form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--部门树-->
+<div class="add form-Tree" style="display:none;" id="form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择部门</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox">
+                    <ul id="windowTree" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--绑定班组-->
+<div class="add form-Tree" style="display:none;" id="tree-group">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">绑定班组</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox1">
+                    <ul id="windowTree1" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--绑定车辆-->
+<div class="add form-Tree" style="display:none;" id="tree-car">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">绑定车辆</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox_car">
+                    <ul id=windowTree_car class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--点击字段查看详情弹出层-->
+<form class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">车辆详情</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body" style="max-height: 450px;overflow-y: auto;">
+        <div class="section">
+            <div class="section-body selectPopup with-pic-popup">
+                <ul class="clear">
+                    <li class="textLen">
+                        <span id="fileName">监管车辆:</span>
+                        <p id="alarmRemark"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script src="../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../res/js/monitorManage/monitorManage.js"></script>
+<script src="../../../res/js/monitorManage/route.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表单验证demo</title>
+    <link rel="stylesheet" href="iconfont.css"/>
+    <link rel="stylesheet" href="jquery-validation-up.css">
+    <script src="jquery-1.8.0.min.js"></script>
+    <script src="jquery-validation-up.js"></script>
+    <style>
+        .validationErrorMsg{
+            color: red;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('#demo').validationUp({
+                rules:{
+                    orgName:{
+                        notEmpty:true,
+                        maxSize:2
+                    },
+                    phone:{
+                        notEmpty:true,
+                        maxSize:11,
+                        minSize:11
+                    },
+                    email:{
+                        email:true
+                    },
+                    remark:{
+                        notEmpty:true
+                    }
+                },
+                errorMsg:{
+                    orgName:{
+                        notEmpty:'请输入单位名称',
+                        maxSize:'单位名称长度超出最大长度限制'
+                    },
+                    phone:{
+                        minSize:'字符小于11位',
+                        notEmpty:'电话号码为必填项'
+                    }
+                },
+                submit:{
+                    submitBtn:$('#btn'),
+                    doSubmitFn:function(formData){console.log(formData)},
+                    validationEvent:'keyup change',
+                    errorMsgIcon:'icon iconfont icon-cuowu1'
+                },
+                customRules:{
+                    minSize:function(_this,value){
+                        var text = $(_this).val();
+
+                        if (text.length<11)return false;
+                        return true;
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="demo">
+    <p><span>单位名称：</span><input type="text" name="orgName"/></p>
+    <p><span>单位电话：</span><input type="text" name="phone"/></p>
+    <p><span>email：</span><input type="text" name="email"/></p>
+    <p><span>地址：</span><input type="text" name="addr"/></p>
+    <p><span>下拉框：</span><select name="choose">
+        <option value="1">行1</option>
+        <option value="2">行2</option>
+        <option value="3">行3</option>
+        <option value="4">行4</option>
+    </select></p>
+    <p data-textarea="true"><span>文本域：</span><textarea name="remark"></textarea></p>
+    <input id="btn" type="button" value="提交"/>
+</div>
+</body>
+</html>

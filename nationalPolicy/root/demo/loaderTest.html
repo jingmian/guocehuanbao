@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../res/css/reset/reset.css">
+	<link rel="stylesheet" href="../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css">
+	<style>
+		ul{
+			list-style: none;
+		}
+		li{
+			line-height: 20px;
+		}
+		#testUl>li:nth-child(odd){
+			color:#f00;
+		}
+		#testUl>li:nth-child(even){
+			color:#0f0;
+		}
+		#spanBox>span{
+			padding: 5px;
+			font-size: 18px;
+			color:#f00;
+		}
+		#testTree{
+			width:500px;
+			height: 500px;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>测试</h1>
+	<ul id="testTree" class="ztree"></ul>
+	
+	<ul id="testUl">
+		
+	</ul>
+
+	<div id="spanBox">
+		
+	</div>
+	<script src="../res/js/library/jquery-1.8.0.min.js"></script>
+	<script src="../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+	<script src="js/loaderTest.js"></script>
+</body>
+</html>

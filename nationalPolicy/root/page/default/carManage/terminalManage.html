@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/personManage/personManage.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/carManage/carManage.css"/>
+    <title>终端管理</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home clear">
+        <div class="departStructLeft">
+            <h2 class="list_title">部门结构树</h2>
+            <div class="personTree">
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+        </div>
+        <div class="m-home infoListRight">
+            <div class="title clear">
+                <h2 class="list_title">终端管理</h2>
+                <div class="search">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="请输入设备编号" class="name_num">
+                            <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                        </li>
+                        <li>
+                            <i id="seniorSearchBtn" title="高级搜索" class="seniorSearch iconfont icon-gaojisousuo2" style="display: block"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dgrid" id="dgridBox">
+                <div class="dgrid-box">
+                    <table id="dgrid"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增排班</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>所属部门:</span>
+                        <input type="text" class="deptName" name="deptName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>终端编号:</span>
+                        <input type="text" class="equipmentNum" name="equipmentNum"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>sim卡号:</span>
+                        <input type="text" class="simNum" name="simNum">
+                    </li>
+                    <li>
+                        <span><em>*</em>设备状态:</span>
+                        <select class="simState" name="simState">
+                            <option value="启用">启用</option>
+                            <option value="禁用">禁用</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span><em>*</em>协议类型:</span>
+                        <select class="equipProcotol" name="equipProcotol">
+                            <option value="808">808</option>
+                            <option value="elink">elink</option>
+                        </select>
+                    </li>
+                    <li class="textLen">
+                        <span><em>*</em>终端类型:</span>
+                        <select class="equipmentType" name="equipmentType">
+                            <option value="1">GPS终端(无油量)</option>
+                            <option value="2">GPS终端(有油量)</option>
+                            <option value="3">视频终端</option>
+                        </select>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea class="remark" name="remark"></textarea>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!-- 导出人员信息 -->
+<!--导出-->
+<form class="form-list-small" id="export">
+    <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName" id="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除车辆终端</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除终端为<span id="delName"></span>的信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--绑定车辆树弹窗-->
+<div class="add form-Tree" style="display:none;" id="pers-form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">请选择挂接车辆</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox1">
+                    <ul id="windowTree1" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--解绑车辆-->
+<form class="form-list-small" id="delete1">
+    <h5 class="title"><span class="titleText">解绑车辆终端</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section deletePopup">
+            <h6 class="title" id="delete-info1">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定解绑终端为<span id="delName1"></span>的信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--结构树弹窗-->
+<div class="add form-Tree" style="display:none;" id="form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择所属部门</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox">
+                    <ul id="windowTree" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script src="../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../../res/js/common/validate.js"></script>-->
+<script src="../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../res/js/common/seniorSearch.js"></script>
+<script src="../../../res/js/carManage/carManage.js"></script>
+<script src="../../../res/js/carManage/terminalManage.js"></script>
+</body>
+</html>

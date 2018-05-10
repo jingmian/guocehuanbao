@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/realTimeMonitor/realTimeMonitor.css"/>
+    <title>设施</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="rTMLBox">
+            <!--<div class="search rTMSerch">
+                <input class="search-btn iconfont icon-sousuo_sousuo" type="text">
+                <i class="iconfont icon-sousuo_sousuo"></i>
+            </div>-->
+            <div class="rTMList">
+                <div class="rTMLType rTMLRoadLine">
+                    <p class="rTMTitle">
+                        <i class="sprite-toilet"></i>
+                        <span>公厕</span>
+                        <em>(0)</em>
+                        <strong class="iconfont icon-sanjiao-copy-copy-copy1"></strong>
+                    </p>
+                    <ul class="clear">
+                        <!--<li>
+                            <input type="checkbox">
+                            <div class="iconfont icon-xuanzhong">
+                            </div>
+                            <span>公厕编号1</span>
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="rTMLType rTMLRoadLine">
+                    <p class="rTMTitle">
+                        <i class="sprite-peel"></i>
+                        <span>果皮箱</span>
+                        <em>(0)</em>
+                        <strong class="iconfont icon-sanjiao-copy-copy-copy1" style="cursor: pointer;"></strong>
+                    </p>
+                    <ul class="clear"></ul>
+                </div>
+                <div class="rTMLType rTMLRoadLine">
+                    <p class="rTMTitle">
+                        <i class="sprite-dustbin"></i>
+                        <span>垃圾箱</span>
+                        <em>(0)</em>
+                        <strong class="iconfont icon-sanjiao-copy-copy-copy1" style="cursor: pointer;"></strong>
+                    </p>
+                    <ul class="clear"></ul>
+                </div>
+                <div class="rTMLType rTMLRoadLine">
+                    <p class="rTMTitle">
+                        <i class="sprite-transfer"></i>
+                        <span>中转站</span>
+                        <em>(0)</em>
+                        <strong class="iconfont icon-sanjiao-copy-copy-copy1" style="cursor: pointer;"></strong>
+                    </p>
+                    <ul class="clear"></ul>
+                </div>
+                <div class="rTMLType rTMLRoadLine">
+                    <p class="rTMTitle">
+                        <i class="sprite-bury"></i>
+                        <span>填埋场</span>
+                        <em>(0)</em>
+                        <strong class="iconfont icon-sanjiao-copy-copy-copy1" style="cursor: pointer;"></strong>
+                    </p>
+                    <ul class="clear"></ul>
+                </div>
+            </div>
+            <div class="btnRTMSShrink">
+                <i class="iconfont icon-shouqi"></i>
+            </div>
+        </div>
+        <div class="contentMap">
+            <div class="operate-list">
+            </div>
+            <div id="map" class="map"></div>
+            <div class="rMapList">
+                <ul class="clear">
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>人员</span>
+                        <ul class="two-menu" id="peopleMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>车辆</span>
+                        <ul class="two-menu" id="carMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>设施</span>
+                        <ul class="two-menu" id="devMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>区域</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>路线</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="car-info"></div>
+<div class="people-info" ></div>
+<div class="dev-info"></div>
+<div class="video-info"></div>
+<div class="alarm-info"></div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../res/js/realTimeMonitor/realTimeMonitor.js"></script>
+<script src="../../../res/js/realTimeMonitor/monitoring.js"></script>
+<script src="../../../res/js/realTimeMonitor/facilities.js"></script>
+</body>
+</html>

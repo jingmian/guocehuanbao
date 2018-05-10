@@ -1,0 +1,12 @@
+.Wdate{
+	/*border:#999 1px solid;*/
+	height:20px;
+	/*background:#fff url(day.png) no-repeat right;*/
+	/*padding-right: 1px;*/
+}
+.Wdate::-ms-clear{display:none;}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

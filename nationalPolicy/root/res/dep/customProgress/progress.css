@@ -1,0 +1,91 @@
+.scrollBar{
+    width: 90%;
+    height:5px;
+    cursor: pointer;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    background-color: #ccc;
+    margin:18px 0 0 10px;
+}
+
+.scroll_Track{
+    width: 0;
+    height: 5px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    background-color: #f40;
+}
+
+.scroll_Thumb{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin-top: -12px;
+    cursor: pointer;
+    /*border: 1px solid #ccc;*/
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    /*background-color: #efefef;*/
+    -webkit-box-shadow: 0 0 5px #ccc;
+    -moz-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border: 1px solid #fff;
+    background-color: #f40;
+}
+
+/* .scroll_Thumb:hover{
+   
+} */
+
+.progressBar{
+    width: 80%;
+    height: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    background-color: #ccc;
+}
+.progressBar_Track{
+    width: 200px;
+    height: 10px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    background-color: #f40;
+}
+#beian{
+    float: left;
+    width: 100%;
+    margin-top: 50px;;
+    text-align: center;
+}
+#beian a{
+    font: 13px '微软雅黑', Arial, Helvetica, sans-serif;
+    color: gray;
+}
+/* .progressTime{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 660px;
+    height: 200px;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: .5;
+    color: white;
+    border: 1px solid gray;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #000;
+    filter: alpha(opacity=50);
+    -moz-opacity: .5;
+    -khtml-opacity: .5;
+    position: fixed;
+    z-index: 2;
+} */

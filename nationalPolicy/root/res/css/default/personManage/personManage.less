@@ -1,0 +1,435 @@
+.bgColor(@btnColor:#009aff) {
+    background-color: @btnColor;
+    //border:1px solid @btnColor;
+}
+
+.border(@borderColor:#ddd) {
+    border: 1px solid @borderColor;
+}
+
+.color(@color:#353639) {
+    color: @color;
+}
+
+.dgridSched {
+    .pagination {
+        display: none;
+    }
+    .datagrid-header, .datagrid-body, .datagrid-footer {
+        color: #353639;
+        td {
+            border: 1px solid #ddd !important;
+            border-top: none !important;
+            &:nth-child(1) {
+                border-left: none !important;
+            }
+            &:nth-last-child(1) {
+                border-right: none !important;
+            }
+        }
+        .schedTypeColor {
+            color: #036edb;
+            height: 30px;
+            display: inline-block;
+        }
+    }
+    .datagrid-header {
+        td {
+            &:nth-child(2) {
+                padding-left: 0px;
+            }
+        }
+    }
+    .datagrid-header-check {
+        position: relative;
+    }
+    .datagrid-btable .datagrid-cell {
+        height: 30px;
+        line-height: 30px;
+    }
+
+}
+
+.list_title {
+    & > p {
+        height: 39px;
+        float: left;
+    }
+    .atteDetaList {
+        height: 39px;
+        line-height: 40px;
+        display: inline-block;
+        float: left;
+        margin-left: 30px;
+        font-size: 12px;
+        & > li {
+            float: left;
+            margin-right: 14px;
+            height: 39px;
+            & > span {
+                height: 10px;
+                display: inline-block;
+                width: 50px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.attendTime {
+    float: left;
+    & > select.attendYear {
+        float: left;
+        width: 60px;
+        height: 26px;
+        margin-top: 6px;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        -o-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        margin-left: 20px;
+    }
+    & > ul.attendMonth {
+        float: left;
+        font-size: 12px;
+        & > li {
+            float: left;
+            height: 24px;
+            //padding-bottom: 2px;
+            margin-top: 6px;
+            line-height: 26px;
+            cursor: pointer;
+            & + li {
+                margin-left: 10px;
+            }
+            &.aMActive {
+                color: #036edb;
+                border-bottom: 2px solid #036edb;
+            }
+        }
+    }
+    & > ul.attendType {
+        float: left;
+        margin-left: 50px;
+        font-size: 12px;
+        & > li {
+            float: left;
+            height: 26px;
+            margin-top: 6px;
+            line-height: 26px;
+            & + li {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.lTList {
+    margin: 0 16px 12px;
+    border-bottom: 1px solid #ddd;
+    width: auto !important;
+    & > ul {
+        height: 40px;
+        padding: 0px !important;
+        li {
+            height: 39px;
+            float: left;
+            cursor: pointer;
+            &.lTActive {
+                border-bottom: 1px solid #036edb;
+                & > span {
+                    color: #036edb;
+                }
+            }
+            & > span {
+                height: 20px;
+                line-height: 20px;
+                margin-top: 10px;
+                color: #3a4c57;
+                border-right: 1px solid #ddd;
+                padding: 0 16px;
+                display: block;
+                & > i.termiState {
+                    width: 10px;
+                    height: 10px;
+                    display: inline-block;
+                    background: red;
+                }
+            }
+        }
+    }
+}
+
+.myDgrid {
+    .datagrid-header-check {
+        & > div {
+            bottom: 43px;
+        }
+        & > input {
+            bottom: 43px;
+        }
+    }
+}
+
+//树状复选框
+.checkbox_false {
+    width: 14px;
+    height: 14px;
+    line-height: 16px;
+    position: relative;
+    font-size: 14px;
+    .bgColor(#dbdbdb);
+    .color(#fff);
+    .border(#dbdbdb);
+}
+
+.checkbox_true {
+    .bgColor(#fff);
+    .color(#009aff);
+    .border(#009aff);
+}
+
+.ztree {
+    li {
+        span {
+            &.button {
+                &.chk {
+                    &.checkbox_false_full, &.checkbox_false_part {
+                        .checkbox_false;
+                    }
+                    &.checkbox_true_full, &.checkbox_true_part {
+                        .checkbox_true;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.infolistTable {
+    width: auto;
+    height: 93%;
+    padding: 0 15px;
+    padding-left:0px;
+    margin-left:15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: auto;
+    border:1px solid #ddd;
+    & > div.table {
+        width: 100%;
+        height: 98%;
+        //border: 1px solid #ddd;
+        & > table {
+            width: 100%;
+        }
+        tr {
+            height: 40px;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+            &:nth-child(1) {
+                border-top: none;
+            }
+            th, td {
+                height: 40px;
+                line-height: 40px;
+                width: auto;
+                color: #333;
+                font-weight: 400;
+                float: left;
+                text-align: center;
+                border-left: 1px solid #ddd;
+                //&:nth-last-child(1){
+                //    border-right:none;
+                //}
+            }
+            td {
+                display: flex;
+                flex: 1;
+                justify-content: center;
+                span {
+                    height: 40px;
+                    display: inline-block;
+                    flex: 1;
+                    cursor: pointer;
+                    border-left: 1px solid #ddd;
+                    &:nth-child(1) {
+                        border-left: none;
+                    }
+                    &.active {
+                        color: #fff;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.last_border {
+    border-right: 1px solid #ddd;
+}
+
+.datagrid-pager {
+    .selectAll {
+        height: 36px;
+        line-height: 26px;
+        display: inline-block;
+        margin-left: 15px;
+    }
+    #btnExport {
+        width: 50px;
+        height: 25px;
+        line-height: 25px;
+        color: #fff;
+        background-color: #009aff;
+        margin-left: 8px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 2px;
+    }
+}
+
+//出勤明细
+.attendText {
+    background-color: #21be63;
+    color: #fff;
+}
+
+.queqinText {
+    background-color: #fb2c36;
+    color: #fff;
+}
+
+.leaveText {
+    background-color: #a4a7ae;
+    color: #fff;
+}
+
+.lateText {
+    background-color: #fab50f;
+    color: #fff;
+}
+
+.leaveEarlyText {
+    background-color: #0c7fea;
+    color: #fff;
+}
+
+
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+    -moz-@{style}: @value;
+    -ms-@{style}: @value;
+        @{style}: @value;
+}
+@detail-border-color:#ddd;
+/*出勤明细*/
+.detail-box{
+    .pre( box-sizing, box-sizing);
+    width:100%;
+    height: 90%;
+    outline: 1px solid @detail-border-color;
+    overflow: auto;
+    //padding-top:50px;
+    margin-top: 10px;
+}
+/*.caption{
+    width:4013px;
+}*/
+
+.caption,.detail-body{
+    width:4013px;
+    &>ul{
+        width: 100%;
+    }
+    li{
+        float: left;
+        width:120px;
+        font-size: 12px;
+        text-align: center;
+        border-left:1px solid @detail-border-color;
+        border-bottom:1px solid @detail-border-color;
+        &.group-name{
+            border-left:none;
+            width:180px;
+        }
+        &.person-name{
+            width:80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &>span{
+            display: inline-block;
+            color:#fff;
+            text-align: center;
+            //height: 100%;
+            //line-height: 30px;
+            &.green{
+                background-color:#21be63;
+            }
+            &.red{
+                background-color:#fb2c36;
+            }
+            &.gray{
+                background-color:#a4a7ae;
+            }
+            &.yellow{
+                background-color:#fab50f;
+            }
+            &.blue{
+                background-color:#0c7fea;
+            }
+
+        }
+    }
+}
+.caption{
+    li{
+        height: 32px;
+        line-height: 32px;
+        &>span{
+            line-height: 32px;
+        }
+    }
+}
+.detail-body{
+    li{
+        height: 29px;
+        line-height: 29px;
+        &>span{
+            line-height: 29px;
+            border-right: 1px solid #fff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            &:nth-last-child(1){
+                border-right: none;
+            }
+        }
+    }
+}
+/*底部全选按钮样式*/
+#dgridBox{
+    .datagrid-header-check{
+        &>.boxDiv{
+            left:288px;
+        }
+        &>input{
+            left:290px;
+        }
+    }
+}
+/*2018/4/24排班信息右侧信息展示样式*/
+.schedulingInfoShow{
+    text-align: center;
+    font-size: 20px;
+    width: 100%!important;
+    overflow: hidden;
+}

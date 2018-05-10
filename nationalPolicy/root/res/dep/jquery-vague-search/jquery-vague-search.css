@@ -1,0 +1,34 @@
+.jquery-vague-search{
+    width: 100px;
+    max-height: 400px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-top: none;
+    background: #fff;
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000000000;
+}
+.jquery-vague-search>ul{
+    width: 100%;
+    box-sizing: border-box;
+}
+.jquery-vague-search>ul>li{
+    width: 100%;
+    height: 26px;
+}
+.jquery-vague-search>ul>li>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    line-height: 26px;
+    box-sizing: border-box;
+    padding: 2px;
+    color: #666;
+}
+.jquery-vague-search>ul>li>a:hover{
+    background: #088fd5;
+    color: #fff;
+}

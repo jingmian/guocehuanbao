@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="jquery-vague-search.css"/>
+    <script src="jquery-1.8.0.min.js"></script>
+    <script src="jquery-vague-search.js"></script>
+    <title></title>
+    <style>
+        .choose{
+            position: absolute;
+            left: 400px;
+            top: 200px;
+        }
+        .searchText{
+            width: 150px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+        .choose1{
+            position: absolute;
+            left: 700px;
+            top: 200px;
+        }
+        .searchText1{
+            width: 200px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        $(function(){
+            var requestUrl='http://192.168.0.63:8888/gwc/service/';     //接口请求地址前缀
+
+            $('.searchText').vagueSearch({
+                searchKey:'fullName',
+                url:requestUrl+'driver/driverList'
+            });
+
+            $('.searchText1').vagueSearch({
+                searchKey:'fullName',
+                url:requestUrl+'driver/driverList'
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="choose">
+    <div style="padding-top: 200px;">
+        key:
+        <input type="text" class="searchText"/>
+    </div>
+
+</div>
+
+<div class="choose1">
+    key:
+    <input type="text" class="searchText1"/>
+</div>
+
+<!--<div class="jquery-vague-search">
+    <ul>
+        <li><a href="javascript:;">123</a></li>
+        <li><a href="javascript:;">123</a></li>
+        <li><a href="javascript:;">123</a></li>
+        <li><a href="javascript:;">123</a></li>
+        <li><a href="javascript:;">123</a></li>
+    </ul>
+</div>-->
+</body>
+</html>

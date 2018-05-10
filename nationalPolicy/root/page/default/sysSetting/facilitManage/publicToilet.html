@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../../res/dep/jquery-vague-search/jquery-vague-search.css">
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <title>公厕</title>
+    <style>
+    </style>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title" id="pageTitle">列表</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入人员名称" id="person_name">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block" id="findPersonInfo"></i>
+                    </li>
+                   <!-- <li>
+                        <select class="time-during">
+                            <option value="0">精检查询</option>
+                            <option value="1">最近一天</option>
+                            <option value="2">最近一周</option>
+                            <option value="3">最近两周</option>
+                            <option value="4">最近一月</option>
+                        </select>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--系统新增公厕-->
+<form class="form-list-small insertBeta" id="insertBeta">
+    <h5 class="title"><span class="titleText">新增</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertBetaPopup clear">
+                <input type="hidden" class="msgLat" readonly/>
+                <input type="hidden" class="msgLon" readonly />
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>编号:</span>
+                        <input type="text" class="facNum" name="facNum"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>名称:</span>
+                        <input type="text" class="facName" name="facName"/>
+                    </li>
+                    <li class="textLen">
+                        <span><em>*</em>责任人:</span>
+                        <select class="personName" name="personId">
+                            <option value="0"></option>
+                        </select>
+                    </li>
+                    <li class="textLen">
+                        <span><em>*</em>所在位置:</span>
+                        <input id="suggestId" type="text" class="facPlace" placeholder="请在地图上选择位置" name="place"/>
+                        <input type="hidden" id="searchResultPanel">
+                    </li>
+                    <li class="takePoint">
+                        <span></span>
+                        <div class="tPImg">
+
+                        </div>
+                        <a href="" style="display: block" class="btnTPoint" id="btnSelPoint">取点</a>
+                        <!--<a href="" style="display: block" class="btnTPoint">取点</a>-->
+                        <a href="javascript:void(0)" style="display: block" class="btnTPoint">新增图片</a>
+                    </li>
+                </ul>
+                <div class="betaMap">
+                    <div id="facMap" class="commonDetaMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除公厕</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除<span id="d-car"></span>?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--人员树弹窗-->
+<div class="add form-Tree" style="display:none;" id="pers-form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">请选择人员</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox1">
+                    <ul id="windowTree1" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../../res/js/sysSetting/sysSetting.js"></script>
+<script src="../../../../res/dep/jquery-vague-search/jquery-vague-search.js"></script>
+<script src="../../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../../res/js/sysSetting/facilitManage/facilitManage.js"></script>
+<script src="../../../../res/js/sysSetting/facilitManage/publicToilet.js"></script>
+</body>
+</html>
+
+

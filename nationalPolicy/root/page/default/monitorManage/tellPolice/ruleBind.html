@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/monitorManage/monitorManage.css"/>
+    <title>规则绑定</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">规则绑定</h2>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看-->
+<form class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">查看规则绑定信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectPopup">
+                <ul class="clear">
+                    <li>
+                        <span>规则名称:</span>
+                        <p class="alarmName"></p>
+                    </li>
+                    <li>
+                        <span>报警类型:</span>
+                        <p class="alarmType"></p>
+                    </li>
+                    <li>
+                        <span>阈值(km/h):</span>
+                        <p class="alarmThreshold"></p>
+                    </li>
+                    <li>
+                        <span>连续数据:</span>
+                        <p class="floatVolue"></p>
+                    </li>
+                    <li>
+                        <span>是否提醒:</span>
+                        <p class="isRemind"></p>
+                    </li>
+                    <li>
+                        <span>是否持续:</span>
+                        <p class="isManyTimesSend"></p>
+                    </li>
+                    <li class="textLen">
+                        <span>报警分级:</span>
+                        <p class="alarmLevel"></p>
+                    </li>
+                    <li class="textLen">
+                        <span>监管人员:</span>
+                        <p class="supervisePersonIds"></p>
+                    </li>
+                    <li class="textLen">
+                        <span>监管车辆:</span>
+                        <p class="superviseCarIds"></p>
+                    </li>
+                </ul>
+                <!--<div class="wSTime clear wSTime_ruleSet">-->
+                    <!--<h3 class="sTTitle">报警分级<a href="javascript:" class="btnTAdd">新增</a></h3>-->
+                    <!--<div class="sTCont">-->
+                        <!--<span>报警等级</span>-->
+                        <!--<span>设置参数(阈值百分比)</span>-->
+                        <!--<span>操作</span>-->
+                    <!--</div>-->
+                    <!--<div class="sTCont sTCont1">-->
+                        <!--<p>-->
+                            <!--<select class="alarmLevel">-->
+                                <!--<option value="0">普通</option>-->
+                                <!--<option value="1">较严重</option>-->
+                                <!--<option value="2">严重</option>-->
+                            <!--</select>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--<input type="text" class="alarmMinVal">-<input type="text" class="alarmMaxVal">-->
+                        <!--</p>-->
+                        <!--<p><a href="javascript:" class="btnTDel">删除</a></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除规则绑定信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除<span id="dInfo"></span>的规则绑定信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--修改【报警】-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">修改报警</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>规则名称:</span>
+                        <input type="text" class="alarmName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>报警类型:</span>
+                        <select class="alarmType"></select>
+                    </li>
+                    <li>
+                        <span>阈值(km/h):</span>
+                        <input type="text" class="alarmThreshold"/>
+                    </li>
+                    <li>
+                        <span>连续数据:</span>
+                        <input type="text" class="floatVolue"/>
+                    </li>
+                    <li>
+                        <span>是否持续:</span>
+                           <select class="isManyTimesSend">
+                               <option value="0">否</option>
+                               <option value="1">是</option>
+                       </select>
+                    </li>
+                    <li>
+                        <span>是否提醒:</span>
+                        <select class="isRemind">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </li>
+                    <li class="textLen">
+                        <span>监管人员:</span>
+                        <input type="text"  class="supervisePersonIds" name="groupId" id="person_input" readonly="readonly"/>
+                    </li>
+                    <li class="textLen">
+                        <span>监管车辆:</span>
+                        <input type="text" class="superviseCarIds" id="car_input" readonly="readonly"/>
+                    </li>
+                </ul>
+                <div class="wSTime clear wSTime_ruleSet">
+                    <h3 class="sTTitle">报警分级<a href="javascript:" class="btnTAdd">新增</a></h3>
+                    <div class="sTCont">
+                        <span>报警等级</span>
+                        <span>设置参数(阈值百分比)</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="sTCont sTCont1">
+                        <p>
+                            <select class="alarmLevel">
+                                <option value="0">普通</option>
+                                <option value="1">较严重</option>
+                                <option value="2">严重</option>
+                            </select>
+                        </p>
+                        <p>
+                            <input type="text" class="alarmMinVal">-<input type="text" class="alarmMaxVal">
+                        </p>
+                        <p><a href="javascript:" class="btnTDel">删除</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--获取监管人员-->
+<div class="add form-Tree" style="display:none;" id="tree-person">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">监管人员</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox1">
+                    <ul id="windowTree1" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="add form-Tree" style="display:none;" id="tree-car">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">绑定车辆</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox_car">
+                    <ul id=windowTree_car class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--点击字段查看详情弹出层-->
+<form class="form-list-small" id="selectAll1">
+    <h5 class="title"><span class="titleText">车辆详情</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body" style="max-height: 450px;overflow-y: auto;">
+        <div class="section">
+            <div class="section-body selectPopup with-pic-popup">
+                <ul class="clear">
+                    <li class="textLen">
+                        <span id="fileName">监管车辆:</span>
+                        <p id="alarmRemark"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/js/common/validate.js"></script>
+<script src="../../../../res/js/monitorManage/monitorManage.js"></script>
+<script src="../../../../res/js/monitorManage/tellPolic/ruleBind.js"></script>
+</body>
+</html>

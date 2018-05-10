@@ -1,0 +1,14 @@
+.validationErrorMsg,.validationErrorMsg2{
+    position:absolute;
+    right: 12px;
+    top: 2px;
+    font-size: 16px!important;
+    color: #fd5a75!important;
+    cursor: pointer;
+}
+.validationErrorMsg2{
+    top: 28px;
+}
+.validation-error{
+    border:1px solid #fd5a75 !important;
+}

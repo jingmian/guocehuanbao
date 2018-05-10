@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="res/css/default/home/home.css"/>
+    <title>国策环保</title>
+</head>
+<body>
+    <div class="NatPot">
+        <!-- 统计数量-->
+        <div class="NatShu">
+            <ul class="NatRon">
+                <li>
+                    <div>
+                        <h5>车辆当日里程数</h5>
+                        <p id="carMileages">0</p>
+                        <i class="iconfont icon-tongzhi"></i>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h5>车辆当日报警数</h5>
+                        <p id="carAlarm">0</p>
+                        <i class="iconfont icon-louyutubiaobaojing"></i>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h5>平台当日卫情上报数</h5>
+                        <p id="sanitationCount">0</p>
+                        <i class="iconfont icon-weibiaoti--"></i>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h5>平台当日油耗</h5>
+                        <p id="oilCount">0</p>
+                        <i class="iconfont icon-shui"></i>
+                    </div>
+                </li>
+            </ul>
+            <ul class="NatPon">
+                <li>
+                    <div>
+                        <p>车辆在线数</p>
+                        <ul class="NatPON-ftu">
+                            <li class="NatPON-fno" style="width: 480px; margin: 0 auto">
+                                <div id="main" style="box-shadow: none;width: 100%;height: 350px;">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>人员出勤</p>
+                        <ul class="NatPON-ftu">
+                            <li class="NatPON-fno" style="width: 480px; margin: 0 auto">
+                                <div id="main1" style="box-shadow: none;width: 100%;height: 350px;">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>平台设施</p>
+                        <ul class="NatPON-ftu">
+                            <li class="NatPON-fno" style="width: 480px; margin: 0 auto">
+                                <div id="main2" style="box-shadow: none;width: 100%;height: 350px;">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <!--柱状图-->
+            <ul class="NatJan">
+                <li>
+                    <div class="NatJan-fa">
+                        <p>成本费用（元）</p>
+                        <ul class="NatPON-ftu">
+                            <li class="NatPON-fno" style="width: 100%; margin: 0 auto">
+                                <div id="main3" style="box-shadow: none;width: 100%;height:320px;">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="NatJan-fa">
+                        <p>运行安全</p>
+                        <ul class="NatPON-ftu">
+                            <li class="NatPON-fno" style="width: 100%; margin: 0 auto">
+                                <div id="main4" style="box-shadow: none;width: 100%;height:320px;">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+           <!-- <div class="tonb">
+                <div class="NatTon">
+                    <p>油耗与里程信息</p>
+                    <ul class="NatPON-ftu">
+                        <li class="NatPON-fno" style="width: 100%; margin: 0 auto;padding: 0 10px">
+                            <div id="main5" style="box-shadow: none;width: 100%;height:320px;">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <script type="text/javascript" src="res/js/library/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="res/js/global/global.js"></script>
+    <script type="text/javascript" src="res/dep/eChart/echarts.min.js"></script>
+    <script type="text/javascript" src="res/dep/layer/layer.js"></script>
+    <script type="text/javascript" src="res/js/common/buildDate.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

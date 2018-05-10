@@ -1,0 +1,426 @@
+/*浮动*/
+/*背景色*/
+/*boxSizing*/
+.boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*border*/
+/*border-radius*/
+body {
+  background-color: #e5e5e5;
+}
+.lBox1 {
+  background-color: #ffffff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid #e5e5e5;
+}
+.lBox1 > p {
+  font-size: 16px;
+}
+.lBox1 > div.box_1 {
+  float: left;
+  padding-bottom: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.lBox1 > div.box_1:nth-child(3n+2) {
+  padding-right: 10px;
+}
+.lBox1 > div.box_1:nth-child(3n+3) {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.lBox1 > div.box_1:nth-child(3n+4) {
+  padding-left: 10px;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p {
+  width: 50%;
+  top: 0px;
+  bottom: 0px;
+  text-align: left;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p:nth-child(2) {
+  margin-left: 50%;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p > span {
+  display: block;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p > span.span1 {
+  font-size: 14px;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p > span.span2 {
+  font-size: 12px;
+  margin-top: 5%;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p > span.span3 {
+  font-size: 12px;
+  margin-top: 5%;
+}
+.lBox1 > div.box_1.box_1_1 > div.box_2 > p > em {
+  font-size: 12px;
+  display: block;
+  margin-top: 5%;
+}
+.lBox1 > div.box_1 > div.box_2 {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.lBox1 > div.box_1 > div.box_2 > span {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 16px;
+}
+.lBox1 > div.box_1 > div.box_2 > i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 23px;
+  height: 23px;
+}
+.lBox1 > div.box_1 > div.box_2 > p {
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  bottom: 30px;
+  position: absolute;
+}
+.lBox1 > div.box_1 > div.box_2 > p > em {
+  font-size: 22px;
+  vertical-align: bottom;
+  margin-right: 2px;
+}
+.lBox2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid #e5e5e5;
+}
+.lBox2 > .lBox2_1 > .lBox2_1_1,
+.lBox2 > .lBox2_1 > .box2_1_2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.lBox2 > .lBox2_1 > .lBox2_1_1 > div,
+.lBox2 > .lBox2_1 > .box2_1_2 > div {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.lBox2 > .lBox2_1 > .lBox2_1_1 {
+  padding-bottom: 5px;
+  border-bottom: 5px solid #e5e5e5;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 {
+  padding: 0px;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div:nth-child(1) {
+  padding-right: 5px;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div:nth-child(2) {
+  padding-left: 5px;
+  border-left: 5px solid #e5e5e5;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div > p {
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 30px;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div > p.txt {
+  padding: 0px;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  bottom: 5%;
+  text-align: center;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div > p.txt > span {
+  font-size: 12px;
+  color: #333;
+  margin: 0 3px;
+}
+.lBox2 > .lBox2_1 > .box2_1_2 > div > h2 {
+  font-size: 16px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: #333;
+}
+.lBox2 > .lBox2_2 {
+  border-left: 5px solid #e5e5e5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.lBox2 > .lBox2_2 > ul {
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lBox2 > .lBox2_2 > ul > li {
+  height: 16.66%;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lBox2 > .lBox2_2 > ul > li > p.title {
+  font-size: 14px;
+}
+.lBox2 > .lBox2_2 > ul > li > p.desc {
+  font-size: 12px;
+}
+.lBox2 > .lBox2_2 > ul > li > p.desc > span {
+  font-size: 12px;
+}
+.lBox2 > .lBox2_2 > ul > li > span {
+  font-size: 16px;
+}
+.lBox2 > .lBox2_2 > ul > li > i {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.lBox3 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid #e5e5e5;
+}
+.lBox3 > .lBox3_1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+}
+.lBox3 > .lBox3_1:nth-child(1) {
+  padding-right: 5px;
+}
+.lBox3 > .lBox3_1:nth-child(2) {
+  padding-left: 5px;
+  border-left: 5px solid #e5e5e5;
+}
+.lBox3 > .lBox3_1 > p {
+  height: 100%;
+}
+.my-map {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid #e5e5e5;
+}
+.rBox1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid #e5e5e5;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.rBox1 > .rBox1_1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 5px solid #e5e5e5;
+}
+.rBox1 > .rBox1_1:nth-child(1),
+.rBox1 > .rBox1_1:nth-child(2) {
+  padding-bottom: 5px;
+  border-top: 0px;
+}
+.rBox1 > .rBox1_1:nth-child(3),
+.rBox1 > .rBox1_1:nth-child(4) {
+  padding-top: 5px;
+}
+.rBox1 > .rBox1_1:nth-child(2n+1) {
+  padding-right: 5px;
+}
+.rBox1 > .rBox1_1:nth-child(2n+2) {
+  padding-left: 5px;
+  border-left: 5px solid #e5e5e5;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > div > h2 {
+  font-size: 14px;
+  position: relative;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > div > h2 > em {
+  position: absolute;
+  right: 5px;
+  font-size: 12px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > div > p {
+  position: relative;
+  font-size: 12px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > div > p.person,
+.rBox1 > .rBox1_1 > .rBox1_2 > div > p.time {
+  display: inline-block;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > div > p.time {
+  margin-left: 30px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > div > span {
+  font-size: 12px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > ul > li {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > ul > li:nth-child(1) {
+  padding-right: 10px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > ul > li:nth-child(2) {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > ul > li:nth-child(3) {
+  padding-left: 10px;
+}
+.rBox1 > .rBox1_1 > .rBox1_2 > ul > li > img {
+  height: 100%;
+  background-color: #ff0000;
+}
+.rBox2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid #e5e5e5;
+}
+.rBox2 > .rBox2_1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rBox2 > .rBox2_1 > ul {
+  height: 100%;
+}
+.rBox2 > .rBox2_1 > ul > li {
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rBox2 > .rBox2_1 > ul > li:nth-child(1) > span.span1 {
+  left: 5px;
+}
+.rBox2 > .rBox2_1 > ul > li:nth-child(1) > span.span2 {
+  right: 10px;
+}
+.rBox2 > .rBox2_1 > ul > li:nth-child(2) {
+  border-left: 5px solid #e5e5e5;
+}
+.rBox2 > .rBox2_1 > ul > li:nth-child(2) > span.span1 {
+  left: 10px;
+}
+.rBox2 > .rBox2_1 > ul > li:nth-child(2) > span.span2 {
+  right: 5px;
+}
+.rBox2 > .rBox2_1 > ul > li > img {
+  background-color: #008000;
+  height: 100%;
+}
+.rBox2 > .rBox2_1 > ul > li > span {
+  position: absolute;
+  top: 10px;
+}
+.rBox2 > .rBox2_2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+  padding-top: 5px;
+  position: relative;
+  background-color: #ffffff;
+  border-top: 5px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.rBox2 > .rBox2_2 > h2 {
+  font-size: 14px;
+}
+.rBox2 > .rBox2_2 > ul.u1 {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.rBox2 > .rBox2_2 > ul.u1 > li {
+  float: left;
+  margin-right: 5px;
+}
+.rBox2 > .rBox2_2 > ul.u1 > li > i {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  float: left;
+  top: 3px;
+  position: relative;
+  margin-right: 2px;
+}
+.rBox2 > .rBox2_2 > ul.u1 > li > span {
+  display: inline-block;
+  font-size: 12px;
+  float: left;
+}
+.rBox2 > .rBox2_2 > table {
+  text-align: center;
+  font-size: 12px;
+  overflow: hidden;
+}
+.rBox2 > .rBox2_2 > table > thead > tr > th {
+  width: 20%;
+  font-weight: 400;
+}
+.rBox2 > .rBox2_2 > table > tbody {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.rBox2 > .rBox2_2 > table > tbody > tr > td {
+  width: 20%;
+}

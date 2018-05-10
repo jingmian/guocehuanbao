@@ -1,0 +1,3478 @@
+html,
+body {
+  font-family: "tahoma", "arial", "Microsoft Yahei", "helvetica", "San Francisco";
+}
+body {
+  /*overflow: hidden;*/
+  width: 100%;
+  height: 100%;
+}
+.m-main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  min-width: 1000px;
+}
+/*头部 start*/
+.m-main .head {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  line-height: 40px;
+}
+.m-main .head .logo {
+  height: 40px;
+  float: left;
+}
+.m-main .head .logo-img {
+  /*width: 40px;height: 40px;padding: 5px 5px 5px 16px;*/
+  height: 40px;
+  float: left;
+}
+.m-main .head .company {
+  height: 40px;
+  float: left;
+  /*padding-left: 20px;*/
+}
+.m-main .head .operation {
+  height: 100%;
+  float: right;
+}
+.m-main .head .operation ul {
+  height: 100%;
+}
+.m-main .head .operation li {
+  height: 100%;
+  float: left;
+  padding: 0 10px;
+  /*old padding:0 5px*/
+  list-style: none;
+  font-size: 14px;
+}
+.m-main .head .operation ul li:first-child ~ li {
+  cursor: pointer;
+}
+.m-main .head .operation ul li:first-child + li + li {
+  padding-left: 4px;
+}
+.m-main .changePwd {
+  display: inline-block;
+  line-height: 54px;
+  cursor: pointer;
+}
+.parting-line {
+  padding: 0 !important;
+}
+.m-main .line {
+  display: inline-block;
+  line-height: 54px;
+  cursor: pointer;
+}
+.m-main .head .operation li span {
+  padding-left: 2px;
+}
+/*头部 end*/
+/*导航 start*/
+.m-main .nav {
+  width: 140px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 40px;
+  z-index: 10;
+}
+.m-main .nav .nav-box {
+  width: 100%;
+  height: 100%;
+}
+/*控制隐藏nav*/
+.trigger-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 140px;
+  width: 0;
+  z-index: 10;
+}
+.trigger-nav > a {
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 17px;
+  height: 61px;
+}
+/*.trigger-nav>a:hover{*/
+/*background-position:right 0;*/
+/*}*/
+/*导航 end*/
+/*内容区 start*/
+.m-main .content {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 140px;
+  padding-top: 40px;
+}
+.m-main .content.content0 {
+  padding-left: 0;
+}
+.m-main .content.content2 {
+  padding-left: 46px;
+}
+.m-main .content .content-box {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.m-main .content iframe {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+/*内容区 end*/
+/*header css*/
+.m-main .head .operation li {
+  margin-left: -3px;
+}
+.m-main .head .operation li:nth-last-child(1) {
+  border-left: 1px solid #036edb;
+}
+.m-main .head .operation li:nth-last-child(1) > a:nth-last-child(1) > i {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.m-main .head .operation li > a {
+  color: #fff;
+  font-size: 14px;
+  margin-right: 6px;
+}
+.m-main .head .operation li > a > i {
+  margin-right: 6px;
+  font-size: 16px;
+  top: 1px;
+  position: relative;
+}
+.m-main .head .operation li.activeLi {
+  background-color: #036edb;
+}
+.m-home {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /*min-width: 1500px;*/
+  position: relative;
+  border: 1px solid #f4f7f9;
+  background-color: #fff;
+}
+.m-home > .title {
+  width: 100%;
+  height: 39px;
+  line-height: 39px;
+  background: #fff;
+  z-index: 10;
+  position: relative;
+}
+.m-home .title .list_title {
+  height: 100%;
+  float: left;
+  color: #536065;
+  padding-left: 14px;
+  font-size: 14px;
+}
+.m-home .title label {
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  color: #fff;
+  margin-right: 8px;
+}
+.m-home .title .search {
+  height: 100%;
+  float: right;
+}
+.m-home .title .search > ul {
+  height: 26px;
+  padding-left: 6px;
+  padding-right: 8px;
+  margin-top: 7px;
+}
+.m-home .title .search ul.ztree {
+  max-height: 100px;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  display: none;
+}
+.m-home .title .search ul.ztree span {
+  color: #000;
+}
+.m-home .title .search > ul > li {
+  height: 100%;
+  float: left;
+  margin-right: 6px;
+  line-height: 24px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+.m-home .title .search > ul > li:nth-child(2) > input {
+  width: 76px;
+  cursor: pointer;
+}
+.m-home .title .search > ul > li:nth-child(2) > i {
+  position: relative;
+  left: -5px;
+  color: #999;
+  cursor: pointer;
+}
+.m-home .title .search > ul > li > .time-during {
+  background-color: #fff;
+}
+.m-home .title .search > ul > li > .time-during > option {
+  background-color: #fff;
+  color: #000000;
+}
+.m-home .title .search select {
+  height: 100%;
+}
+.m-home .title .search input {
+  width: 170px;
+  height: 26px;
+  line-height: 26px;
+  text-indent: 6px;
+  padding-top: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+}
+.m-home .title .search label:first-child {
+  display: inline-block;
+  margin-right: 5px;
+  color: #f0f0f0;
+}
+.m-home .title .search .search-btn {
+  width: 30px;
+  height: 26px;
+  border-left: 1px solid #ddd;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  padding-left: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+.m-home .title .search .search-btn i {
+  font-size: 18px;
+}
+.m-home .title .search .dataImg {
+  height: 24px;
+  position: absolute;
+  right: 30px;
+  top: 1px;
+}
+.m-home .title .search a {
+  width: 24px;
+  height: 24px;
+  font-size: 22px;
+  color: #fff;
+}
+.m-home .title .search a:hover {
+  color: #fff;
+}
+.m-home .title .search .searchForm {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  height: 221px;
+  display: none;
+  background: none;
+}
+.m-home .title .search .select-box2 {
+  margin-right: 50px;
+}
+.m-home .title .search .select-box2 span {
+  color: #ffffff;
+}
+.m-home .dgrid {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 39px;
+  margin-top: -39px;
+  position: relative;
+  z-index: 1;
+}
+.m-home .dgrid .dgrid-box {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  pading: 0px 14px;
+}
+.m-home .dgrid .dictType {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  padding-top: 73px;
+}
+.m-home .dgrid .dictType .dictTypeList {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #eee;
+}
+.m-home .dgrid .dictType .dictTypeList > p {
+  height: 32px;
+  line-height: 30px;
+  padding-left: 10px;
+  background: #8ac1ef;
+  color: #fff;
+  font-size: 12px;
+}
+.m-home .dgrid .dictType .dictTypeList ul > li {
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  padding-left: 30px;
+  color: #666;
+  cursor: default;
+}
+.m-home .dgrid .dictType .dictTypeList ul > li:hover {
+  background: #89d2f4;
+  color: #fff;
+}
+.m-home .dgrid .dictTypeGrid {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 200px;
+  z-index: 5;
+}
+/*public-btn*/
+.btn {
+  background: #0a87ff;
+  border: 0;
+  outline: 0;
+  width: 56px;
+  height: 26px;
+  text-align: center;
+  float: left;
+  margin-left: 14px;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+/*通用样式*/
+/*
+    解决datagrid中内容溢出
+*/
+.datagrid-btable .datagrid-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+}
+.datagrid-btable .datagrid-cell:hover {
+  overflow: visible;
+}
+/*样式2*/
+/*********订单详情表单****************/
+.form-list-small {
+  width: 100%;
+  z-index: 1000000000;
+  display: none;
+}
+/* 2017/07/11 */
+.form-list > .title,
+.form-list-small > .title {
+  height: 44px;
+  line-height: 44px;
+  color: #353639;
+  position: relative;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+.form-list > .title > i,
+.form-list-small > .title > i {
+  font-size: 20px;
+  color: #666666;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 25px;
+  height: 40px;
+}
+/*h6-title下的图标 2017/07/11 */
+.form-list-small .section .title {
+  padding-left: 60px;
+}
+.icon-warning {
+  color: #ffbc3b;
+}
+.icon-inf {
+  color: #4b92fc;
+}
+.icon-danger {
+  color: #f00;
+}
+.form-list-small > .form-body {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px 20px;
+  border-bottom: 1px solid #e1e3e5;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/*2017/07/11*/
+/*2017/07/11*/
+.form-list-small > .form-body .section-body li {
+  line-height: 24px;
+  font-size: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  color: #353639;
+}
+/*.form-list-small > .form-body .section-body div {
+    padding-left: 40px;
+}*/
+/*
+    修改input
+    修改select
+*/
+.form-list-small > .form-body .section-body .infoList [type="text"] {
+  width: 185px;
+  padding: 4px;
+  border: 1px solid #ddd;
+}
+.form-list-small > .form-body .section-body .infoList li.long input[type="text"] {
+  width: 500px;
+}
+.form-list > .form-body .section-body .infoList select,
+.form-list-small > .form-body .section-body .infoList select {
+  width: 195px;
+  padding: 3px;
+  border: 1px solid #c9c9c9;
+}
+.form-list-small > .form-body .section-body .infoList textarea {
+  width: 193px;
+  height: 40px;
+}
+.form-list > .form-btn,
+.form-list-small > .form-btn {
+  width: 100%;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 20px 10px 0;
+}
+.form-list > .form-btn ul,
+.form-list-small > .form-btn ul {
+  float: right;
+  height: 100%;
+}
+.form-list > .form-btn ul li,
+.form-list-small > .form-btn ul li {
+  width: 56px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  float: left;
+  margin-left: 6px;
+  color: #fff;
+  border: 1px solid #009aff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.m-from {
+  padding: 14px 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.panel {
+  padding: 0 14px;
+}
+.datagrid .panel-body {
+  border: none;
+  border: 1px solid #ddd;
+}
+.datagrid-header td,
+.datagrid-body td,
+.datagrid-footer td {
+  border: none !important;
+}
+.datagrid-header td:nth-child(1),
+.datagrid-body td:nth-child(1),
+.datagrid-footer td:nth-child(1) {
+  padding-left: 14px;
+}
+.datagrid-header,
+.datagrid-td-rownumber {
+  background-color: #fff !important;
+}
+.datagrid-header {
+  border-bottom: 1px solid #ddd;
+  height: 40px;
+}
+.datagrid-header > .datagrid-header-inner {
+  height: 41px;
+}
+.datagrid-header > .datagrid-header-inner > .datagrid-htable {
+  height: 40px;
+}
+.datagrid-header > .datagrid-header-inner > .datagrid-htable .datagrid-header-row,
+.datagrid-header > .datagrid-header-inner > .datagrid-htable .datagrid-row {
+  border-bottom: 1px solid #ddd !important;
+  height: 40px;
+  line-height: 40px;
+}
+.pagination table {
+  float: right !important;
+}
+.pagination-info {
+  height: 36px;
+  line-height: 36px;
+}
+.pagination-btn {
+  height: 36px;
+  /*& > */
+  /* & >*/
+}
+.pagination-btn > span.selectAll {
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  display: inline-block;
+  padding: 0px !important;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.pagination-btn .btn {
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 6px;
+  border-radius: 2px;
+  color: #fff;
+  padding: 0px !important;
+}
+.pagination-btn .btn > span {
+  display: inline;
+  padding: 0px !important;
+  height: 25px !important;
+  line-height: normal !important;
+}
+.pagination-btn .btn {
+  margin-right: 8px !important;
+  margin-left: 0px !important;
+}
+.pagination-btn .btn:hover {
+  color: #fff;
+  border-radius: 2px;
+}
+.pagination-btn strong {
+  display: none;
+}
+.pagination-btn strong a {
+  display: block;
+}
+.pagination-btn strong.btn-more {
+  position: relative;
+  z-index: 8888888;
+}
+.datagrid-header-row,
+.datagrid-row {
+  border-bottom: 1px solid #ddd !important;
+}
+a.l-btn-plain span.l-btn-left {
+  display: inline-block;
+  height: 25px !important;
+  padding-top: 0px!important;
+}
+a.l-btn-plain span.l-btn-left > span {
+  height: 25px !important;
+  line-height: 25px !important;
+}
+a.l-btn-plain span.l-btn-left > span.icon-shangyiye,
+a.l-btn-plain span.l-btn-left > span.icon-qianyiye,
+a.l-btn-plain span.l-btn-left > span.icon-xiayiye,
+a.l-btn-plain span.l-btn-left > span.icon-moye {
+  font-size: 16px;
+  color: gray;
+}
+.datagrid-view,
+.datagrid-view1,
+.datagrid-view2 {
+  overflow: auto !important;
+}
+/*数据列表复选框*/
+.checkbox_false {
+  width: 16px;
+  height: 16px;
+  line-height: 18px;
+  position: relative;
+  font-size: 16px;
+  background-color: #dbdbdb;
+  color: #ffffff;
+  border: 1px solid #dbdbdb;
+}
+.checkbox_false1 {
+  font-size: 18px;
+  color: #dbdbdb;
+  line-height: normal;
+}
+.checkbox_true {
+  background-color: #ffffff;
+  color: #009aff;
+  border: 1px solid #009aff;
+}
+.checkbox_true1 {
+  color: #009aff;
+}
+.datagrid-header-check {
+  width: 23px;
+}
+.datagrid-header-check > .boxDiv,
+.datagrid-header-check > input {
+  position: fixed;
+  top: auto;
+  left: auto;
+}
+.datagrid-header-check > .boxDiv {
+  bottom: 23px;
+  left: 46px;
+  font-size: 18px;
+  color: #dbdbdb;
+  line-height: normal;
+  position: fixed;
+}
+.datagrid-header-check > input {
+  position: fixed;
+  bottom: 23px;
+  left: 49px;
+  opacity: 0;
+  z-index: 1;
+}
+.datagrid-header-check > input:checked + div {
+  color: #009aff;
+}
+.datagrid-cell-check {
+  text-align: left;
+  width: 16px;
+  height: 16px;
+  line-height: 18px;
+  position: relative;
+  font-size: 16px;
+  background-color: #dbdbdb;
+  color: #ffffff;
+  border: 1px solid #dbdbdb;
+  margin-right: 7px;
+}
+.datagrid-cell-check > input {
+  position: relative;
+  top: 2px;
+  display: none;
+}
+.datagrid-row-checked .datagrid-cell-check {
+  background-color: #ffffff;
+  color: #009aff;
+  border: 1px solid #009aff;
+}
+/*浮动*/
+/*强制换行*/
+.word-warp {
+  word-wrap: break-word;
+}
+/*超出部分省略号*/
+/*外边距margin*/
+/*内边距padding*/
+/*列表不出现滚动条*/
+.layui-layer-content {
+  overflow: hidden !important;
+}
+.layui-layer-content.layui-layer-page {
+  overflow: hidden !important;
+}
+/*常用边框1px solid #ddd*/
+/*边框圆角*/
+/*boxSizing*/
+.box-sizing {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*btn按钮*/
+.btnStyle {
+  height: 24px;
+  line-height: 24px;
+  width: 56px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn#btnNewAdd {
+  background-color: #009aff;
+}
+.btn#btnCorrect {
+  background-color: #009aff;
+}
+.btn#btnDelete {
+  background-color: #fd5053;
+}
+.btn#btnApudate {
+  background-color: #ff9a00;
+}
+.btn#btnExport {
+  background-color: #009aff;
+  display: none!important;
+}
+.btn#btnImport {
+  background-color: #009aff;
+  display: none!important;
+}
+.btn#btnAssign {
+  background-color: #009aff;
+}
+.btn#btnConfirm {
+  background-color: #009aff;
+}
+.btn#btnSelect {
+  background-color: #009aff;
+}
+.btn#btnBinding {
+  background-color: #009aff;
+}
+.btn#btnUnbinding {
+  background-color: #ff9a00;
+}
+.btn#btnStatistList {
+  background-color: #ff9a00;
+  display: none;
+}
+.btn#btnInsertBeta {
+  background-color: #ff9a00;
+  display: none;
+}
+.btn#btnInsertArea {
+  background-color: #009aff;
+}
+.btn#btnPersonData {
+  background-color: #ff9a00;
+}
+.btn#btnRemind {
+  background-color: #009aff;
+}
+/*在线、离线、报警等颜色*/
+.dColor1 {
+  background-color: #21be64;
+}
+.dColor2 {
+  background-color: #a4a7ae;
+}
+.dColor3 {
+  background-color: #f01d27;
+}
+.dColor4 {
+  background-color: #f7a00a;
+}
+.icon-zhankai {
+  font-size: 16px;
+}
+/*颜色*/
+.datagrid-header-inner {
+  width: 100%;
+}
+.datagrid-header-inner > table {
+  width: 100%;
+}
+.datagrid-body > table {
+  width: 100%;
+}
+.pagination table td:nth-child(1) a.l-btn,
+.pagination table td:nth-child(2) a.l-btn,
+.pagination table td:nth-last-child(1) a.l-btn,
+.pagination table td:nth-last-child(2) a.l-btn,
+.pagination table td:nth-last-child(3) a.l-btn,
+.pagination table td:nth-last-child(4) a.l-btn {
+  border-radius: inherit;
+}
+.pagination table td:nth-child(1) a.l-btn > span,
+.pagination table td:nth-child(2) a.l-btn > span,
+.pagination table td:nth-last-child(1) a.l-btn > span,
+.pagination table td:nth-last-child(2) a.l-btn > span,
+.pagination table td:nth-last-child(3) a.l-btn > span,
+.pagination table td:nth-last-child(4) a.l-btn > span {
+  padding: 0;
+}
+.pagination table td:nth-child(1) a.l-btn > span span.l-btn-icon,
+.pagination table td:nth-child(2) a.l-btn > span span.l-btn-icon,
+.pagination table td:nth-last-child(1) a.l-btn > span span.l-btn-icon,
+.pagination table td:nth-last-child(2) a.l-btn > span span.l-btn-icon,
+.pagination table td:nth-last-child(3) a.l-btn > span span.l-btn-icon,
+.pagination table td:nth-last-child(4) a.l-btn > span span.l-btn-icon {
+  font-size: 16px;
+}
+/*数据列表*/
+/*左侧部门结构*/
+.departStructLeft {
+  float: left;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+  padding: 0 14px;
+  border-right: 12px solid #f4f7f9;
+  border-color: #f4f7f9;
+}
+.departStructLeft > .list_title {
+  height: 39px;
+  line-height: 39px;
+}
+.departStructLeft > .personTree {
+  border: 1px solid #ddd;
+  height: 91%;
+  padding: 0 6px;
+  overflow-x: auto;
+}
+/*右侧列表*/
+.infoListRight {
+  float: left;
+  padding-left: 240px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*弹出层*/
+.selectPopup,
+.updatePopup,
+.insertPopup,
+.distribPopup,
+.insertBetaPopup,
+.insertAreaPopup,
+.updateAreaPopup,
+.selectAreaPopup,
+.personDataPopup,
+.carInfoPopup,
+.peelInfoPopup,
+.videoInfoPopup,
+.sateInfoPopup,
+.sateInfoPopup > .sIInfo,
+.sateConfirmPopup,
+.updateTPPopup,
+.addPersonPopup,
+.bindingPopup,
+.unbindingPopup {
+  position: relative;
+}
+.selectPopup > ul,
+.updatePopup > ul,
+.insertPopup > ul,
+.distribPopup > ul,
+.insertBetaPopup > ul,
+.insertAreaPopup > ul,
+.updateAreaPopup > ul,
+.selectAreaPopup > ul,
+.personDataPopup > ul,
+.carInfoPopup > ul,
+.peelInfoPopup > ul,
+.videoInfoPopup > ul,
+.sateInfoPopup > ul,
+.sateInfoPopup > .sIInfo > ul,
+.sateConfirmPopup > ul,
+.updateTPPopup > ul,
+.addPersonPopup > ul,
+.bindingPopup > ul,
+.unbindingPopup > ul {
+  padding: 4px 0px 14px 0px !important;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.selectPopup > ul li,
+.updatePopup > ul li,
+.insertPopup > ul li,
+.distribPopup > ul li,
+.insertBetaPopup > ul li,
+.insertAreaPopup > ul li,
+.updateAreaPopup > ul li,
+.selectAreaPopup > ul li,
+.personDataPopup > ul li,
+.carInfoPopup > ul li,
+.peelInfoPopup > ul li,
+.videoInfoPopup > ul li,
+.sateInfoPopup > ul li,
+.sateInfoPopup > .sIInfo > ul li,
+.sateConfirmPopup > ul li,
+.updateTPPopup > ul li,
+.addPersonPopup > ul li,
+.bindingPopup > ul li,
+.unbindingPopup > ul li,
+.selectPopup > ul .long,
+.updatePopup > ul .long,
+.insertPopup > ul .long,
+.distribPopup > ul .long,
+.insertBetaPopup > ul .long,
+.insertAreaPopup > ul .long,
+.updateAreaPopup > ul .long,
+.selectAreaPopup > ul .long,
+.personDataPopup > ul .long,
+.carInfoPopup > ul .long,
+.peelInfoPopup > ul .long,
+.videoInfoPopup > ul .long,
+.sateInfoPopup > ul .long,
+.sateInfoPopup > .sIInfo > ul .long,
+.sateConfirmPopup > ul .long,
+.updateTPPopup > ul .long,
+.addPersonPopup > ul .long,
+.bindingPopup > ul .long,
+.unbindingPopup > ul .long {
+  position: relative;
+  width: 50%;
+  float: left;
+  height: auto !important;
+  margin-top: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px !important;
+  padding-left: 80px !important;
+  padding-right: 10px !important;
+  color: #353639;
+}
+.selectPopup > ul li.textareaLi,
+.updatePopup > ul li.textareaLi,
+.insertPopup > ul li.textareaLi,
+.distribPopup > ul li.textareaLi,
+.insertBetaPopup > ul li.textareaLi,
+.insertAreaPopup > ul li.textareaLi,
+.updateAreaPopup > ul li.textareaLi,
+.selectAreaPopup > ul li.textareaLi,
+.personDataPopup > ul li.textareaLi,
+.carInfoPopup > ul li.textareaLi,
+.peelInfoPopup > ul li.textareaLi,
+.videoInfoPopup > ul li.textareaLi,
+.sateInfoPopup > ul li.textareaLi,
+.sateInfoPopup > .sIInfo > ul li.textareaLi,
+.sateConfirmPopup > ul li.textareaLi,
+.updateTPPopup > ul li.textareaLi,
+.addPersonPopup > ul li.textareaLi,
+.bindingPopup > ul li.textareaLi,
+.unbindingPopup > ul li.textareaLi,
+.selectPopup > ul .long.textareaLi,
+.updatePopup > ul .long.textareaLi,
+.insertPopup > ul .long.textareaLi,
+.distribPopup > ul .long.textareaLi,
+.insertBetaPopup > ul .long.textareaLi,
+.insertAreaPopup > ul .long.textareaLi,
+.updateAreaPopup > ul .long.textareaLi,
+.selectAreaPopup > ul .long.textareaLi,
+.personDataPopup > ul .long.textareaLi,
+.carInfoPopup > ul .long.textareaLi,
+.peelInfoPopup > ul .long.textareaLi,
+.videoInfoPopup > ul .long.textareaLi,
+.sateInfoPopup > ul .long.textareaLi,
+.sateInfoPopup > .sIInfo > ul .long.textareaLi,
+.sateConfirmPopup > ul .long.textareaLi,
+.updateTPPopup > ul .long.textareaLi,
+.addPersonPopup > ul .long.textareaLi,
+.bindingPopup > ul .long.textareaLi,
+.unbindingPopup > ul .long.textareaLi {
+  height: 50px !important;
+  width: 100% !important;
+}
+.selectPopup > ul li.textareaLi > span,
+.updatePopup > ul li.textareaLi > span,
+.insertPopup > ul li.textareaLi > span,
+.distribPopup > ul li.textareaLi > span,
+.insertBetaPopup > ul li.textareaLi > span,
+.insertAreaPopup > ul li.textareaLi > span,
+.updateAreaPopup > ul li.textareaLi > span,
+.selectAreaPopup > ul li.textareaLi > span,
+.personDataPopup > ul li.textareaLi > span,
+.carInfoPopup > ul li.textareaLi > span,
+.peelInfoPopup > ul li.textareaLi > span,
+.videoInfoPopup > ul li.textareaLi > span,
+.sateInfoPopup > ul li.textareaLi > span,
+.sateInfoPopup > .sIInfo > ul li.textareaLi > span,
+.sateConfirmPopup > ul li.textareaLi > span,
+.updateTPPopup > ul li.textareaLi > span,
+.addPersonPopup > ul li.textareaLi > span,
+.bindingPopup > ul li.textareaLi > span,
+.unbindingPopup > ul li.textareaLi > span,
+.selectPopup > ul .long.textareaLi > span,
+.updatePopup > ul .long.textareaLi > span,
+.insertPopup > ul .long.textareaLi > span,
+.distribPopup > ul .long.textareaLi > span,
+.insertBetaPopup > ul .long.textareaLi > span,
+.insertAreaPopup > ul .long.textareaLi > span,
+.updateAreaPopup > ul .long.textareaLi > span,
+.selectAreaPopup > ul .long.textareaLi > span,
+.personDataPopup > ul .long.textareaLi > span,
+.carInfoPopup > ul .long.textareaLi > span,
+.peelInfoPopup > ul .long.textareaLi > span,
+.videoInfoPopup > ul .long.textareaLi > span,
+.sateInfoPopup > ul .long.textareaLi > span,
+.sateInfoPopup > .sIInfo > ul .long.textareaLi > span,
+.sateConfirmPopup > ul .long.textareaLi > span,
+.updateTPPopup > ul .long.textareaLi > span,
+.addPersonPopup > ul .long.textareaLi > span,
+.bindingPopup > ul .long.textareaLi > span,
+.unbindingPopup > ul .long.textareaLi > span {
+  position: relative;
+}
+.selectPopup > ul li.textareaLi > textarea,
+.updatePopup > ul li.textareaLi > textarea,
+.insertPopup > ul li.textareaLi > textarea,
+.distribPopup > ul li.textareaLi > textarea,
+.insertBetaPopup > ul li.textareaLi > textarea,
+.insertAreaPopup > ul li.textareaLi > textarea,
+.updateAreaPopup > ul li.textareaLi > textarea,
+.selectAreaPopup > ul li.textareaLi > textarea,
+.personDataPopup > ul li.textareaLi > textarea,
+.carInfoPopup > ul li.textareaLi > textarea,
+.peelInfoPopup > ul li.textareaLi > textarea,
+.videoInfoPopup > ul li.textareaLi > textarea,
+.sateInfoPopup > ul li.textareaLi > textarea,
+.sateInfoPopup > .sIInfo > ul li.textareaLi > textarea,
+.sateConfirmPopup > ul li.textareaLi > textarea,
+.updateTPPopup > ul li.textareaLi > textarea,
+.addPersonPopup > ul li.textareaLi > textarea,
+.bindingPopup > ul li.textareaLi > textarea,
+.unbindingPopup > ul li.textareaLi > textarea,
+.selectPopup > ul .long.textareaLi > textarea,
+.updatePopup > ul .long.textareaLi > textarea,
+.insertPopup > ul .long.textareaLi > textarea,
+.distribPopup > ul .long.textareaLi > textarea,
+.insertBetaPopup > ul .long.textareaLi > textarea,
+.insertAreaPopup > ul .long.textareaLi > textarea,
+.updateAreaPopup > ul .long.textareaLi > textarea,
+.selectAreaPopup > ul .long.textareaLi > textarea,
+.personDataPopup > ul .long.textareaLi > textarea,
+.carInfoPopup > ul .long.textareaLi > textarea,
+.peelInfoPopup > ul .long.textareaLi > textarea,
+.videoInfoPopup > ul .long.textareaLi > textarea,
+.sateInfoPopup > ul .long.textareaLi > textarea,
+.sateInfoPopup > .sIInfo > ul .long.textareaLi > textarea,
+.sateConfirmPopup > ul .long.textareaLi > textarea,
+.updateTPPopup > ul .long.textareaLi > textarea,
+.addPersonPopup > ul .long.textareaLi > textarea,
+.bindingPopup > ul .long.textareaLi > textarea,
+.unbindingPopup > ul .long.textareaLi > textarea {
+  width: 100%;
+  height: 50px;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.selectPopup > ul li > span,
+.updatePopup > ul li > span,
+.insertPopup > ul li > span,
+.distribPopup > ul li > span,
+.insertBetaPopup > ul li > span,
+.insertAreaPopup > ul li > span,
+.updateAreaPopup > ul li > span,
+.selectAreaPopup > ul li > span,
+.personDataPopup > ul li > span,
+.carInfoPopup > ul li > span,
+.peelInfoPopup > ul li > span,
+.videoInfoPopup > ul li > span,
+.sateInfoPopup > ul li > span,
+.sateInfoPopup > .sIInfo > ul li > span,
+.sateConfirmPopup > ul li > span,
+.updateTPPopup > ul li > span,
+.addPersonPopup > ul li > span,
+.bindingPopup > ul li > span,
+.unbindingPopup > ul li > span,
+.selectPopup > ul .long > span,
+.updatePopup > ul .long > span,
+.insertPopup > ul .long > span,
+.distribPopup > ul .long > span,
+.insertBetaPopup > ul .long > span,
+.insertAreaPopup > ul .long > span,
+.updateAreaPopup > ul .long > span,
+.selectAreaPopup > ul .long > span,
+.personDataPopup > ul .long > span,
+.carInfoPopup > ul .long > span,
+.peelInfoPopup > ul .long > span,
+.videoInfoPopup > ul .long > span,
+.sateInfoPopup > ul .long > span,
+.sateInfoPopup > .sIInfo > ul .long > span,
+.sateConfirmPopup > ul .long > span,
+.updateTPPopup > ul .long > span,
+.addPersonPopup > ul .long > span,
+.bindingPopup > ul .long > span,
+.unbindingPopup > ul .long > span {
+  width: 80px;
+  display: inline-block;
+  margin-left: -80px !important;
+  text-align: right;
+  color: #353639;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 2px !important;
+  float: left;
+}
+.selectPopup > ul li > span > em,
+.updatePopup > ul li > span > em,
+.insertPopup > ul li > span > em,
+.distribPopup > ul li > span > em,
+.insertBetaPopup > ul li > span > em,
+.insertAreaPopup > ul li > span > em,
+.updateAreaPopup > ul li > span > em,
+.selectAreaPopup > ul li > span > em,
+.personDataPopup > ul li > span > em,
+.carInfoPopup > ul li > span > em,
+.peelInfoPopup > ul li > span > em,
+.videoInfoPopup > ul li > span > em,
+.sateInfoPopup > ul li > span > em,
+.sateInfoPopup > .sIInfo > ul li > span > em,
+.sateConfirmPopup > ul li > span > em,
+.updateTPPopup > ul li > span > em,
+.addPersonPopup > ul li > span > em,
+.bindingPopup > ul li > span > em,
+.unbindingPopup > ul li > span > em,
+.selectPopup > ul .long > span > em,
+.updatePopup > ul .long > span > em,
+.insertPopup > ul .long > span > em,
+.distribPopup > ul .long > span > em,
+.insertBetaPopup > ul .long > span > em,
+.insertAreaPopup > ul .long > span > em,
+.updateAreaPopup > ul .long > span > em,
+.selectAreaPopup > ul .long > span > em,
+.personDataPopup > ul .long > span > em,
+.carInfoPopup > ul .long > span > em,
+.peelInfoPopup > ul .long > span > em,
+.videoInfoPopup > ul .long > span > em,
+.sateInfoPopup > ul .long > span > em,
+.sateInfoPopup > .sIInfo > ul .long > span > em,
+.sateConfirmPopup > ul .long > span > em,
+.updateTPPopup > ul .long > span > em,
+.addPersonPopup > ul .long > span > em,
+.bindingPopup > ul .long > span > em,
+.unbindingPopup > ul .long > span > em {
+  color: #f60a0a;
+  margin-right: 2px;
+  top: 2px;
+  position: relative;
+}
+.selectPopup > ul li > input,
+.updatePopup > ul li > input,
+.insertPopup > ul li > input,
+.distribPopup > ul li > input,
+.insertBetaPopup > ul li > input,
+.insertAreaPopup > ul li > input,
+.updateAreaPopup > ul li > input,
+.selectAreaPopup > ul li > input,
+.personDataPopup > ul li > input,
+.carInfoPopup > ul li > input,
+.peelInfoPopup > ul li > input,
+.videoInfoPopup > ul li > input,
+.sateInfoPopup > ul li > input,
+.sateInfoPopup > .sIInfo > ul li > input,
+.sateConfirmPopup > ul li > input,
+.updateTPPopup > ul li > input,
+.addPersonPopup > ul li > input,
+.bindingPopup > ul li > input,
+.unbindingPopup > ul li > input,
+.selectPopup > ul .long > input,
+.updatePopup > ul .long > input,
+.insertPopup > ul .long > input,
+.distribPopup > ul .long > input,
+.insertBetaPopup > ul .long > input,
+.insertAreaPopup > ul .long > input,
+.updateAreaPopup > ul .long > input,
+.selectAreaPopup > ul .long > input,
+.personDataPopup > ul .long > input,
+.carInfoPopup > ul .long > input,
+.peelInfoPopup > ul .long > input,
+.videoInfoPopup > ul .long > input,
+.sateInfoPopup > ul .long > input,
+.sateInfoPopup > .sIInfo > ul .long > input,
+.sateConfirmPopup > ul .long > input,
+.updateTPPopup > ul .long > input,
+.addPersonPopup > ul .long > input,
+.bindingPopup > ul .long > input,
+.unbindingPopup > ul .long > input {
+  width: 100%;
+  background-color: #fff;
+  height: 26px;
+  text-indent: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+.selectPopup > ul li > p,
+.updatePopup > ul li > p,
+.insertPopup > ul li > p,
+.distribPopup > ul li > p,
+.insertBetaPopup > ul li > p,
+.insertAreaPopup > ul li > p,
+.updateAreaPopup > ul li > p,
+.selectAreaPopup > ul li > p,
+.personDataPopup > ul li > p,
+.carInfoPopup > ul li > p,
+.peelInfoPopup > ul li > p,
+.videoInfoPopup > ul li > p,
+.sateInfoPopup > ul li > p,
+.sateInfoPopup > .sIInfo > ul li > p,
+.sateConfirmPopup > ul li > p,
+.updateTPPopup > ul li > p,
+.addPersonPopup > ul li > p,
+.bindingPopup > ul li > p,
+.unbindingPopup > ul li > p,
+.selectPopup > ul .long > p,
+.updatePopup > ul .long > p,
+.insertPopup > ul .long > p,
+.distribPopup > ul .long > p,
+.insertBetaPopup > ul .long > p,
+.insertAreaPopup > ul .long > p,
+.updateAreaPopup > ul .long > p,
+.selectAreaPopup > ul .long > p,
+.personDataPopup > ul .long > p,
+.carInfoPopup > ul .long > p,
+.peelInfoPopup > ul .long > p,
+.videoInfoPopup > ul .long > p,
+.sateInfoPopup > ul .long > p,
+.sateInfoPopup > .sIInfo > ul .long > p,
+.sateConfirmPopup > ul .long > p,
+.updateTPPopup > ul .long > p,
+.addPersonPopup > ul .long > p,
+.bindingPopup > ul .long > p,
+.unbindingPopup > ul .long > p {
+  width: 100%;
+  display: inline-block;
+  color: #353639;
+  vertical-align: top;
+  word-wrap: break-word;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.selectPopup > ul li > select,
+.updatePopup > ul li > select,
+.insertPopup > ul li > select,
+.distribPopup > ul li > select,
+.insertBetaPopup > ul li > select,
+.insertAreaPopup > ul li > select,
+.updateAreaPopup > ul li > select,
+.selectAreaPopup > ul li > select,
+.personDataPopup > ul li > select,
+.carInfoPopup > ul li > select,
+.peelInfoPopup > ul li > select,
+.videoInfoPopup > ul li > select,
+.sateInfoPopup > ul li > select,
+.sateInfoPopup > .sIInfo > ul li > select,
+.sateConfirmPopup > ul li > select,
+.updateTPPopup > ul li > select,
+.addPersonPopup > ul li > select,
+.bindingPopup > ul li > select,
+.unbindingPopup > ul li > select,
+.selectPopup > ul .long > select,
+.updatePopup > ul .long > select,
+.insertPopup > ul .long > select,
+.distribPopup > ul .long > select,
+.insertBetaPopup > ul .long > select,
+.insertAreaPopup > ul .long > select,
+.updateAreaPopup > ul .long > select,
+.selectAreaPopup > ul .long > select,
+.personDataPopup > ul .long > select,
+.carInfoPopup > ul .long > select,
+.peelInfoPopup > ul .long > select,
+.videoInfoPopup > ul .long > select,
+.sateInfoPopup > ul .long > select,
+.sateInfoPopup > .sIInfo > ul .long > select,
+.sateConfirmPopup > ul .long > select,
+.updateTPPopup > ul .long > select,
+.addPersonPopup > ul .long > select,
+.bindingPopup > ul .long > select,
+.unbindingPopup > ul .long > select {
+  width: 100%;
+  height: 26px;
+  line-height: 25px;
+  border: 1px solid #dddddd;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inherit;
+}
+.selectPopup > ul .long,
+.updatePopup > ul .long,
+.insertPopup > ul .long,
+.distribPopup > ul .long,
+.insertBetaPopup > ul .long,
+.insertAreaPopup > ul .long,
+.updateAreaPopup > ul .long,
+.selectAreaPopup > ul .long,
+.personDataPopup > ul .long,
+.carInfoPopup > ul .long,
+.peelInfoPopup > ul .long,
+.videoInfoPopup > ul .long,
+.sateInfoPopup > ul .long,
+.sateInfoPopup > .sIInfo > ul .long,
+.sateConfirmPopup > ul .long,
+.updateTPPopup > ul .long,
+.addPersonPopup > ul .long,
+.bindingPopup > ul .long,
+.unbindingPopup > ul .long {
+  width: 100%;
+}
+.selectPopup > div.personPhoto,
+.updatePopup > div.personPhoto,
+.insertPopup > div.personPhoto,
+.distribPopup > div.personPhoto,
+.insertBetaPopup > div.personPhoto,
+.insertAreaPopup > div.personPhoto,
+.updateAreaPopup > div.personPhoto,
+.selectAreaPopup > div.personPhoto,
+.personDataPopup > div.personPhoto,
+.carInfoPopup > div.personPhoto,
+.peelInfoPopup > div.personPhoto,
+.videoInfoPopup > div.personPhoto,
+.sateInfoPopup > div.personPhoto,
+.sateInfoPopup > .sIInfo > div.personPhoto,
+.sateConfirmPopup > div.personPhoto,
+.updateTPPopup > div.personPhoto,
+.addPersonPopup > div.personPhoto,
+.bindingPopup > div.personPhoto,
+.unbindingPopup > div.personPhoto {
+  position: absolute;
+  right: 0px;
+  width: 120px;
+  height: 120px;
+  background: #000;
+  top: 14px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.selectPopup > div.personPhoto > a.btnUpdaPhoto,
+.updatePopup > div.personPhoto > a.btnUpdaPhoto,
+.insertPopup > div.personPhoto > a.btnUpdaPhoto,
+.distribPopup > div.personPhoto > a.btnUpdaPhoto,
+.insertBetaPopup > div.personPhoto > a.btnUpdaPhoto,
+.insertAreaPopup > div.personPhoto > a.btnUpdaPhoto,
+.updateAreaPopup > div.personPhoto > a.btnUpdaPhoto,
+.selectAreaPopup > div.personPhoto > a.btnUpdaPhoto,
+.personDataPopup > div.personPhoto > a.btnUpdaPhoto,
+.carInfoPopup > div.personPhoto > a.btnUpdaPhoto,
+.peelInfoPopup > div.personPhoto > a.btnUpdaPhoto,
+.videoInfoPopup > div.personPhoto > a.btnUpdaPhoto,
+.sateInfoPopup > div.personPhoto > a.btnUpdaPhoto,
+.sateInfoPopup > .sIInfo > div.personPhoto > a.btnUpdaPhoto,
+.sateConfirmPopup > div.personPhoto > a.btnUpdaPhoto,
+.updateTPPopup > div.personPhoto > a.btnUpdaPhoto,
+.addPersonPopup > div.personPhoto > a.btnUpdaPhoto,
+.bindingPopup > div.personPhoto > a.btnUpdaPhoto,
+.unbindingPopup > div.personPhoto > a.btnUpdaPhoto {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+.distribPopup li > a.btnDConfirm,
+.personDataPopup li > a.btnDConfirm {
+  float: left;
+  background-color: #009aff;
+  height: 24px;
+  line-height: 24px;
+  width: 56px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #009aff;
+  border-radius: 2px;
+  margin-left: 12px !important;
+}
+.carInfo,
+.videoInfo,
+.sateInfo {
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.carInfo .titleText,
+.videoInfo .titleText,
+.sateInfo .titleText,
+.carInfo .titleState,
+.videoInfo .titleState,
+.sateInfo .titleState {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+.carInfo .titleState > em,
+.videoInfo .titleState > em,
+.sateInfo .titleState > em {
+  color: #f7a00a;
+}
+.sateInfo .titleState > em {
+  color: #f01d27;
+}
+.sateInfo .form-body {
+  padding: 0!important;
+}
+.selectPopup > div.sIIImg > h5 {
+  height: 26px;
+  line-height: 26px;
+  color: #444444;
+  background-color: #ebeff3;
+  padding-left: 14px !important;
+}
+.selectPopup > div.sIIImg > ul {
+  padding: 5px 0px;
+}
+.selectPopup > div.sIIImg > ul > li {
+  padding: 0px!important;
+}
+.sateInfoPopup > div.sIState,
+.sateConfirmPopup > div.sIState,
+.sateInfoPopup > div.sIInfo,
+.sateConfirmPopup > div.sIInfo,
+.sateInfoPopup > div.sIIImg,
+.sateConfirmPopup > div.sIIImg,
+.sateInfoPopup > div.sIIImg2,
+.sateConfirmPopup > div.sIIImg2 {
+  padding-left: 0px !important;
+}
+.sateInfoPopup > div.sIState div,
+.sateConfirmPopup > div.sIState div,
+.sateInfoPopup > div.sIInfo div,
+.sateConfirmPopup > div.sIInfo div,
+.sateInfoPopup > div.sIIImg div,
+.sateConfirmPopup > div.sIIImg div,
+.sateInfoPopup > div.sIIImg2 div,
+.sateConfirmPopup > div.sIIImg2 div {
+  padding-left: 0px !important;
+}
+.sateInfoPopup > div.sIState > h5,
+.sateConfirmPopup > div.sIState > h5,
+.sateInfoPopup > div.sIInfo > h5,
+.sateConfirmPopup > div.sIInfo > h5,
+.sateInfoPopup > div.sIIImg > h5,
+.sateConfirmPopup > div.sIIImg > h5,
+.sateInfoPopup > div.sIIImg2 > h5,
+.sateConfirmPopup > div.sIIImg2 > h5 {
+  height: 26px;
+  line-height: 26px;
+  color: #444444;
+  background-color: #ebeff3;
+  padding-left: 14px !important;
+}
+.sateInfoPopup > div.sIState > ul,
+.sateConfirmPopup > div.sIState > ul,
+.sateInfoPopup > div.sIInfo > ul,
+.sateConfirmPopup > div.sIInfo > ul,
+.sateInfoPopup > div.sIIImg > ul,
+.sateConfirmPopup > div.sIIImg > ul,
+.sateInfoPopup > div.sIIImg2 > ul,
+.sateConfirmPopup > div.sIIImg2 > ul {
+  position: relative;
+}
+.sateInfoPopup > div.sIState > ul > li,
+.sateConfirmPopup > div.sIState > ul > li,
+.sateInfoPopup > div.sIInfo > ul > li,
+.sateConfirmPopup > div.sIInfo > ul > li,
+.sateInfoPopup > div.sIIImg > ul > li,
+.sateConfirmPopup > div.sIIImg > ul > li,
+.sateInfoPopup > div.sIIImg2 > ul > li,
+.sateConfirmPopup > div.sIIImg2 > ul > li {
+  padding-left: 0 !important;
+  float: left;
+  color: #353639;
+}
+.sateInfoPopup > div.sIState > ul > li > span,
+.sateConfirmPopup > div.sIState > ul > li > span,
+.sateInfoPopup > div.sIInfo > ul > li > span,
+.sateConfirmPopup > div.sIInfo > ul > li > span,
+.sateInfoPopup > div.sIIImg > ul > li > span,
+.sateConfirmPopup > div.sIIImg > ul > li > span,
+.sateInfoPopup > div.sIIImg2 > ul > li > span,
+.sateConfirmPopup > div.sIIImg2 > ul > li > span {
+  width: auto;
+  margin-left: 0 !important;
+}
+.sateInfoPopup > div.sIState > ul > li > p,
+.sateConfirmPopup > div.sIState > ul > li > p,
+.sateInfoPopup > div.sIInfo > ul > li > p,
+.sateConfirmPopup > div.sIInfo > ul > li > p,
+.sateInfoPopup > div.sIIImg > ul > li > p,
+.sateConfirmPopup > div.sIIImg > ul > li > p,
+.sateInfoPopup > div.sIIImg2 > ul > li > p,
+.sateConfirmPopup > div.sIIImg2 > ul > li > p {
+  width: auto;
+}
+.sateInfoPopup > div.sIInfo > ul,
+.sateConfirmPopup > div.sIInfo > ul {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.sateInfoPopup > div.sIIImg > ul,
+.sateConfirmPopup > div.sIIImg > ul,
+.sateInfoPopup > div.sIIImg2 > ul,
+.sateConfirmPopup > div.sIIImg2 > ul {
+  margin-top: 5px !important;
+  height: auto;
+  padding: 0 15px;
+}
+.sateInfoPopup > div.sIIImg > ul li,
+.sateConfirmPopup > div.sIIImg > ul li,
+.sateInfoPopup > div.sIIImg2 > ul li,
+.sateConfirmPopup > div.sIIImg2 > ul li {
+  width: 33%;
+  height: auto;
+}
+.sateInfoPopup > div.sIIImg > ul li:nth-child(3n+1),
+.sateConfirmPopup > div.sIIImg > ul li:nth-child(3n+1),
+.sateInfoPopup > div.sIIImg2 > ul li:nth-child(3n+1),
+.sateConfirmPopup > div.sIIImg2 > ul li:nth-child(3n+1) {
+  padding-left: 0px !important;
+  padding-right: 6px !important;
+}
+.sateInfoPopup > div.sIIImg > ul li:nth-child(3n+2),
+.sateConfirmPopup > div.sIIImg > ul li:nth-child(3n+2),
+.sateInfoPopup > div.sIIImg2 > ul li:nth-child(3n+2),
+.sateConfirmPopup > div.sIIImg2 > ul li:nth-child(3n+2) {
+  padding-left: 6px !important;
+  padding-right: 3px !important;
+}
+.sateInfoPopup > div.sIIImg > ul li:nth-child(3n+3),
+.sateConfirmPopup > div.sIIImg > ul li:nth-child(3n+3),
+.sateInfoPopup > div.sIIImg2 > ul li:nth-child(3n+3),
+.sateConfirmPopup > div.sIIImg2 > ul li:nth-child(3n+3) {
+  padding-left: 6px !important;
+  padding-right: 0px !important;
+}
+.sateInfoPopup > div.sIIImg > ul li > img,
+.sateConfirmPopup > div.sIIImg > ul li > img,
+.sateInfoPopup > div.sIIImg2 > ul li > img,
+.sateConfirmPopup > div.sIIImg2 > ul li > img {
+  height: 70px;
+  width: 100%;
+}
+.sateInfoPopup > div.sIIImg > ul img,
+.sateConfirmPopup > div.sIIImg > ul img,
+.sateInfoPopup > div.sIIImg2 > ul img,
+.sateConfirmPopup > div.sIIImg2 > ul img {
+  height: auto;
+  width: 100%;
+}
+.sateConfirmPopup {
+  /* 2017/12/01 新增 */
+}
+.sateConfirmPopup + .document .title {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 14px;
+  margin-bottom: 10px;
+  color: #444444;
+  background: #ebeff3;
+  font-size: 12px;
+}
+.sateConfirmPopup + .document .title span {
+  color: #439cf5;
+  float: right;
+  padding-right: 14px;
+  cursor: pointer;
+}
+.sateConfirmPopup + .document .file-box {
+  padding-top: 10px;
+  max-height: 300px;
+}
+.sateConfirmPopup + .document .file-box > img {
+  width: 30%;
+  float: left;
+  margin: 0 0 10px 10px;
+  border: 1px solid #95b8e7;
+}
+.sateConfirmPopup + .document .file-box > span,
+.sateConfirmPopup + .document .file-box > a {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 30px;
+  line-height: 26px;
+  padding: 0 14px;
+  margin: 0 10px 10px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.sateConfirmPopup + .document .file-box > span b,
+.sateConfirmPopup + .document .file-box > a b {
+  font-weight: normal;
+}
+.sateConfirmPopup + .document .file-box em {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 9px;
+  background-color: #000;
+  cursor: pointer;
+}
+.sateConfirmPopup + .document .file-box em i {
+  position: relative;
+  left: 0;
+  top: 1px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+.carInfoPopup li,
+div.sIInfo li {
+  width: 100%;
+}
+.carInfoPopup li.carImg,
+div.sIInfo li.carImg {
+  padding-left: 0px !important;
+  height: 84px !important;
+}
+.carInfoPopup li.carImg > img,
+div.sIInfo li.carImg > img {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 85px;
+}
+.carInfoPopup li.carTimeRoute,
+div.sIInfo li.carTimeRoute {
+  padding-left: 16px !important;
+  color: #f01d27 !important;
+}
+.carInfoPopup li.carTimeRoute > i,
+div.sIInfo li.carTimeRoute > i {
+  width: 20px;
+  height: 18px;
+  display: inline-block;
+  color: #f01d27;
+  vertical-align: top;
+  float: left;
+}
+.carInfoPopup li.carTimeRoute > span,
+div.sIInfo li.carTimeRoute > span {
+  color: #f01d27;
+  margin-left: 0px !important;
+  width: auto;
+}
+.carInfoPopup li.carTimeRoute > span > em,
+div.sIInfo li.carTimeRoute > span > em {
+  top: 0px;
+}
+.carInfoPopup li.colorBlue > p,
+div.sIInfo li.colorBlue > p {
+  color: #036edb;
+}
+.carInfoPopup li.colorRed > p,
+div.sIInfo li.colorRed > p {
+  color: #f01d27;
+}
+.carInfoPopup li.maxWLi,
+div.sIInfo li.maxWLi {
+  width: 100%;
+}
+.carInfoPopup li:nth-child(n),
+div.sIInfo li:nth-child(n) {
+  margin-right: 0px !important;
+}
+.insertPopup > ul li > textarea,
+.updateTPPopup > ul li > textarea,
+.bindingPopup > ul li > textarea,
+.selectPopup > ul li > textarea {
+  color: #444;
+  padding-left: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.insertPopup > ul li.textLen,
+.updateTPPopup > ul li.textLen,
+.bindingPopup > ul li.textLen,
+.selectPopup > ul li.textLen {
+  width: 100% !important;
+}
+.insertPopup > ul li.textLen > input,
+.updateTPPopup > ul li.textLen > input,
+.bindingPopup > ul li.textLen > input,
+.selectPopup > ul li.textLen > input {
+  width: 100%;
+}
+.insertPopup > ul li > input,
+.updateTPPopup > ul li > input,
+.bindingPopup > ul li > input,
+.selectPopup > ul li > input {
+  border: 1px solid #ddd;
+}
+/* 2017/12/01  新增*/
+.insertPopup + .document .title,
+.insertPopup + .document + .document .title {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 14px;
+  margin-bottom: 10px;
+  color: #444444;
+  background: #ebeff3;
+  font-size: 12px;
+}
+.insertPopup + .document .title span,
+.insertPopup + .document + .document .title span {
+  color: #439cf5;
+  float: right;
+  padding-right: 14px;
+  cursor: pointer;
+}
+.insertPopup + .document .file-box,
+.insertPopup + .document + .document .file-box {
+  padding-top: 5px;
+  max-height: 300px;
+}
+.insertPopup + .document .file-box > img,
+.insertPopup + .document + .document .file-box > img {
+  width: 30%;
+  float: left;
+  height: 75px;
+  margin: 0 0 10px 10px;
+}
+.insertPopup + .document .file-box > span,
+.insertPopup + .document + .document .file-box > span,
+.insertPopup + .document .file-box > a,
+.insertPopup + .document + .document .file-box > a {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 30px;
+  line-height: 26px;
+  padding: 0 14px;
+  margin: 0 10px 10px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.insertPopup + .document .file-box > span b,
+.insertPopup + .document + .document .file-box > span b,
+.insertPopup + .document .file-box > a b,
+.insertPopup + .document + .document .file-box > a b {
+  font-weight: normal;
+}
+.insertPopup + .document .file-box em,
+.insertPopup + .document + .document .file-box em {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 9px;
+  background-color: #000;
+  cursor: pointer;
+}
+.insertPopup + .document .file-box em i,
+.insertPopup + .document + .document .file-box em i {
+  position: relative;
+  left: 0;
+  top: 1px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+.deletePopup,
+.unbindingPopup {
+  height: auto;
+}
+.deletePopup .title > i,
+.unbindingPopup .title > i {
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.deletePopup h6,
+.unbindingPopup h6 {
+  position: relative;
+  max-height: 200px;
+  height: auto;
+  overflow-y: auto;
+  padding: 15px 0px;
+  padding-left: 25px !important;
+}
+.deletePopup h6 > p,
+.unbindingPopup h6 > p {
+  display: inline-block;
+}
+.deletePopup h6 span,
+.unbindingPopup h6 span {
+  color: #f01d27;
+}
+/*导出*/
+.exportPopup li > input {
+  width: 405px !important;
+  border: 1px solid #ddd;
+}
+/*查看*/
+.selectPopup {
+  min-height: 200px;
+}
+.selectPopup > ul {
+  width: 460px;
+  padding-left: 15px !important;
+}
+.selectPopup > ul li {
+  padding-left: 0 !important;
+}
+.selectPopup > ul li > span {
+  width: auto;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+.selectPopup > ul li > p {
+  width: auto;
+}
+.selectPopup > ul li > input {
+  border: none;
+  ime-mode: disabled;
+}
+.selectPopup > ul li > input[disabled="disabled"] {
+  background-color: #fff;
+  border: none;
+}
+.selectPopup > ul li > textarea {
+  border: none;
+  ime-mode: disabled;
+}
+.selectPopup > ul li > textarea[disabled="disabled"] {
+  background-color: #fff;
+  border: none;
+}
+/*修改*/
+.updatePopup > ul {
+  width: 460px;
+}
+.updatePopup li > input {
+  border: 1px solid #ddd;
+}
+.updatePopup li > textarea {
+  border: 1px solid #ddd;
+}
+/*修改报警*/
+.updateTPPopup div {
+  padding-left: 0px !important;
+}
+.updateTPPopup > div.tPClass > h5 {
+  height: 26px;
+  line-height: 26px;
+  background-color: #a4a7ae;
+  padding-left: 14px !important;
+}
+.updateTPPopup > div.tPClass > div.tPCBox {
+  height: auto;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li > span {
+  color: #353639;
+  margin-right: 14px !important;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li > span > em {
+  color: #f60a0a;
+  top: 2px;
+  position: relative;
+  margin-right: 2px !important;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li > select,
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li > input {
+  border: 1px solid #dddddd;
+  display: inline-block;
+  height: 25px;
+  border-radius: 2px;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi1 > select {
+  margin-right: 30px !important;
+  width: 138px;
+  font-size: 12px;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi1 > a {
+  display: inline-block;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi1 > a.btnInseUl {
+  color: #036edb;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi1 > a.btnRemoUl {
+  color: #f01d27;
+  margin-left: 10px !important;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi2 > input {
+  width: 51px;
+  height: 26px;
+  margin-right: 6px !important;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi2 > i {
+  color: #353639;
+  margin-right: 6px !important;
+  display: inline-block;
+}
+.updateTPPopup > div.tPClass > div.tPCBox > ul > li.tPCBLi2 > p {
+  display: inline-block;
+  color: #353639;
+  margin-left: 24px !important;
+}
+/*删除*/
+.deletePopup {
+  height: auto;
+}
+.deletePopup .title > i {
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.deletePopup h6 {
+  position: relative;
+  max-height: 200px;
+  height: auto;
+  overflow-y: auto;
+  padding: 15px 0px;
+  padding-left: 25px !important;
+}
+.deletePopup h6 > p {
+  display: inline-block;
+}
+.deletePopup h6 span {
+  color: #f01d27;
+}
+/*新增*/
+.insertPopup .wSTime,
+.selectPopup .wSTime {
+  border: 1px solid #ddd;
+  margin-bottom: 16px;
+  padding-left: 0px !important;
+  max-height: 300px;
+  overflow: auto;
+}
+.insertPopup .wSTime > h3.sTTitle,
+.selectPopup .wSTime > h3.sTTitle {
+  height: 36px;
+  line-height: 36px;
+  background-color: #f4f7f9;
+  padding-left: 12px;
+  color: #353639;
+  position: relative;
+}
+.insertPopup .wSTime > h3.sTTitle > a.btnTAdd,
+.selectPopup .wSTime > h3.sTTitle > a.btnTAdd {
+  position: absolute;
+  right: 23px;
+  height: 36px;
+  color: #036edb;
+  font-size: 12px;
+}
+.insertPopup .wSTime > div.sTCont,
+.selectPopup .wSTime > div.sTCont {
+  border-top: 1px solid #ddd;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+.insertPopup .wSTime > div.sTCont > span,
+.selectPopup .wSTime > div.sTCont > span,
+.insertPopup .wSTime > div.sTCont > input,
+.selectPopup .wSTime > div.sTCont > input {
+  margin-right: 0px !important;
+  display: inline-block;
+  height: 36px;
+  color: #353639;
+  width: 25%;
+  float: left;
+}
+.insertPopup .wSTime > div.sTCont > span:nth-child(2),
+.selectPopup .wSTime > div.sTCont > span:nth-child(2),
+.insertPopup .wSTime > div.sTCont > input:nth-child(2),
+.selectPopup .wSTime > div.sTCont > input:nth-child(2) {
+  text-align: center;
+}
+.insertPopup .wSTime > div.sTCont > span:nth-last-child(1),
+.selectPopup .wSTime > div.sTCont > span:nth-last-child(1),
+.insertPopup .wSTime > div.sTCont > input:nth-last-child(1),
+.selectPopup .wSTime > div.sTCont > input:nth-last-child(1),
+.insertPopup .wSTime > div.sTCont > span:nth-last-child(2),
+.selectPopup .wSTime > div.sTCont > span:nth-last-child(2),
+.insertPopup .wSTime > div.sTCont > input:nth-last-child(2),
+.selectPopup .wSTime > div.sTCont > input:nth-last-child(2) {
+  text-align: right;
+}
+.insertPopup .wSTime > div.sTCont1,
+.selectPopup .wSTime > div.sTCont1 {
+  border-top: 1px solid #ddd;
+}
+.insertPopup .wSTime > div.sTCont1 > span > a.btnTDel,
+.selectPopup .wSTime > div.sTCont1 > span > a.btnTDel {
+  color: #e84957;
+  cursor: pointer;
+}
+/*添加人员*/
+.addPersonPopup {
+  height: 500px;
+}
+.addPersonPopup div {
+  padding-left: 0px !important;
+}
+.addPersonPopup li.aPcheckAll > input,
+.addPersonPopup div.aPCBPerson li > input {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  vertical-align: middle;
+  top: 4px;
+  position: relative;
+}
+.addPersonPopup > ul li {
+  width: 25%!important;
+  padding-left: 45px !important;
+  padding-right: 10px !important;
+}
+.addPersonPopup > ul li > span {
+  width: 45px;
+  text-align: left;
+  margin-right: 0px !important;
+  margin-left: -45px !important;
+}
+.addPersonPopup > ul li input {
+  border: 1px solid #dddddd;
+}
+.addPersonPopup > ul li:nth-child(n) {
+  margin-right: 0px !important;
+}
+.addPersonPopup > ul li.aPcheckAll > span {
+  text-align: right;
+}
+.addPersonPopup > ul li.aPcheckAll > input {
+  margin-left: 6px !important;
+}
+.addPersonPopup > ul li.aPcheckAll > a {
+  margin-left: 30px !important;
+  height: 24px;
+  line-height: 24px;
+  width: 56px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #009aff;
+  border: 1px solid #009aff;
+  display: inline-block;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt li > p {
+  padding-right: 10px !important;
+}
+.addPersonPopup div.aPCheckBox div.aPCBPerson li > p {
+  padding-left: 19px !important;
+}
+.addPersonPopup div.aPCheckBox div.aPCBPerson li > p > input {
+  position: absolute;
+  left: 3px;
+  top: 6px;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt > ul,
+.addPersonPopup div.aPCheckBox div.aPCBPerson > ul {
+  padding: 0px 3px;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt > ul li,
+.addPersonPopup div.aPCheckBox div.aPCBPerson > ul li {
+  width: 11%;
+  padding-right: 3px !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt > ul li > p,
+.addPersonPopup div.aPCheckBox div.aPCBPerson > ul li > p {
+  height: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  padding: 0 3px;
+  position: relative;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt > ul li > p > span,
+.addPersonPopup div.aPCheckBox div.aPCBPerson > ul li > p > span {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 16px;
+  line-height: 16px;
+  top: 3px;
+  position: relative;
+  display: inline-block;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt {
+  height: 200px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt > ul {
+  margin-top: 6px !important;
+}
+.addPersonPopup div.aPCheckBox div.aPCBTxt > ul li a {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  font-size: 16px;
+}
+.addPersonPopup div.aPCheckBox div.aPCBPerson {
+  margin-top: 8px !important;
+}
+.insertBeta,
+.insertArea,
+.updateArea,
+.selectArea {
+  width: 100%;
+  border: none;
+}
+.insertBeta > div.form-body,
+.insertArea > div.form-body,
+.updateArea > div.form-body,
+.selectArea > div.form-body {
+  width: 100%;
+}
+.insertBeta > div.form-body > div.section,
+.insertArea > div.form-body > div.section,
+.updateArea > div.form-body > div.section,
+.selectArea > div.form-body > div.section {
+  width: 100%;
+}
+.insertBeta .insertBetaPopup,
+.insertArea .insertBetaPopup,
+.updateArea .insertBetaPopup,
+.selectArea .insertBetaPopup,
+.insertBeta .insertAreaPopup,
+.insertArea .insertAreaPopup,
+.updateArea .insertAreaPopup,
+.selectArea .insertAreaPopup,
+.insertBeta .updateAreaPopup,
+.insertArea .updateAreaPopup,
+.updateArea .updateAreaPopup,
+.selectArea .updateAreaPopup,
+.insertBeta .selectAreaPopup,
+.insertArea .selectAreaPopup,
+.updateArea .selectAreaPopup,
+.selectArea .selectAreaPopup {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.insertBeta .insertBetaPopup > ul,
+.insertArea .insertBetaPopup > ul,
+.updateArea .insertBetaPopup > ul,
+.selectArea .insertBetaPopup > ul,
+.insertBeta .insertAreaPopup > ul,
+.insertArea .insertAreaPopup > ul,
+.updateArea .insertAreaPopup > ul,
+.selectArea .insertAreaPopup > ul,
+.insertBeta .updateAreaPopup > ul,
+.insertArea .updateAreaPopup > ul,
+.updateArea .updateAreaPopup > ul,
+.selectArea .updateAreaPopup > ul,
+.insertBeta .selectAreaPopup > ul,
+.insertArea .selectAreaPopup > ul,
+.updateArea .selectAreaPopup > ul,
+.selectArea .selectAreaPopup > ul,
+.insertBeta .insertBetaPopup > div.betaMap,
+.insertArea .insertBetaPopup > div.betaMap,
+.updateArea .insertBetaPopup > div.betaMap,
+.selectArea .insertBetaPopup > div.betaMap,
+.insertBeta .insertAreaPopup > div.betaMap,
+.insertArea .insertAreaPopup > div.betaMap,
+.updateArea .insertAreaPopup > div.betaMap,
+.selectArea .insertAreaPopup > div.betaMap,
+.insertBeta .updateAreaPopup > div.betaMap,
+.insertArea .updateAreaPopup > div.betaMap,
+.updateArea .updateAreaPopup > div.betaMap,
+.selectArea .updateAreaPopup > div.betaMap,
+.insertBeta .selectAreaPopup > div.betaMap,
+.insertArea .selectAreaPopup > div.betaMap,
+.updateArea .selectAreaPopup > div.betaMap,
+.selectArea .selectAreaPopup > div.betaMap {
+  float: left;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.insertBeta .insertBetaPopup > ul,
+.insertArea .insertBetaPopup > ul,
+.updateArea .insertBetaPopup > ul,
+.selectArea .insertBetaPopup > ul,
+.insertBeta .insertAreaPopup > ul,
+.insertArea .insertAreaPopup > ul,
+.updateArea .insertAreaPopup > ul,
+.selectArea .insertAreaPopup > ul,
+.insertBeta .updateAreaPopup > ul,
+.insertArea .updateAreaPopup > ul,
+.updateArea .updateAreaPopup > ul,
+.selectArea .updateAreaPopup > ul,
+.insertBeta .selectAreaPopup > ul,
+.insertArea .selectAreaPopup > ul,
+.updateArea .selectAreaPopup > ul,
+.selectArea .selectAreaPopup > ul {
+  width: 35%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ddd;
+  height: 430px;
+}
+.insertBeta .insertBetaPopup > ul > li.long,
+.insertArea .insertBetaPopup > ul > li.long,
+.updateArea .insertBetaPopup > ul > li.long,
+.selectArea .insertBetaPopup > ul > li.long,
+.insertBeta .insertAreaPopup > ul > li.long,
+.insertArea .insertAreaPopup > ul > li.long,
+.updateArea .insertAreaPopup > ul > li.long,
+.selectArea .insertAreaPopup > ul > li.long,
+.insertBeta .updateAreaPopup > ul > li.long,
+.insertArea .updateAreaPopup > ul > li.long,
+.updateArea .updateAreaPopup > ul > li.long,
+.selectArea .updateAreaPopup > ul > li.long,
+.insertBeta .selectAreaPopup > ul > li.long,
+.insertArea .selectAreaPopup > ul > li.long,
+.updateArea .selectAreaPopup > ul > li.long,
+.selectArea .selectAreaPopup > ul > li.long {
+  width: 100% !important;
+}
+.insertBeta .insertBetaPopup > div.auto-search,
+.insertArea .insertBetaPopup > div.auto-search,
+.updateArea .insertBetaPopup > div.auto-search,
+.selectArea .insertBetaPopup > div.auto-search,
+.insertBeta .insertAreaPopup > div.auto-search,
+.insertArea .insertAreaPopup > div.auto-search,
+.updateArea .insertAreaPopup > div.auto-search,
+.selectArea .insertAreaPopup > div.auto-search,
+.insertBeta .updateAreaPopup > div.auto-search,
+.insertArea .updateAreaPopup > div.auto-search,
+.updateArea .updateAreaPopup > div.auto-search,
+.selectArea .updateAreaPopup > div.auto-search,
+.insertBeta .selectAreaPopup > div.auto-search,
+.insertArea .selectAreaPopup > div.auto-search,
+.updateArea .selectAreaPopup > div.auto-search,
+.selectArea .selectAreaPopup > div.auto-search {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 5;
+  color: #444;
+  line-height: 25px;
+}
+.insertBeta .insertBetaPopup > div.auto-search input,
+.insertArea .insertBetaPopup > div.auto-search input,
+.updateArea .insertBetaPopup > div.auto-search input,
+.selectArea .insertBetaPopup > div.auto-search input,
+.insertBeta .insertAreaPopup > div.auto-search input,
+.insertArea .insertAreaPopup > div.auto-search input,
+.updateArea .insertAreaPopup > div.auto-search input,
+.selectArea .insertAreaPopup > div.auto-search input,
+.insertBeta .updateAreaPopup > div.auto-search input,
+.insertArea .updateAreaPopup > div.auto-search input,
+.updateArea .updateAreaPopup > div.auto-search input,
+.selectArea .updateAreaPopup > div.auto-search input,
+.insertBeta .selectAreaPopup > div.auto-search input,
+.insertArea .selectAreaPopup > div.auto-search input,
+.updateArea .selectAreaPopup > div.auto-search input,
+.selectArea .selectAreaPopup > div.auto-search input {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.insertBeta .insertBetaPopup > div.auto-search + div,
+.insertArea .insertBetaPopup > div.auto-search + div,
+.updateArea .insertBetaPopup > div.auto-search + div,
+.selectArea .insertBetaPopup > div.auto-search + div,
+.insertBeta .insertAreaPopup > div.auto-search + div,
+.insertArea .insertAreaPopup > div.auto-search + div,
+.updateArea .insertAreaPopup > div.auto-search + div,
+.selectArea .insertAreaPopup > div.auto-search + div,
+.insertBeta .updateAreaPopup > div.auto-search + div,
+.insertArea .updateAreaPopup > div.auto-search + div,
+.updateArea .updateAreaPopup > div.auto-search + div,
+.selectArea .updateAreaPopup > div.auto-search + div,
+.insertBeta .selectAreaPopup > div.auto-search + div,
+.insertArea .selectAreaPopup > div.auto-search + div,
+.updateArea .selectAreaPopup > div.auto-search + div,
+.selectArea .selectAreaPopup > div.auto-search + div {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  z-index: 5;
+  border: 1px solid #C0C0C0;
+  width: 179px;
+  background-color: #fff;
+  height: auto;
+  display: none;
+}
+.insertBeta .insertBetaPopup > div.betaMap,
+.insertArea .insertBetaPopup > div.betaMap,
+.updateArea .insertBetaPopup > div.betaMap,
+.selectArea .insertBetaPopup > div.betaMap,
+.insertBeta .insertAreaPopup > div.betaMap,
+.insertArea .insertAreaPopup > div.betaMap,
+.updateArea .insertAreaPopup > div.betaMap,
+.selectArea .insertAreaPopup > div.betaMap,
+.insertBeta .updateAreaPopup > div.betaMap,
+.insertArea .updateAreaPopup > div.betaMap,
+.updateArea .updateAreaPopup > div.betaMap,
+.selectArea .updateAreaPopup > div.betaMap,
+.insertBeta .selectAreaPopup > div.betaMap,
+.insertArea .selectAreaPopup > div.betaMap,
+.updateArea .selectAreaPopup > div.betaMap,
+.selectArea .selectAreaPopup > div.betaMap {
+  width: 65%;
+  padding-left: 6px;
+  height: 430px;
+}
+.insertBeta .insertBetaPopup > div.betaMap > div.commonDetaMap,
+.insertArea .insertBetaPopup > div.betaMap > div.commonDetaMap,
+.updateArea .insertBetaPopup > div.betaMap > div.commonDetaMap,
+.selectArea .insertBetaPopup > div.betaMap > div.commonDetaMap,
+.insertBeta .insertAreaPopup > div.betaMap > div.commonDetaMap,
+.insertArea .insertAreaPopup > div.betaMap > div.commonDetaMap,
+.updateArea .insertAreaPopup > div.betaMap > div.commonDetaMap,
+.selectArea .insertAreaPopup > div.betaMap > div.commonDetaMap,
+.insertBeta .updateAreaPopup > div.betaMap > div.commonDetaMap,
+.insertArea .updateAreaPopup > div.betaMap > div.commonDetaMap,
+.updateArea .updateAreaPopup > div.betaMap > div.commonDetaMap,
+.selectArea .updateAreaPopup > div.betaMap > div.commonDetaMap,
+.insertBeta .selectAreaPopup > div.betaMap > div.commonDetaMap,
+.insertArea .selectAreaPopup > div.betaMap > div.commonDetaMap,
+.updateArea .selectAreaPopup > div.betaMap > div.commonDetaMap,
+.selectArea .selectAreaPopup > div.betaMap > div.commonDetaMap {
+  border: 1px solid #ddd;
+  height: 430px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.insertBeta .insertBetaPopup li,
+.insertArea .insertBetaPopup li,
+.updateArea .insertBetaPopup li,
+.selectArea .insertBetaPopup li,
+.insertBeta .insertAreaPopup li,
+.insertArea .insertAreaPopup li,
+.updateArea .insertAreaPopup li,
+.selectArea .insertAreaPopup li,
+.insertBeta .updateAreaPopup li,
+.insertArea .updateAreaPopup li,
+.updateArea .updateAreaPopup li,
+.selectArea .updateAreaPopup li,
+.insertBeta .selectAreaPopup li,
+.insertArea .selectAreaPopup li,
+.updateArea .selectAreaPopup li,
+.selectArea .selectAreaPopup li {
+  width: 50% !important;
+}
+.insertBeta .insertBetaPopup li.textareaLi,
+.insertArea .insertBetaPopup li.textareaLi,
+.updateArea .insertBetaPopup li.textareaLi,
+.selectArea .insertBetaPopup li.textareaLi,
+.insertBeta .insertAreaPopup li.textareaLi,
+.insertArea .insertAreaPopup li.textareaLi,
+.updateArea .insertAreaPopup li.textareaLi,
+.selectArea .insertAreaPopup li.textareaLi,
+.insertBeta .updateAreaPopup li.textareaLi,
+.insertArea .updateAreaPopup li.textareaLi,
+.updateArea .updateAreaPopup li.textareaLi,
+.selectArea .updateAreaPopup li.textareaLi,
+.insertBeta .selectAreaPopup li.textareaLi,
+.insertArea .selectAreaPopup li.textareaLi,
+.updateArea .selectAreaPopup li.textareaLi,
+.selectArea .selectAreaPopup li.textareaLi {
+  width: 100% !important;
+}
+.insertBeta .insertBetaPopup li.textareaLi > textarea,
+.insertArea .insertBetaPopup li.textareaLi > textarea,
+.updateArea .insertBetaPopup li.textareaLi > textarea,
+.selectArea .insertBetaPopup li.textareaLi > textarea,
+.insertBeta .insertAreaPopup li.textareaLi > textarea,
+.insertArea .insertAreaPopup li.textareaLi > textarea,
+.updateArea .insertAreaPopup li.textareaLi > textarea,
+.selectArea .insertAreaPopup li.textareaLi > textarea,
+.insertBeta .updateAreaPopup li.textareaLi > textarea,
+.insertArea .updateAreaPopup li.textareaLi > textarea,
+.updateArea .updateAreaPopup li.textareaLi > textarea,
+.selectArea .updateAreaPopup li.textareaLi > textarea,
+.insertBeta .selectAreaPopup li.textareaLi > textarea,
+.insertArea .selectAreaPopup li.textareaLi > textarea,
+.updateArea .selectAreaPopup li.textareaLi > textarea,
+.selectArea .selectAreaPopup li.textareaLi > textarea {
+  border: 1px solid #ddd;
+  width: 100% !important;
+}
+.insertBeta .insertBetaPopup li.takePoint,
+.insertArea .insertBetaPopup li.takePoint,
+.updateArea .insertBetaPopup li.takePoint,
+.selectArea .insertBetaPopup li.takePoint,
+.insertBeta .insertAreaPopup li.takePoint,
+.insertArea .insertAreaPopup li.takePoint,
+.updateArea .insertAreaPopup li.takePoint,
+.selectArea .insertAreaPopup li.takePoint,
+.insertBeta .updateAreaPopup li.takePoint,
+.insertArea .updateAreaPopup li.takePoint,
+.updateArea .updateAreaPopup li.takePoint,
+.selectArea .updateAreaPopup li.takePoint,
+.insertBeta .selectAreaPopup li.takePoint,
+.insertArea .selectAreaPopup li.takePoint,
+.updateArea .selectAreaPopup li.takePoint,
+.selectArea .selectAreaPopup li.takePoint {
+  width: 554px !important;
+  height: auto !important;
+}
+.insertBeta .insertBetaPopup li.takePoint > div.tPImg,
+.insertArea .insertBetaPopup li.takePoint > div.tPImg,
+.updateArea .insertBetaPopup li.takePoint > div.tPImg,
+.selectArea .insertBetaPopup li.takePoint > div.tPImg,
+.insertBeta .insertAreaPopup li.takePoint > div.tPImg,
+.insertArea .insertAreaPopup li.takePoint > div.tPImg,
+.updateArea .insertAreaPopup li.takePoint > div.tPImg,
+.selectArea .insertAreaPopup li.takePoint > div.tPImg,
+.insertBeta .updateAreaPopup li.takePoint > div.tPImg,
+.insertArea .updateAreaPopup li.takePoint > div.tPImg,
+.updateArea .updateAreaPopup li.takePoint > div.tPImg,
+.selectArea .updateAreaPopup li.takePoint > div.tPImg,
+.insertBeta .selectAreaPopup li.takePoint > div.tPImg,
+.insertArea .selectAreaPopup li.takePoint > div.tPImg,
+.updateArea .selectAreaPopup li.takePoint > div.tPImg,
+.selectArea .selectAreaPopup li.takePoint > div.tPImg {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  display: inline-block;
+}
+.insertBeta .insertBetaPopup li.takePoint > a,
+.insertArea .insertBetaPopup li.takePoint > a,
+.updateArea .insertBetaPopup li.takePoint > a,
+.selectArea .insertBetaPopup li.takePoint > a,
+.insertBeta .insertAreaPopup li.takePoint > a,
+.insertArea .insertAreaPopup li.takePoint > a,
+.updateArea .insertAreaPopup li.takePoint > a,
+.selectArea .insertAreaPopup li.takePoint > a,
+.insertBeta .updateAreaPopup li.takePoint > a,
+.insertArea .updateAreaPopup li.takePoint > a,
+.updateArea .updateAreaPopup li.takePoint > a,
+.selectArea .updateAreaPopup li.takePoint > a,
+.insertBeta .selectAreaPopup li.takePoint > a,
+.insertArea .selectAreaPopup li.takePoint > a,
+.updateArea .selectAreaPopup li.takePoint > a,
+.selectArea .selectAreaPopup li.takePoint > a {
+  height: 24px;
+  line-height: 24px;
+  width: 56px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+.insertBeta .insertBetaPopup li.takePoint > a.btnTPoint,
+.insertArea .insertBetaPopup li.takePoint > a.btnTPoint,
+.updateArea .insertBetaPopup li.takePoint > a.btnTPoint,
+.selectArea .insertBetaPopup li.takePoint > a.btnTPoint,
+.insertBeta .insertAreaPopup li.takePoint > a.btnTPoint,
+.insertArea .insertAreaPopup li.takePoint > a.btnTPoint,
+.updateArea .insertAreaPopup li.takePoint > a.btnTPoint,
+.selectArea .insertAreaPopup li.takePoint > a.btnTPoint,
+.insertBeta .updateAreaPopup li.takePoint > a.btnTPoint,
+.insertArea .updateAreaPopup li.takePoint > a.btnTPoint,
+.updateArea .updateAreaPopup li.takePoint > a.btnTPoint,
+.selectArea .updateAreaPopup li.takePoint > a.btnTPoint,
+.insertBeta .selectAreaPopup li.takePoint > a.btnTPoint,
+.insertArea .selectAreaPopup li.takePoint > a.btnTPoint,
+.updateArea .selectAreaPopup li.takePoint > a.btnTPoint,
+.selectArea .selectAreaPopup li.takePoint > a.btnTPoint {
+  background-color: #009aff;
+}
+.insertBeta .insertBetaPopup li.takePoint > a.btnTDraw,
+.insertArea .insertBetaPopup li.takePoint > a.btnTDraw,
+.updateArea .insertBetaPopup li.takePoint > a.btnTDraw,
+.selectArea .insertBetaPopup li.takePoint > a.btnTDraw,
+.insertBeta .insertAreaPopup li.takePoint > a.btnTDraw,
+.insertArea .insertAreaPopup li.takePoint > a.btnTDraw,
+.updateArea .insertAreaPopup li.takePoint > a.btnTDraw,
+.selectArea .insertAreaPopup li.takePoint > a.btnTDraw,
+.insertBeta .updateAreaPopup li.takePoint > a.btnTDraw,
+.insertArea .updateAreaPopup li.takePoint > a.btnTDraw,
+.updateArea .updateAreaPopup li.takePoint > a.btnTDraw,
+.selectArea .updateAreaPopup li.takePoint > a.btnTDraw,
+.insertBeta .selectAreaPopup li.takePoint > a.btnTDraw,
+.insertArea .selectAreaPopup li.takePoint > a.btnTDraw,
+.updateArea .selectAreaPopup li.takePoint > a.btnTDraw,
+.selectArea .selectAreaPopup li.takePoint > a.btnTDraw {
+  background-color: #009aff;
+}
+.insertBeta .insertBetaPopup li.takePoint > a.btnTDescr,
+.insertArea .insertBetaPopup li.takePoint > a.btnTDescr,
+.updateArea .insertBetaPopup li.takePoint > a.btnTDescr,
+.selectArea .insertBetaPopup li.takePoint > a.btnTDescr,
+.insertBeta .insertAreaPopup li.takePoint > a.btnTDescr,
+.insertArea .insertAreaPopup li.takePoint > a.btnTDescr,
+.updateArea .insertAreaPopup li.takePoint > a.btnTDescr,
+.selectArea .insertAreaPopup li.takePoint > a.btnTDescr,
+.insertBeta .updateAreaPopup li.takePoint > a.btnTDescr,
+.insertArea .updateAreaPopup li.takePoint > a.btnTDescr,
+.updateArea .updateAreaPopup li.takePoint > a.btnTDescr,
+.selectArea .updateAreaPopup li.takePoint > a.btnTDescr,
+.insertBeta .selectAreaPopup li.takePoint > a.btnTDescr,
+.insertArea .selectAreaPopup li.takePoint > a.btnTDescr,
+.updateArea .selectAreaPopup li.takePoint > a.btnTDescr,
+.selectArea .selectAreaPopup li.takePoint > a.btnTDescr {
+  background-color: #ff9a00;
+}
+.insertBeta .insertBetaPopup li.textLen,
+.insertArea .insertBetaPopup li.textLen,
+.updateArea .insertBetaPopup li.textLen,
+.selectArea .insertBetaPopup li.textLen,
+.insertBeta .insertAreaPopup li.textLen,
+.insertArea .insertAreaPopup li.textLen,
+.updateArea .insertAreaPopup li.textLen,
+.selectArea .insertAreaPopup li.textLen,
+.insertBeta .updateAreaPopup li.textLen,
+.insertArea .updateAreaPopup li.textLen,
+.updateArea .updateAreaPopup li.textLen,
+.selectArea .updateAreaPopup li.textLen,
+.insertBeta .selectAreaPopup li.textLen,
+.insertArea .selectAreaPopup li.textLen,
+.updateArea .selectAreaPopup li.textLen,
+.selectArea .selectAreaPopup li.textLen {
+  width: 100% !important;
+}
+.insertBeta .insertBetaPopup li.textLen > input,
+.insertArea .insertBetaPopup li.textLen > input,
+.updateArea .insertBetaPopup li.textLen > input,
+.selectArea .insertBetaPopup li.textLen > input,
+.insertBeta .insertAreaPopup li.textLen > input,
+.insertArea .insertAreaPopup li.textLen > input,
+.updateArea .insertAreaPopup li.textLen > input,
+.selectArea .insertAreaPopup li.textLen > input,
+.insertBeta .updateAreaPopup li.textLen > input,
+.insertArea .updateAreaPopup li.textLen > input,
+.updateArea .updateAreaPopup li.textLen > input,
+.selectArea .updateAreaPopup li.textLen > input,
+.insertBeta .selectAreaPopup li.textLen > input,
+.insertArea .selectAreaPopup li.textLen > input,
+.updateArea .selectAreaPopup li.textLen > input,
+.selectArea .selectAreaPopup li.textLen > input {
+  width: 100% !important;
+}
+.insertBeta .insertBetaPopup li > input,
+.insertArea .insertBetaPopup li > input,
+.updateArea .insertBetaPopup li > input,
+.selectArea .insertBetaPopup li > input,
+.insertBeta .insertAreaPopup li > input,
+.insertArea .insertAreaPopup li > input,
+.updateArea .insertAreaPopup li > input,
+.selectArea .insertAreaPopup li > input,
+.insertBeta .updateAreaPopup li > input,
+.insertArea .updateAreaPopup li > input,
+.updateArea .updateAreaPopup li > input,
+.selectArea .updateAreaPopup li > input,
+.insertBeta .selectAreaPopup li > input,
+.insertArea .selectAreaPopup li > input,
+.updateArea .selectAreaPopup li > input,
+.selectArea .selectAreaPopup li > input {
+  width: 100% !important;
+  border: 1px solid #ddd;
+}
+/*车辆信息模块*/
+.with-pic-popup > ul {
+  display: inline-block;
+}
+.with-pic-popup .pic-wrap {
+  float: right;
+  margin-top: 10px;
+}
+.with-pic-popup .pic-wrap .pic-list > li {
+  position: relative;
+  float: left;
+  width: 132px;
+  height: 132px;
+  border: 1px solid #ebeff3;
+  background-color: #F7F7FD;
+  padding: 0;
+}
+.with-pic-popup .pic-wrap .pic-list > li > img {
+  width: 100%;
+}
+.with-pic-popup .pic-wrap .pic-list .choose-pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -13px;
+  margin-left: -36px;
+  display: inline-block;
+  width: 72px;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  text-align: center;
+  background-color: #419ef4;
+  border-radius: 4px;
+}
+.with-pic-popup .pic-wrap .pic-list .shade {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 3px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  opacity: 0.4;
+  cursor: pointer;
+  font-size: 12px;
+}
+.with-pic-popup .pic-wrap .input-group [type='file'] {
+  display: none;
+}
+/*统计模块弹出层列表*/
+.statistPopup {
+  height: auto !important;
+  border: 1px solid #ddd;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.statistPopup > div {
+  width: 100% !important;
+}
+.statistPopup > div > div {
+  width: 100% !important;
+}
+.statistPopup > div > div > div {
+  width: 100% !important;
+}
+.statistPopup > div > div > div > div {
+  width: 100% !important;
+}
+.statistPopup > div > div > div > div > div {
+  width: 100% !important;
+}
+.statistPopup div.pagination table {
+  margin-right: 16px;
+}
+.statistPopup div.datagrid-view {
+  height: 260px !important;
+  overflow: auto !important;
+}
+.statistPopup div.datagrid-body {
+  height: 219px !important;
+  overflow-x: auto !important;
+}
+.statistPopup div.pagination-info {
+  width: auto !important;
+  float: left;
+  margin-left: 14px;
+}
+.statistPopup div {
+  height: auto !important;
+  padding-left: 0px !important;
+  border: none;
+}
+.statistPopup div .panel-body {
+  border: none !important;
+}
+.statistPopup div .datagrid-header-check {
+  position: relative;
+  top: 0px;
+}
+.statistPopup div .datagrid-header td:nth-child(2) {
+  padding-left: 0px;
+}
+/*分配*/
+.distribPopup li {
+  width: 50% !important;
+}
+.distribPopup li > span {
+  float: left;
+  text-align: left;
+  width: auto !important;
+}
+.distribPopup li > input {
+  float: left;
+  border: 1px solid #ddd;
+}
+.distribPopup li > a.btnDConfirm {
+  position: absolute;
+  left: 300px;
+}
+.distribPopup > .departStructLeft {
+  position: relative;
+  border: none;
+  width: 100%;
+  padding: 0 !important;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  overflow: auto;
+}
+.distribPopup > .departStructLeft > .personTree {
+  padding-left: 0 !important;
+  border: none !important;
+  height: 260px;
+}
+/*人员数据*/
+.personDataPopup {
+  height: 500px;
+  overflow-y: auto;
+}
+.personDataPopup > ul > li {
+  width: 225px;
+}
+.personDataPopup > ul > li > input {
+  width: 140px;
+  border: 1px solid #dddddd;
+}
+.personDataPopup > ul > li.confirmLi {
+  width: auto;
+  padding-left: 0 !important;
+}
+.personDataPopup > div.pDList {
+  border: 1px solid #dddddd;
+  width: 610px;
+  min-height: 430px;
+  margin-left: 12px !important;
+}
+.personDataPopup > div.pDList > ul.pDType {
+  height: 26px;
+  line-height: 26px;
+  padding-left: 11px !important;
+}
+.personDataPopup > div.pDList > ul.pDType > li {
+  float: left;
+  padding: 0px;
+}
+.personDataPopup > div.pDList > ul.pDType > li > p {
+  height: 10px;
+  width: 30px;
+  display: inline-block;
+  margin-right: 12px !important;
+}
+.personDataPopup > div.pDList > ul.pDType > li + li {
+  margin-left: 12px !important;
+}
+.personDataPopup > div.pDList > ul.pDCont > li {
+  width: 110px;
+  height: 60px;
+  position: relative;
+  border-radius: 2px;
+  float: left;
+  padding: 0px 0px 0px 0px !important;
+  margin-bottom: 10px !important;
+}
+.personDataPopup > div.pDList > ul.pDCont > li.online {
+  background-color: #05D25C;
+}
+.personDataPopup > div.pDList > ul.pDCont > li.offline {
+  background-color: #A4A7AE;
+}
+.personDataPopup > div.pDList > ul.pDCont > li.alarm {
+  background-color: #FF4E5E;
+}
+.personDataPopup > div.pDList > ul.pDCont > li.else {
+  background-color: #FAB50F;
+}
+.personDataPopup > div.pDList > ul.pDCont > li.checked {
+  background-color: #009aff !important;
+}
+.personDataPopup > div.pDList > ul.pDCont > li > em {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  color: #fff;
+  border: 1px solid #ffffff;
+  display: inline-block;
+}
+.personDataPopup > div.pDList > ul.pDCont > li > span {
+  display: block;
+  height: 22px;
+  width: 36px;
+  margin: 20px auto 0px auto !important;
+}
+.personDataPopup > div.pDList > ul.pDCont > li > p {
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+.personDataPopup > div.pDList > ul.pDCont > li:nth-child(n) {
+  margin-left: 10px !important;
+}
+/*车辆信息num*/
+.carInfo ul.btnSelectCar > li {
+  border: 1px solid #ffffff;
+  color: #353639;
+  font-size: 12px;
+}
+/*果皮箱基本信息*/
+.peelInfoPopup li {
+  width: 100% !important;
+}
+.peelInfoPopup li.carImg {
+  padding-left: 0px !important;
+  height: 200px !important;
+}
+.peelInfoPopup li.carImg > img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 200px;
+}
+.peelInfoPopup li.carImg2 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  height: 300px !important;
+}
+.peelInfoPopup li.carImg2 > img {
+  width: 99%;
+}
+.peelInfoPopup li.carImg3 {
+  padding: 0 !important;
+  min-height: 300px;
+  text-align: center;
+  max-height: 600px !important;
+}
+.peelInfoPopup li.carImg3 > img {
+  width: 100%;
+  vertical-align: middle;
+}
+.peelInfoPopup li.public-img {
+  height: 300px !important;
+  line-height: 300px;
+  text-align: center;
+  font-size: 0;
+  padding: 0 !important;
+}
+.peelInfoPopup li.public-img > img {
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+/*实时视频*/
+.videoInfoPopup li {
+  width: 100% !important;
+  padding-left: 0px !important;
+}
+.videoInfoPopup li.carImg {
+  width: 100%;
+  height: 300px !important;
+  background-color: #ff0000;
+  position: relative;
+}
+.videoInfoPopup li.carImg > p.videoTime {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  text-align: center;
+  color: #ffffff;
+  width: auto !important;
+  line-height: 16px;
+}
+.videoInfoPopup li.carImg > p.videoTime > em {
+  display: block;
+}
+/*卫情信息*/
+.sateInfoPopup > div.sIState > h5 {
+  margin-top: 10px !important;
+}
+.sateInfoPopup > div.sIState > ul {
+  margin: 0 auto 0 auto !important;
+}
+.sateInfoPopup > div.sIState > ul > li {
+  line-height: 20px;
+  padding: 10px 0px 10px 0px !important;
+}
+.sateInfoPopup > div.sIState > ul > li.gray {
+  background: url(../../../../res/img/default/g-point.png) no-repeat -2px top;
+}
+.sateInfoPopup > div.sIState > ul > li.blue {
+  background: url(../../../../res/img/default/b-l-point.png) no-repeat -2px top;
+}
+.sateInfoPopup > div.sIState > ul > li > span,
+.sateInfoPopup > div.sIState > ul > li > p {
+  color: #353639;
+}
+.sateInfoPopup > div.sIState li.sISTxt {
+  width: 105px;
+  text-align: center;
+}
+.sateInfoPopup > div.sIState li.sISTxt > div.sISRadus {
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  border: 1px solid #a4a7ae;
+  position: relative;
+  margin: 0px auto 0px auto !important;
+}
+.sateInfoPopup > div.sIState li.sISTxt > div.sISRadus > em {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: #a4a7ae;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.sateInfoPopup > div.sIState li.sISTxt > div.sISRadus.active {
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  border: 1px solid #6fa2fb;
+  position: relative;
+  margin: 0px auto 0px auto !important;
+}
+.sateInfoPopup > div.sIState li.sISTxt > div.sISRadus.active > em {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: #6fa2fb;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.sateInfoPopup > div.sIState li.sISTxt > span {
+  display: block;
+}
+.sateInfoPopup > div.sIState li.sISLine {
+  position: absolute;
+  width: 80px;
+  overflow: hidden;
+  top: 7px;
+}
+.sateInfoPopup > div.sIState li.sISLine > p {
+  height: 1px;
+  background-color: #a4a7ae;
+  width: 200px;
+}
+.sateInfoPopup > div.sIState li.sISLine.sISLine1 {
+  left: 66px;
+}
+.sateInfoPopup > div.sIState li.sISLine.sISLine2 {
+  left: 170px;
+}
+.sateInfoPopup > div.sIState li.sISLine.sISLine3 {
+  left: 275px;
+}
+/*卫情确认*/
+.sateConfirmPopup > ul > li > input {
+  border: 1px solid #dddddd;
+}
+/*绑定*/
+.bindingPopup {
+  position: relative;
+}
+.bindingPopup > ul {
+  padding: 4px 0px 14px 0px !important;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bindingPopup > ul li,
+.bindingPopup > ul .long {
+  position: relative;
+  width: 50%;
+  float: left;
+  height: auto !important;
+  margin-top: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px !important;
+  padding-left: 80px !important;
+  padding-right: 10px !important;
+  color: #353639;
+}
+.bindingPopup > ul li.textareaLi,
+.bindingPopup > ul .long.textareaLi {
+  height: 50px !important;
+  width: 100% !important;
+}
+.bindingPopup > ul li.textareaLi > span,
+.bindingPopup > ul .long.textareaLi > span {
+  position: relative;
+}
+.bindingPopup > ul li.textareaLi > textarea,
+.bindingPopup > ul .long.textareaLi > textarea {
+  width: 100%;
+  height: 50px;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bindingPopup > ul li > span,
+.bindingPopup > ul .long > span {
+  width: 80px;
+  display: inline-block;
+  margin-left: -80px !important;
+  text-align: right;
+  color: #353639;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 2px !important;
+  float: left;
+}
+.bindingPopup > ul li > span > em,
+.bindingPopup > ul .long > span > em {
+  color: #f60a0a;
+  margin-right: 2px;
+  top: 2px;
+  position: relative;
+}
+.bindingPopup > ul li > input,
+.bindingPopup > ul .long > input {
+  width: 100%;
+  background-color: #fff;
+  height: 26px;
+  text-indent: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+.bindingPopup > ul li > p,
+.bindingPopup > ul .long > p {
+  width: 100%;
+  display: inline-block;
+  color: #353639;
+  vertical-align: top;
+  word-wrap: break-word;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bindingPopup > ul li > select,
+.bindingPopup > ul .long > select {
+  width: 100%;
+  height: 26px;
+  line-height: 25px;
+  border: 1px solid #dddddd;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inherit;
+}
+.bindingPopup > ul .long {
+  width: 100%;
+}
+.bindingPopup > div.personPhoto {
+  position: absolute;
+  right: 0px;
+  width: 120px;
+  height: 120px;
+  background: #000;
+  top: 14px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bindingPopup > div.personPhoto > a.btnUpdaPhoto {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+.bindingPopup > ul li > textarea {
+  color: #444;
+  padding-left: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bindingPopup > ul li.textLen {
+  width: 100% !important;
+}
+.bindingPopup > ul li.textLen > input {
+  width: 100%;
+}
+.bindingPopup > ul li > input {
+  border: 1px solid #ddd;
+}
+/*解绑*/
+.unbindingPopup {
+  position: relative;
+  height: auto;
+}
+.unbindingPopup > ul {
+  padding: 4px 0px 14px 0px !important;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.unbindingPopup > ul li,
+.unbindingPopup > ul .long {
+  position: relative;
+  width: 50%;
+  float: left;
+  height: auto !important;
+  margin-top: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px !important;
+  padding-left: 80px !important;
+  padding-right: 10px !important;
+  color: #353639;
+}
+.unbindingPopup > ul li.textareaLi,
+.unbindingPopup > ul .long.textareaLi {
+  height: 50px !important;
+  width: 100% !important;
+}
+.unbindingPopup > ul li.textareaLi > span,
+.unbindingPopup > ul .long.textareaLi > span {
+  position: relative;
+}
+.unbindingPopup > ul li.textareaLi > textarea,
+.unbindingPopup > ul .long.textareaLi > textarea {
+  width: 100%;
+  height: 50px;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.unbindingPopup > ul li > span,
+.unbindingPopup > ul .long > span {
+  width: 80px;
+  display: inline-block;
+  margin-left: -80px !important;
+  text-align: right;
+  color: #353639;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 2px !important;
+  float: left;
+}
+.unbindingPopup > ul li > span > em,
+.unbindingPopup > ul .long > span > em {
+  color: #f60a0a;
+  margin-right: 2px;
+  top: 2px;
+  position: relative;
+}
+.unbindingPopup > ul li > input,
+.unbindingPopup > ul .long > input {
+  width: 100%;
+  background-color: #fff;
+  height: 26px;
+  text-indent: 6px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+.unbindingPopup > ul li > p,
+.unbindingPopup > ul .long > p {
+  width: 100%;
+  display: inline-block;
+  color: #353639;
+  vertical-align: top;
+  word-wrap: break-word;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.unbindingPopup > ul li > select,
+.unbindingPopup > ul .long > select {
+  width: 100%;
+  height: 26px;
+  line-height: 25px;
+  border: 1px solid #dddddd;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inherit;
+}
+.unbindingPopup > ul .long {
+  width: 100%;
+}
+.unbindingPopup > div.personPhoto {
+  position: absolute;
+  right: 0px;
+  width: 120px;
+  height: 120px;
+  background: #000;
+  top: 14px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.unbindingPopup > div.personPhoto > a.btnUpdaPhoto {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+.unbindingPopup .title > i {
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.unbindingPopup h6 {
+  position: relative;
+  max-height: 200px;
+  height: auto;
+  overflow-y: auto;
+  padding: 15px 0px;
+  padding-left: 25px !important;
+}
+.unbindingPopup h6 > p {
+  display: inline-block;
+}
+.unbindingPopup h6 span {
+  color: #f01d27;
+}
+/*部门结构数弹出层*/
+.form-Tree .form-top {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.form-Tree .form-top > span.iconfont {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.form-Tree .form-content {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  max-height: 300px;
+  overflow: auto;
+}
+.form-Tree .form-btns {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+}
+.form-Tree .form-btns > input {
+  float: right;
+  top: 7px;
+  position: relative;
+}
+/*行驶图标*/
+.iconfont.icon-ignitionsystem {
+  margin-left: -3px;
+  font-size: 12px;
+}
+.iconfont.icon-ignitionsystem + span {
+  margin-left: 0px;
+  padding-left: 2px;
+}
+/*管理员操作*/
+li.sysUser {
+  position: relative;
+}
+li.sysUser > div.sysUserBox {
+  display: none;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  left: 0;
+  height: auto!important;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+li.sysUser > div.sysUserBox > p {
+  margin: 0!important;
+  width: 100%;
+  height: 40px !important;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  padding: 0px !important;
+}
+li.sysUser > div.sysUserBox > p:nth-last-child(1) {
+  border: none!important;
+}
+li.sysUser > div.sysUserBox > p:hover {
+  background-color: #bbb;
+}
+li.sysUser > div.sysUserBox > p > i {
+  display: inline-block;
+}
+li.sysUser > div.sysUserBox > p.activeLi {
+  background-color: #a4a7ae!important;
+}
+.errorBorderRed {
+  border: 1px solid #fd5a75!important;
+}
+.layui-layer-shade {
+  z-index: 1000!important;
+}
+.a {
+  color: #ccc;
+}
+.layui-layer-setwin .layui-layer-close2 {
+  width: 60px!important;
+  height: 43px!important;
+  right: -15px !important;
+  top: -15px !important;
+}
+/*系统设置-设施*/
+.document > .document-title {
+  width: 200px;
+  text-align: center;
+}
+.document > .document-title > a {
+  color: #347FD4;
+}
+.document .pic-show {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: #ebeff3;
+}
+.document .pic-show > img {
+  width: 100%;
+  height: 100%;
+}
+.nav .nav-box h4 i,
+.nav .nav-box h4 span {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.nav .nav-box h5 {
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+#videoBox .rTMList,
+#videoBox .rTMLRoadLine {
+  height: 100%;
+  padding-bottom: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#videoBox .rTMLRoadLine > ul {
+  height: 100%;
+  overflow-y: auto;
+}
+#videoBox .videoBoxR {
+  position: absolute;
+  left: 200px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+}
+#videoBox .videoBoxR > ul {
+  height: 100%;
+}
+#videoBox .videoBoxR > ul > li {
+  width: 100%;
+  background-color: #ddd;
+  height: 100%;
+}
+#videoBox1 {
+  padding: 10px;
+  position: relative;
+  background-color: #f4f7f9;
+}
+#videoBox1 .video_info {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+#videoBox1 .video_info > .video_txt {
+  width: 436px;
+  height: 255px;
+  margin: 0 auto;
+  position: relative;
+  top: 250px;
+  padding: 14px;
+}
+#videoBox1 .video_info > .video_txt > .v_infoIcon {
+  width: 66px;
+  height: auto;
+  display: block;
+  position: absolute;
+}
+#videoBox1 .video_info > .video_txt > .v_infoIcon > img {
+  width: 100%;
+}
+#videoBox1 .video_info > .video_txt > .v_txt1 {
+  font-size: 30px;
+  position: absolute;
+  left: 94px;
+}
+#videoBox1 .video_info > .video_txt > .v_txt2 {
+  font-size: 16px;
+  color: #666;
+  position: absolute;
+  left: 94px;
+  margin-top: 45px;
+}
+#videoBox1 .video_info > .video_txt > .v_txt2 > span {
+  color: #3096fe;
+}
+.seniorSearch {
+  padding: 0 5px;
+  left: 0!important;
+  top: 2px;
+  font-size: 20px;
+  color: #000!important;
+}

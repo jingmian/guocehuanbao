@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/realTimeMonitor/realTimeMonitor.css"/>
+    <title>卫情</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="rTMLBox">
+            <div class="rTMList">
+                <div class="rTMLWSituation">
+                    <ul class="clear">
+                        <!--<li>
+                            <div class="rWSImgTxt">
+                                <img src="../../../res/img/default/logou2.png" alt="卫情图片">
+                                <p>
+                                    <span>10-17 18:30</span>
+                                    <em>地面存在垃圾</em>
+                                </p>
+                            </div>
+                            <i class="rWSTag">标签</i>
+                            <p>锦江区望江路1号中海广场</p>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="btnRTMSShrink">
+                <i class="iconfont icon-shouqi"></i>
+            </div>
+        </div>
+        <div class="contentMap">
+            <div class="operate-list">
+            </div>
+            <div id="map" class="map"></div>
+            <div class="rMapList">
+                <ul class="clear">
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>人员</span>
+                        <ul class="two-menu" id="peopleMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>车辆</span>
+                        <ul class="two-menu" id="carMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>设施</span>
+                        <ul class="two-menu" id="devMenu"></ul>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>区域</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                        <span>路线</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--卫情信息-->
+<div class="form-list-small sateInfo" id="sateInfo">
+    <h5 class="title clear">
+        <span class="titleText">卫情信息</span>
+        <span class="titleState">等待时间 : <em></em></span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body sateInfoPopup">
+                <div class="sIState">
+                    <h5>卫情状态</h5>
+                    <ul class="clear">
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>卫情上报</span>
+                            <p data-class="addTime"></p>
+                        </li>
+                        <li class="sISLine sISLine1">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>分派时间</span>
+                            <p data-class="arrangeTime"></p>
+                        </li>
+                        <li class="sISLine sISLine2">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>任务完成</span>
+                            <p data-class="sureTime"></p>
+                        </li>
+                        <li class="sISLine sISLine3">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>确认完成</span>
+                            <p data-class="fileTime"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sIInfo">
+                    <h5>卫情信息</h5>
+                    <ul class="clear">
+                        <li>
+                            <span>上报人:</span>
+                            <p data-class="agentName">张三</p>
+                        </li>
+                        <li class="colorBlue">
+                            <span>上报时间:</span>
+                            <p data-class="addTime">2017-10-16</p>
+                        </li>
+                        <li class="maxWLi colorBlue">
+                            <span>卫情地点:</span>
+                            <p data-class="sanitationPlace">成都</p>
+                        </li>
+                        <li class="maxWLi">
+                            <span>卫情描述:</span>
+                            <p data-class="sanitationDetails">卫情描述</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sIIImg">
+                    <h5>卫情照片</h5>
+                    <ul class="clear">
+                        <!-- <li><img src="" alt=""></li>
+                         <li><img src="" alt=""></li>
+                         <li><img src="" alt=""></li>
+                         <li><img src="" alt=""></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--大图-->
+<div class="form-list-small" id="peelInfo">
+    <h5 class="title clear">
+        <span>卫情照片</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body peelInfoPopup">
+                <ul class="clear">
+                    <li class="public-img">
+                        <img src="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="car-info"></div>
+<div class="people-info"></div>
+<div class="dev-info"></div>
+<div class="video-info"></div>
+<div class="alarm-info"></div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../res/js/realTimeMonitor/realTimeMonitor.js"></script>
+<script src="../../../res/js/realTimeMonitor/monitoring.js"></script>
+<script src="../../../res/js/realTimeMonitor/weiSituation.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/personManage/personManage.css"/>
+    <title>出勤记录</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">出勤数据</h2>
+            <div class="attendTime clear">
+                <select class="attendYear" name="" id="attendYear">
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                </select>
+                <ul class="attendMonth clear">
+                    <li><span>01</span>月</li>
+                    <li><span>02</span>月</li>
+                    <li><span>03</span>月</li>
+                    <li><span>04</span>月</li>
+                    <li><span>05</span>月</li>
+                    <li><span>06</span>月</li>
+                    <li><span>07</span>月</li>
+                    <li><span>08</span>月</li>
+                    <li><span>09</span>月</li>
+                    <li><span>10</span>月</li>
+                    <li><span>11</span>月</li>
+                    <li><span>12</span>月</li>
+                </ul>
+                <ul class="attendType clear">
+                    <li>休息:<span> </span></li>
+                    <li>出勤:<span class="iconfont icon-check"></span></li>
+                    <li>缺勤:<span class="iconfont icon-jian" style="color:red;"></span></li>
+                    <li>请假:<span>假</span></li>
+                    <li>迟到:<span>迟</span></li>
+                    <li>早退:<span>早</span></li>
+                </ul>
+            </div>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入人员名称" id="personName">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid" id="dgrid1">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 导出人员信息 -->
+<!--导出-->
+<form class="form-list-small" id="export">
+    <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName" id="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/js/personManage/personManage.js"></script>
+<script src="../../../../res/js/personManage/attendManage/attendRecord.js"></script>
+</body>
+</html>
+
+
+

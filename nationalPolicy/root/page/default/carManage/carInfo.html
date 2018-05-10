@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/jquery-validation-up/jquery-validation-up.css">
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/carManage/carManage.css"/>
+    <title>车辆信息</title>
+    <style>
+        .datagrid-header-check > input, .datagrid-header-check > .boxDiv {
+            left: 285px !important;
+        }
+
+        .pic-wrap {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .pic-wrap .pic-list > li {
+            position: relative;
+            float: left;
+            width: 132px;
+            height: 132px;
+            border: 1px solid #ebeff3;
+            background-color: #F7F7FD;
+            padding: 0;
+        }
+
+        .selectPopup > ul {
+            width: 700px;
+        }
+
+        .section-body li {
+            line-height: 24px;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 5px;
+            color: #353639;
+        }
+
+        /* .with-pic-popup .pic-wrap .pic-list > li {
+             position: relative;
+             float: left;
+             width: 132px;
+             height: 132px;
+             border: 1px solid #ebeff3;
+             background-color: #F7F7FD;
+             padding: 0;
+         }*/
+        .sIIImg .clear > li img{
+            position: relative;
+            float: left;
+            width: 100%;
+            height: 50%;
+            border: 1px solid #ebeff3;
+            background-color: #F7F7FD;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home clear">
+        <div class="departStructLeft">
+            <h2 class="list_title">部门结构树</h2>
+            <div class="personTree">
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+        </div>
+        <div class="m-home infoListRight">
+            <div class="title clear">
+                <h2 class="list_title">车辆信息列表</h2>
+                <div class="search">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="请输入车牌号" id="carNum">
+                            <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                        </li>
+                        <li>
+                            <i id="seniorSearchBtn" title="高级搜索" class="seniorSearch iconfont icon-gaojisousuo2" style="display: block"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dgrid">
+                <div class="dgrid-box">
+                    <table id="dgrid"></table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 导出人员信息 -->
+<!--导出-->
+<form class="form-list-small" id="export">
+    <h5 class="title"><span class="titleText">导出</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName" id="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--导入-->
+<form class="form-list-small" id="import">
+    <h5 class="title"><span class="titleText">导入</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body">
+                <ul class="clear infoList">
+                    <li>
+                        <span>文件名称：</span>
+                        <input type="text" class="excelFileName"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--查看-->
+<form class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">查看资料</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectPopup">
+                <ul class="clear">
+                    <li>
+                        <span>所属部门:</span>
+                        <p class="deptName"></p>
+                    </li>
+                    <li>
+                        <span>车牌号:</span>
+                        <p class="carNum"></p>
+                    </li>
+                    <li>
+                        <span>车型:</span>
+                        <p class="carType"></p>
+                    </li>
+                    <li>
+                        <span>品牌:</span>
+                        <p class="carBrand"></p>
+                    </li>
+                    <li>
+                        <span>车架号:</span>
+                        <p class="carCode"></p>
+                    </li>
+                    <li>
+                        <span>发动机号:</span>
+                        <p class="motorModel"></p>
+                    </li>
+                    <li>
+                        <span>所属单位:</span>
+                        <p class="dept"></p>
+                    </li>
+                    <li>
+                        <span>设备状态:</span>
+                        <p class="onState"></p>
+                    </li>
+                    <li>
+                        <span>设备卡号:</span>
+                        <p class="equipmentNum"></p>
+                    </li>
+                    <li>
+                        <span>购买时间:</span>
+                        <p class="buyTime"></p>
+                    </li>
+                    <li>
+                        <span>购买费用(元):</span>
+                        <p class="buyMoney"></p>
+                    </li>
+                    <li>
+                        <span>供应商:</span>
+                        <p class="carProvider"></p>
+                    </li>
+                    <li>
+                        <span>购保时间:</span>
+                        <p class="insuranceTime"></p>
+                    </li>
+                    <li>
+                        <span>有限时间(年):</span>
+                        <p class="insuranceLong"></p>
+                    </li>
+                    <li>
+                        <span>上次年检:</span>
+                        <p class="inspeLastTime"></p>
+                    </li>
+                    <li>
+                        <span>上次保养:</span>
+                        <p class="mainLastTime"></p>
+                    </li>
+                    <li>
+                        <span>保养间隔(月):</span>
+                        <p class="mainRemMonth"></p>
+                    </li>
+                    <li>
+                        <span>保养里程间隔:</span>
+                        <p class="mainRemMileage"></p>
+                    </li>
+                    <li>
+                        <span>油箱容积(升):</span>
+                        <p class="carVolume"></p>
+                    </li>
+                    <li>
+                        <span>座位数:</span>
+                        <p class="seatNum"></p>
+                    </li>
+                </ul>
+                <div class="sIIImg">
+                    <h5>图片</h5>
+                    <ul class="clear">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <!--<li class="no b-gray">取消</li>-->
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除车辆信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--新增/修改-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">修改人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body updatePopup with-pic-popup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>所属部门:</span>
+                        <input type="text" class="deptName" name="deptName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>车牌号:</span>
+                        <input type="text" class="carNum" name="carNum"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>车型:</span>
+                        <select class="carType" id="carType" name="carType"></select>
+                    </li>
+                    <li>
+                        <span><em>*</em>油箱容积(L):</span>
+                        <input type="text" class="carVolume" placeholder="单位：升" name="carVolume"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>车辆品牌:</span>
+                        <select class="carBrand" id="carBrand" name="carBrand"></select>
+                    </li>
+                    <li>
+                        <span>发动机号:</span>
+                        <input type="text" class="motorModel" name="motorModel"/>
+                    </li>
+                    <li>
+                        <span>车架号:</span>
+                        <input type="text" class="carCode" name="carCode"/>
+                    </li>
+                    <li>
+                        <span>购买时间:</span>
+                        <input type="text" class="buyTime" id="time1" name="buyTime"/>
+                    </li>
+                    <li>
+                        <span>购买费用(元):</span>
+                        <input type="text" class="buyMoney" name="buyMoney"/>
+                    </li>
+                    <li>
+                        <span>供应商:</span>
+                        <select class="carProvider" id="carProvider" name="carProvider"></select>
+                    </li>
+                    <li>
+                        <span>座位数:</span>
+                        <select class="seatNum" name="seatNum">
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>购保时间:</span>
+                        <input type="text" class="insuranceTime" id="time2" name="insuranceTime"/>
+                    </li>
+                    <li>
+                        <span>保险有效期:</span>
+                        <select class="insuranceLong" name="insuranceLong">
+                            <option value="1">1年</option>
+                            <option value="2">2年</option>
+                            <option value="3">3年</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span><em>*</em>上次年检:</span>
+                        <input type="text" class="inspeLastTime" id="time3" name="inspeLastTime"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>下次年检:</span>
+                        <input type="text" class="inspeNextTime" id="time4" name="inspeNextTime"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>上次保养:</span>
+                        <input type="text" class="mainLastTime" id="time5" name="mainLastTime"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>保养提醒:</span>
+                        <select class="mainRemMonth" name="mainRemMonth">
+                            <option value="6">6个月</option>
+                            <option value="12">12个月</option>
+                            <option value="18">18个月</option>
+                            <option value="24">24个月</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span><em>*</em>提醒里程:</span>
+                        <select class="mainRemMileage" name="mainRemMileage">
+                            <option value="5000">5000公里</option>
+                            <option value="7500">7500公里</option>
+                            <option value="10000">10000公里</option>
+                            <option value="12500">12500公里</option>
+                            <option value="15000">15000公里</option>
+                        </select>
+                    </li>
+                </ul>
+                <div class="pic-wrap">
+                    <ul class="pic-list clear">
+                        <li>
+                            <a href="javascript:void(0)" class="choose-pic" data-name="pic">选择图片</a>
+                            <span class="shade" data-name="pic">点击修改</span>
+                        </li>
+                    </ul>
+                    <ul class="input-group">
+                        <li>
+                            <input type="file" id="pic" name="pic" data-name="picName"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--结构树弹窗-->
+<div class="add form-Tree" style="display:none;" id="form-Tree">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">选择所属部门</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox">
+                    <ul id="windowTree" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<!--油量矫正-->
+<form class="form-list-small" id="correct">
+    <h5 class="title"><span class="titleText"></span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup correctPopup">
+                <div class="wSTime clear wSTime0">
+                    <h3 class="sTTitle">当前油量</h3>
+                    <div class="sTCont">
+                        <span>时间</span>
+                        <span>油量</span>
+                        <span></span>
+                    </div>
+                    <div class="sTCont sTCont1">
+                        <span class="workTime1"></span>
+                        <span class="workTime2"></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="wSTime clear wSTime1" style="border: none;">
+                    <h3 class="sTTitle">油量矫正</h3>
+                    <ul>
+                        <li>
+                            <span>开始油量:</span>
+                            <input type="text" id="startOil">
+                            <a href="javascript:;" id="btnStartOil">开始矫正</a>
+                        </li>
+                        <li>
+                            <span>结束油量:</span>
+                            <input type="text" id="endOil">
+                            <a href="javascript:;" id="btnEndOil">结束矫正</a>
+                        </li>
+                        <li class="fuelQuant">
+                            <span>加油量:</span>
+                            <input type="text" placeholder="单位:升" id="fuelOil">
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">矫正</li>
+            <li class="no b-gray">关闭</li>
+        </ul>
+    </div>
+</form>
+<!--预览大图-->
+<div class="form-list-small" id="carViewInfo">
+    <h5 class="title clear">
+        <span id="sateImg">车辆图片</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body peelInfoPopup">
+                <ul class="clear">
+                    <li class="carImg3">
+                        <img src="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../../res/js/common/validate.js"></script>-->
+<script src="../../../res/dep/jquery-validation-up/jquery-validation-up.js"></script>
+<script src="../../../res/js/common/validate.js"></script>
+<script src="../../../res/js/common/seniorSearch.js"></script>
+<script src="../../../res/js/carManage/carManage.js"></script>
+<script src="../../../res/js/carManage/carInfo.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <title>垃圾箱</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">垃圾箱列表</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入人员名称" id="person_name">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block" id="findPersonInfo"></i>
+                    </li>
+                    <!--<li>
+                        <select class="time-during">
+                            <option value="0">精检查询</option>
+                            <option value="1">最近一天</option>
+                            <option value="2">最近一周</option>
+                            <option value="3">最近两周</option>
+                            <option value="4">最近一月</option>
+                        </select>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--系统新增公厕-->
+<form class="form-list-small insertBeta" id="insertBeta">
+    <h5 class="title"><span class="titleText">新增垃圾箱</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertBetaPopup clear">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>垃圾箱编号:</span>
+                        <input type="text" class="facNum"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>名称:</span>
+                        <input type="text" class="facName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>所属网络:</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>经度:</span>
+                        <input type="text" class="msgLon"/>
+                    </li>
+                    <li>
+                        <span>纬度:</span>
+                        <input type="text" class="msgLat"/>
+                    </li>
+                    <li class="textLen">
+                        <span>责任人:</span>
+                        <select class="personName">
+                            <option value="0"></option>
+                        </select>
+                    </li>
+                    <li class="textLen">
+                        <span>所在位置:</span>
+                        <input type="text" class="facPlace"/>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea></textarea>
+                    </li>
+                    <li class="takePoint">
+                        <span></span>
+                        <div class="tPImg">
+
+                        </div>
+                        <a href="" class="btnTPoint">取点</a>
+                    </li>
+                </ul>
+                <div class="betaMap">
+                    <div class="commonDetaMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--查看-->
+<form class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">新增规则</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>用户名</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>密码</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>组织机构</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>联系电话</span>
+                        <input type="text"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--修改-->
+<form class="form-list-small" id="update">
+    <h5 class="title"><span class="titleText">新增规则</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body updatePopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>用户名</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>密码</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>组织机构</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>联系电话</span>
+                        <input type="text"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除车牌号为<span id="d-car"></span>的车辆?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/js/sysSetting/sysSetting.js"></script>
+<script src="../../../../res/js/sysSetting/facilitManage/facilitManage.js"></script>
+<script src="../../../../res/js/sysSetting/facilitManage/dustbin.js"></script>
+
+<script src="../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../YcyaUI/map/YcyaMap.js"></script>
+</body>
+</html>
+
+

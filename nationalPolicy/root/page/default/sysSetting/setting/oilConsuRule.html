@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <title>油耗规则</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">油耗规则</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入规则名称" id="personName">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增规则</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>规则名称:</span>
+                        <input type="text" class="ruleName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>车型:</span>
+                        <select class="carType">
+                        </select>
+                      <!--  <input type="text" class="carType"/>-->
+                    </li>
+                    <li>
+                        <span>油耗:</span>
+                        <input type="text" class="oilConsume"/>
+                    </li>
+                    <li>
+                        <span>油量:</span>
+                        <input type="text" class="oilValue"/>
+                    </li>
+                    <!--  <li>
+                          <span>连续数据:</span>
+                          <input type="text" class="num"/>
+                      </li>-->
+                   <!-- <li>
+                        <span>是否提醒:</span>
+                        <select class="isRemind">
+                            <option value="0">不提醒</option>
+                            <option value="1">提醒</option>
+                        </select>
+                       &lt;!&ndash; <input type="text" class="isRemind"/>&ndash;&gt;
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除油耗规则信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除油耗规则名称为<span id="dInfo"></span>信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/js/common/validate.js"></script>
+<script src="../../../../res/js/sysSetting/sysSetting.js"></script>
+<script src="../../../../res/js/sysSetting/setting/oilConsuRule.js"></script>
+</body>
+</html>

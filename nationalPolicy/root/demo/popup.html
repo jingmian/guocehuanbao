@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../res/css/default/main/main.css"/>
+    <title>各种弹出层</title>
+    <style>
+        .form-list-small{
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增排班</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>考勤班次</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>倒班类型</span>
+                        <input type="text"/>
+                    </li>
+                    <li class="textLen">
+                        <span>休假规则</span>
+                        <input type="text"/>
+                    </li>
+                    <li class="textLen">
+                        <span>绑定人员</span>
+                        <input type="text"/>
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注</span>
+                        <textarea></textarea>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--查看-->
+<form class="form-list-small" id="selectAll">
+    <h5 class="title"><span class="titleText">查看人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body selectPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>姓名:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>联系电话:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>工种:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>名族:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>性别:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>入职时间:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>户籍:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>身份证号:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li>
+                        <span>家庭住址:</span>
+                        <input type="text" disabled="disabled" />
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea disabled="disabled"></textarea>
+                    </li>
+                </ul>
+                <div class="personPhoto">
+                    <p class="photoImg"></p>
+                    <a href="" class="btnUpdaPhoto"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除车牌号为<span id="d-car"></span>的车辆?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--修改-->
+<form class="form-list-small" id="update1">
+    <h5 class="title"><span class="titleText">修改人员信息</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body updatePopup">
+                <ul class="clear">
+                    <li>
+                        <span>上报人:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>上报时间:</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>卫情描述:</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>现场图片:</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>卫情等级:</span>
+                        <input type="text" />
+                    </li>
+                </ul>
+                <div class="personPhoto">
+                    <p class="photoImg"></p>
+                    <a href="" class="btnUpdaPhoto"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--修改【报警】-->
+<form class="form-list-small" id="update">
+    <h5 class="title"><span class="titleText">修改报警</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body updateTPPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>报警名称:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>报警类型:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>阈值:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>连续数据:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>是否持续:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span>是否提醒:</span>
+                        <input type="text"/>
+                    </li>
+                    <li class="textLen">
+                        <span>监管人员:</span>
+                        <input type="text"/>
+                    </li>
+                    <li class="textLen">
+                        <span>监管车辆:</span>
+                        <input type="text"/>
+                    </li>
+                </ul>
+                <div class="tPClass">
+                    <h5>报警分级</h5>
+                    <div class="tPCBox">
+                        <ul>
+                            <li class="tPCBLi1">
+                                <span><em>*</em>报警等级:</span>
+                                <select>
+                                    <option value="报警1">报警1</option>
+                                    <option value="报警2">报警2</option>
+                                    <option value="报警3">报警3</option>
+                                </select>
+                                <a href="" class="btnInseUl">新增</a>
+                                <a href="" class="btnRemoUl">删除</a>
+                            </li>
+                            <li class="tPCBLi2">
+                                <span><em>*</em>设置参数:</span>
+                                <input type="text">
+                                <i>到</i>
+                                <input type="text">
+                                <p>(请根据阈值的百分比进行参数设置)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="yes b-blue">确定</li>
+            <li class="no b-gray">取消</li>
+        </ul>
+    </div>
+</form>
+<!--分配-->
+<form class="form-list-small" id="distrib">
+    <h5 class="title"><span class="titleText">分配角色</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body distribPopup">
+                <ul class="clear">
+                    <li>
+                        <span>角色名:</span>
+                        <input type="text"/>
+                        <a class="btnDConfirm">确认</a>
+                    </li>
+                </ul>
+                <div class="departStructLeft">
+                    <!--<h2 class="list_title">部门结构树</h2>-->
+                    <div class="personTree">
+                        <ul id="treeDemo1" class="ztree"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--统计弹出层-->
+<form class="form-list-small" id="statistList">
+    <h5 class="title"><span class="titleText">行驶明细</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body statistPopup">
+                <table id="dgrid1"></table>
+            </div>
+        </div>
+    </div>
+</form>
+<!--系统新增公厕-->
+<form class="form-list-small insertBeta" id="insertBeta">
+    <h5 class="title"><span class="titleText">新增公厕</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertBetaPopup clear">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>公厕编号:</span>
+                        <input type="text"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>所属网络:</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>经度:</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>纬度:</span>
+                        <input type="text" />
+                    </li>
+                    <li class="textLen">
+                        <span>责任人:</span>
+                        <input type="text" />
+                    </li>
+                    <li class="textLen">
+                        <span>所在位置:</span>
+                        <input type="text"  />
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea></textarea>
+                    </li>
+                    <li class="takePoint">
+                        <span></span>
+                        <div class="tPImg">
+
+                        </div>
+                        <a href="" class="btnTPoint">取点</a>
+                    </li>
+                </ul>
+                <div class="betaMap">
+                    <div class="commonDetaMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--人员数据-->
+<form class="form-list-small" id="personData">
+    <h5 class="title"><span class="titleText">人员数据</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body personDataPopup">
+                <ul class="clear">
+                    <li><span>所属单位:</span><input type="text"></li>
+                    <li><span>人员姓名:</span><input type="text"></li>
+                    <li class="confirmLi"><a class="btnDConfirm">确认</a></li>
+                </ul>
+                <div class="pDList">
+                    <ul class="pDType clear">
+                        <li><p class="pDTColor dColor1"></p>在线</li>
+                        <li><p class="pDTColor dColor2"></p>离线</li>
+                        <li><p class="pDTColor dColor3"></p>报警</li>
+                        <li><p class="pDTColor dColor4"></p>其他</li>
+                    </ul>
+                    <ul class="pDCont clear">
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p>藏DD20145</p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p>藏DD20145</p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p>藏DD20145</p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <span></span>
+                            <p></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--车辆信息-num-->
+<form class="form-list-small carInfo" id="carInfo">
+    <h5 class="title clear">
+        <span class="titleText">藏D8900</span>
+        <span class="titleState">状态:<em>正在作业</em></span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body carInfoPopup">
+                <ul class="clear">
+                    <li class="carImg">
+                        <img src="">
+                    </li>
+                    <li class="colorBlue">
+                        <span>驾驶员:</span>
+                        <p>张三</p>
+                    </li>
+                    <li class="colorBlue">
+                        <span>设备号:</span>
+                        <p>301245145241</p>
+                    </li>
+                    <li>
+                        <span>联系电话:</span>
+                        <p>13550152076</p>
+                    </li>
+                    <li>
+                        <span>车型:</span>
+                        <p>洒水车</p>
+                    </li>
+                    <li>
+                        <span>方向:</span>
+                        <p>正东</p>
+                    </li>
+                    <li class="colorBlue">
+                        <span>车速:</span>
+                        <p>25km/h</p>
+                    </li>
+                    <li class="colorRed">
+                        <span>消耗油量:</span>
+                        <p>2500</p>
+                    </li>
+                    <li>
+                        <span>当日里程:</span>
+                        <p>20km</p>
+                    </li>
+                    <li>
+                        <span>通讯时间:</span>
+                        <p>2017-10-16 00:00</p>
+                    </li>
+                    <li class="maxWLi colorBlue">
+                        <span>当前位置:</span>
+                        <p>成都</p>
+                    </li>
+                    <li class="maxWLi">
+                        <span>所属网络:</span>
+                        <p>wifi</p>
+                    </li>
+                    <li class="maxWLi carTimeRoute">
+                        <i></i>
+                        <span class="carTime">2017-10-16</span>
+                        <span class="carRoute">偏离路线<em>60</em>km</span>
+                    </li>
+                    <li class="maxWLi">
+                        <span>排班情况:</span>
+                        <p>暂无</p>
+                    </li>
+                    <li class="colorBlue">
+                        <span>上班时间:</span>
+                        <p>2017/10/16 9:00</p>
+                    </li>
+                    <li class="colorBlue">
+                        <span>下班时间:</span>
+                        <p>2017/10/16 18:00</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul class="btnSelectCar">
+            <li>视频查看</li>
+            <li>查看轨迹</li>
+            <li>报警数据</li>
+            <li>查看油耗</li>
+        </ul>
+    </div>
+</form>
+<!--果皮箱信息-->
+<form class="form-list-small" id="peelInfo">
+    <h5 class="title clear">
+        <span>果皮箱基本信息</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body peelInfoPopup">
+                <ul class="clear">
+                    <li class="carImg">
+                        <img src="">
+                    </li>
+                    <li>
+                        <span>设备编号:</span>
+                        <p>14253564445464</p>
+                    </li>
+                    <li>
+                        <span>责任人:</span>
+                        <p>张三</p>
+                    </li>
+                    <li>
+                        <span>所属网络:</span>
+                        <p>wifi</p>
+                    </li>
+                    <li>
+                        <span>设施位置:</span>
+                        <p>成都</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<!--实时视频-->
+<form class="form-list-small videoInfo" id="videoInfo">
+    <h5 class="title clear">
+        <span class="titleText">藏D8900</span>
+        <span class="titleState">状态:<em>正在作业</em></span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body videoInfoPopup">
+                <ul class="clear">
+                    <li class="carImg">
+                        <img src="">
+                        <p class="videoTime">2017-10-16<em>18:30</em></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<!--卫情信息-->
+<form class="form-list-small sateInfo" id="sateInfo">
+    <h5 class="title clear">
+        <span class="titleText">卫情信息</span>
+        <span class="titleState">等待时间:<em>3</em><em>小时</em></span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body sateInfoPopup">
+                <div class="sIState">
+                    <h5>卫情状态</h5>
+                    <ul class="clear">
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span>卫情上报</span>
+                            <p>2017-10-16</p>
+                        </li>
+                        <li class="sISLine sISLine1">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span></span>
+                            <p></p>
+                        </li>
+                        <li class="sISLine sISLine2">
+                            <p></p>
+                        </li>
+                        <li class="sISTxt">
+                            <div class="sISRadus"><em></em></div>
+                            <span></span>
+                            <p></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sIInfo">
+                    <h5>卫情信息</h5>
+                    <ul class="clear">
+                        <li>
+                            <span>上报人:</span>
+                            <p>张三</p>
+                        </li>
+                        <li class="colorBlue">
+                            <span>上报时间:</span>
+                            <p>2017-10-16</p>
+                        </li>
+                        <li class="maxWLi colorBlue">
+                            <span>卫情地点:</span>
+                            <p>成都</p>
+                        </li>
+                        <li class="maxWLi">
+                            <span>卫情描述:</span>
+                            <p>卫情描述</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sIIImg">
+                    <h5>卫情照片</h5>
+                    <ul class="clear">
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--卫情确认-->
+<form class="form-list-small sateConfirm" id="sateConfirm">
+    <h5 class="title clear">
+        <span class="titleText">卫情确认</span>
+        <i class="icon iconfont icon-cheng"></i>
+    </h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body sateConfirmPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>处理时间:</span>
+                        <input type="text">
+                    </li>
+                </ul>
+                <div class="sIIImg">
+                    <h5>现场图片</h5>
+                    <ul class="clear">
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<script>
+
+</script>
+</body>
+</html>

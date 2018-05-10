@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+html,body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,p,blockquote,pre,hr,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+html{width: 100%;height: 100%;}
+body{width: 100%;height: 100%;font-size: 14px;font-family: "MicroSoft YaHei",sans-serif;color: #000;overflow: auto;}
+li{list-style: none;}
+a{color: #000;text-decoration: none;}
+a:hover{text-decoration: none;}
+/*解决IE浏览器a标签点击是有个背景色*/
+a:active{background-color: transparent !important\9;}
+input,textarea,select{border: none;outline: none;
+    /*/!*清除移动端默认的表达样式*!/*/
+    /*-webkit-appearance: none;*/
+    /*appearance: none;*/
+}
+textarea{resize: none;overflow: auto;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;font-style: normal;}
+em,strong{font-style:normal;font-weight:normal;}
+img{display: block;border: none;}
+
+/*清除浮动*/
+.clear:after{content: '';display: block;clear: both;}
+.clear{zoom:1;}
+

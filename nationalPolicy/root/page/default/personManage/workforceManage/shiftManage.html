@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/zTree_v3-master/css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../../res/dep/fontIcon/iconfont.css"/>
+    <title>班次管理</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="title clear">
+            <h2 class="list_title">班次管理</h2>
+            <div class="search">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="请输入班次名称" id="personName">
+                        <i class="search-btn iconfont icon-sousuo_sousuo" style="display: block"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dgrid">
+            <div class="dgrid-box">
+                <table id="dgrid"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新增-->
+<form class="form-list-small" id="addNew">
+    <h5 class="title"><span class="titleText">新增班次</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section">
+            <div class="section-body insertPopup">
+                <ul class="clear">
+                    <li>
+                        <span><em>*</em>班次名称:</span>
+                        <input type="text" class="teamName"/>
+                    </li>
+                    <li>
+                        <span><em>*</em>考勤次数:</span>
+                        <input  class="attCount" />
+                    </li>
+                    <li>
+                        <span><em>*</em>考勤规则:</span>
+                        <select class="attRuleId" id="mode1">
+                            <option value="0">1</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span><em>*</em>倒班周期:</span>
+                        <input class="attendCyc" />
+                    </li>
+                    <li>
+                        <span><em>*</em>绑定班组:</span>
+                        <input type="text" class="groupNames" />
+                    </li>
+                    <li class="textareaLi">
+                        <span>备注:</span>
+                        <textarea class="remark"></textarea>
+                    </li>
+                </ul>
+                <div class="wSTime clear">
+                    <h3 class="sTTitle">上班时间<a href="javascript:;" class="btnTAdd">新增</a></h3>
+                    <div class="sTCont">
+                        <span>上班时间</span>
+                        <span>下班时间</span>
+                        <span>上班名称</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="sTCont sTCont1">
+                        <input type="text" class="time1" id="time1" placeholder="格式：09:00"/>
+                        <input type="text" class="time2" id="time2" placeholder="格式：12:00"/>
+                        <input class="workName" placeholder="例如：早班"/>
+                        <span><a href="javascript:;" class="btnTDel">删除</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--删除-->
+<form class="form-list-small" id="delete">
+    <h5 class="title"><span class="titleText">删除班次</span><i class="icon iconfont icon-cheng"></i></h5>
+    <div class="form-body">
+        <div class="section-body deletePopup">
+            <h6 class="title" id="delete-info">
+                <i class="iconfont icon-tishi-copy icon-danger"></i>
+                确定删除班次名称为<span id="delName"></span>的信息?
+            </h6>
+        </div>
+    </div>
+    <div class="form-btn">
+        <ul>
+            <li class="no b-gray">关闭</li>
+            <li class="yes b-blue">确定</li>
+        </ul>
+    </div>
+</form>
+<!--绑定班组-->
+<div class="add form-Tree" style="display:none;" id="tree-group">
+    <form method="post">
+        <div class="form-container">
+            <!--标题-->
+            <div class="form-top">
+                <span class="iconfont icon-cheng close"></span><span><i class="iconfont "></i><strong class="titleText">绑定班组</strong></span>
+            </div>
+            <!--内容-->
+            <div class="form-content">
+                <div id="windowTreeBox1">
+                    <ul id="windowTree1" class="ztree"></ul>
+                </div>
+            </div>
+            <!--按钮组-->
+            <div class="form-btns clear">
+                <input class="btn b-blue submit-btn" type="button" value="确定">
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../../res/js/global/global.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.core.js"></script>
+<script src="../../../../res/dep/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="../../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../../res/dep/layer/layer.js"></script>
+<script src="../../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../res/js/common/validate.js"></script>
+<script src="../../../../res/js/personManage/personManage.js"></script>
+<script src="../../../../res/js/personManage/workforceManage/shiftManage.js"></script>
+</body>
+</html>

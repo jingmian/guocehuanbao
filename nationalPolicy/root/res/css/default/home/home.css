@@ -1,0 +1,226 @@
+html {
+  font-size: 12px;
+}
+body {
+  background: #f2f5f7;
+}
+.NatPot {
+  width: 100%;
+  max-width: 1920px;
+}
+.NatDao {
+  width: 100%;
+  background: #1f84ed;
+  padding: 0 16px;
+  height: 40px;
+}
+.NatDao-add {
+  color: #fff;
+  float: left;
+}
+.NatDao-cdd {
+  float: right;
+  border: 0;
+}
+.NatDao-cdd li {
+  float: left;
+  color: #fff;
+  line-height: 39px;
+  border: 0;
+  font-size: 12px;
+}
+.NatDao-cdd li a {
+  width: 100%;
+  height: 39px;
+  display: inline-block;
+  color: #fff;
+  padding: 0 10px;
+}
+.NatDao-cdd li a:hover {
+  text-decoration: none;
+}
+.NatDao-cdd li a > i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.NatDao-cdd li.on {
+  background: #036edb;
+}
+.iconfont {
+  line-height: 38px;
+}
+.NatShu {
+  width: 100%;
+  padding: 14px 6px 14px 16px;
+  overflow: hidden;
+  zoom: 1;
+  box-sizing: border-box;
+}
+.NatPon > li {
+  width: 33.3%;
+  float: left;
+}
+.NatRon {
+  padding-bottom: 14px;
+  overflow: hidden;
+}
+.NatRon li {
+  width: 25%;
+  float: left;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.NatRon li:nth-child(1) > div {
+  background: #db5ee6;
+  background: linear-gradient(left, #db5ee6, #d58bf7);
+  background: -webkit-linear-gradient(left, #db5ee6, #d58bf7);
+  background: -moz-linear-gradient(left, #db5ee6, #d58bf7);
+  background: -o-linear-gradient(left, #db5ee6, #d58bf7);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#db5ee6, endColorstr=#d58bf7);
+}
+.NatRon li:nth-child(2) > div {
+  background: #fd525d;
+  background: linear-gradient(left, #fd525d, #fa7082);
+  background: -webkit-linear-gradient(left, #fd525d, #fa7082);
+  background: -moz-linear-gradient(left, #fd525d, #fa7082);
+  background: -o-linear-gradient(left, #fd525d, #fa7082);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#fd525d, endColorstr=#fa7082);
+}
+.NatRon li:nth-child(3) > div {
+  background: #faaf33;
+  background: -webkit-linear-gradient(left, #faaf33, #f9ac43);
+  background: -moz-linear-gradient(left, #faaf33, #f9ac43);
+  background: -o-linear-gradient(left, #faaf33, #f9ac43);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#faaf33, endColorstr=#f9ac43);
+}
+.NatRon li:nth-child(4) > div {
+  background: #3d8aed;
+  background: linear-gradient(left, #3d8aed, #6ea4fc);
+  background: -webkit-linear-gradient(left, #3d8aed, #6ea4fc);
+  background: -moz-linear-gradient(left, #3d8aed, #6ea4fc);
+  background: -o-linear-gradient(left, #3d8aed, #6ea4fc);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#3d8aed, endColorstr=#6ea4fc);
+}
+.NatRon li div {
+  padding: 0 0 0 14px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  color: #fff;
+  margin: 2px 1px;
+  box-sizing: border-box;
+  position: relative;
+}
+.NatRon li div > h5 {
+  height: 40px;
+  line-height: 40px;
+}
+.NatRon li div > p {
+  font-size: 22px;
+  margin-left: 10px;
+  height: 60px;
+  line-height: 60px;
+}
+.NatRon li div > i {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-size: 40px;
+  color: #fff;
+}
+.NatPon li {
+  padding-right: 10px;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+.NatPON-ftu {
+  height: 100%;
+}
+.NatPon li > div {
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  color: #43505d;
+  background: #fff;
+  overflow: hidden;
+}
+.NatPon li div > p {
+  margin: 20px 0 0 14px;
+}
+.NatJan {
+  width: 100%;
+  height: 400px;
+}
+.NatJan li {
+  width: 50%;
+  height: 400px;
+  padding-right: 10px;
+  padding-top: 14px;
+  float: left;
+  box-sizing: border-box;
+}
+.NatJan-fa {
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  background: #fff;
+  color: #43505d;
+  overflow: hidden;
+}
+.NatJan-fa p {
+  margin: 20px 0 0 14px;
+}
+.tonb {
+  width: 100%;
+  padding: 14px 0 14px 0;
+  overflow: hidden;
+  min-width: 1325px;
+}
+.tonb .NatTon {
+  width: 99.4%;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.15);
+  height: 99%;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  color: #43505d;
+  background: #fff;
+  overflow: hidden;
+  z-index: 88!important;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+.NatTon p {
+  margin: 20px 0 0 14px;
+}

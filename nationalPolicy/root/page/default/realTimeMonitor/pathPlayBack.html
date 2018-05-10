@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" href="../../../res/css/reset/reset.css"/>
+    <link rel="stylesheet" href="../../../res/dep/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/easyui.css"/>
+    <link rel="stylesheet" href="../../../res/dep/easyui/themes/ycya/datagrid.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/main/main.css"/>
+    <link rel="stylesheet" href="../../../res/dep/customProgress/progress.css"/>
+    <link rel="stylesheet" href="../../../res/css/default/realTimeMonitor/realTimeMonitor.css"/>
+    <title>轨迹回放</title>
+</head>
+<body>
+<div class="m-from">
+    <div class="m-home">
+        <div class="contentMap">
+            <div class="go-back" id="goBack">
+                <i class=""></i><span>返回</span>
+            </div>
+            <div id="map" class="map"></div>
+            <div class="path-wrap">
+                <div class="path-top">
+                    <ul class="search-box">
+                        <li><label for="startTime">开始时间 ：</label><input type="text" placeholder="请选择时间" id="startTime"/></li>
+                        <li><label for="endTime">结束时间 ：</label><input type="text" placeholder="请选择时间" id="endTime"/></li>
+                        <li><button id="yes" class="btn">确定</button></li>
+                    </ul>
+                    <!--<ul class="input-box">
+                        &lt;!&ndash;<li>&ndash;&gt;
+                            &lt;!&ndash;<span>&ndash;&gt;
+                                &lt;!&ndash;<i class="iconfont icon-check active"></i>&ndash;&gt;
+                            &lt;!&ndash;</span>&ndash;&gt;
+                            &lt;!&ndash;<strong>显示拐点</strong>&ndash;&gt;
+                        &lt;!&ndash;</li>&ndash;&gt;
+                        <li>
+                            <span>
+                                <i class="iconfont icon-check"></i>
+                            </span>
+                            <strong>停车点</strong>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="iconfont icon-check"></i>
+                            </span>
+                            <strong>超速点</strong>
+                        </li>
+                    </ul>-->
+                    <ul class="operate-btn">
+                        <li class="blue play" id="play">
+                            <i class="iconfont icon-bofang"></i>
+                        </li>
+                        <li class="blue" id="stop">
+                            <i class="iconfont icon-tingzhi-copy"></i>
+                        </li>
+                        <li class="speed" id="speed">
+                            <span> 正常</span> <i class="iconfont icon-sanjiao-copy-copy-copy"></i>
+                            <dl>
+                                <dd data-speed="2000">慢速</dd>
+                                <dd data-speed="1000">正常</dd>
+                                <dd data-speed="100">快速</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div class="progress-box">
+                        <div id="scrollBar" class="scrollBar">
+                            <div id="scroll_Track" class="scroll_Track"></div>
+                            <div id="scroll_Thumb" class="scroll_Thumb"></div>
+                        </div>
+                        <p id="scrollBarTxt"></p>
+                    </div>
+                    <div class="toggle">
+                        <i class="iconfont icon-sanjiao-copy-copy-copy" title="收缩"></i>
+                    </div>
+                    <ul class="path-tabs">
+                        <li class="active">
+                            <i class="iconfont icon-qita1"></i><span>明细</span>
+                        </li>
+                       <!-- <li>
+                            <i class="iconfont icon-huizong1"></i><span>曲线图</span>
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="path-content">
+                    <div class="section current">
+                        <div class="section-body" >
+                            <div id="dgrid"></div>
+                        </div>
+                    </div>
+                    <div class="section ">
+                        <div class="section-body" >
+                            <div id="polyLine" class="line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../res/js/library/jquery-1.8.0.min.js"></script>
+<script src="../../../res/js/global/global.js"></script>
+<script src="../../../res/dep/layer/layer.js"></script>
+<script src="../../../res/dep/eChart/echarts.min.js"></script>
+<script src="../../../res/dep/My97DatePicker/WdatePicker.js"></script>
+<script src="../../../../YcyaUI/map/ycya.js"></script>
+<script src="../../../../YcyaUI/map/YcyaMap.js"></script>
+<script src="../../../res/dep/easyui/jquery.easyui.min.1.5.3.js"></script>
+<script src="../../../res/dep/easyui/locale/ycya-lang-zh_CN.js"></script>
+<script src="../../../res/dep/customProgress/progress.js"></script>
+<script src="../../../res/js/realTimeMonitor/pathPlayBack.js"></script>
+</body>
+</html>
